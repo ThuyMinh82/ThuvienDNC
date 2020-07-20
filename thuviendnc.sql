@@ -244,8 +244,7 @@ ALTER TABLE `profileuser`
 -- Constraints for table `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `FK_user_group_ID` FOREIGN KEY (`id_group`) REFERENCES `usergroup` (`id_group`);
-COMMIT;
+  
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
