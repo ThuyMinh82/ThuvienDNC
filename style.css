@@ -1,0 +1,26 @@
+.container fluid{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: Lato;
+    background: skyblue;
+}
+
+#banner{
+    background-size: 100%;
+    margin-bottom: 5px;
+    background: #D2EDFB;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.banner col-md-8 col-sm-12 col-xs-12{
+    width: 75%;
+    float: left;
+}
+ 
+.banner .col-sm-4{
+    width: 25%;
+    float: right;
+    background: skyblue;
+}
