@@ -139,8 +139,8 @@ CREATE TABLE `profileuser` (
 --
 
 INSERT INTO `profileuser` (`id_pro`, `name_pro`, `email`, `address`, `phone`) VALUES
-(1, 'Nguyễn Hoàng Giang Cute', 'jasonnguyen0204@gmail.com', '2338/4 Mỹ hưng 1, Mỹ Hòa, Bình Minh, Vĩnh Long', '0789539650'),
-(2, 'Nguyễn Thị Diễm Hương', 'admin@example.com', 'Sóc Tờ Răng', '0123456789'),
+(1, 'Nguyễn Hoàng Giang Baby Cute', 'jasonnguyen0204@gmail.com', '2338/4 Mỹ hưng 1, Mỹ Hòa, Bình Minh, Vĩnh Long', '0789539650'),
+(2, 'Nguyễn Thị Diễm Hương handsome', 'admin@example.com', 'Sóc Tờ Răng', '0123456789'),
 (3, 'Nguyễn Thị Ạc Min', 'admin1@example.com', 'Com Bú Tơ', '0987654321'),
 (4, 'Nguyễn Thị Dú Sơ', 'user@example.com', 'Mai Sớ Vơ', '09876543210'),
 (5, 'Nguyễn Thị Dú Sơ Hai', 'user2@example.com', 'Mai Sái Lân', '09876543212'),
