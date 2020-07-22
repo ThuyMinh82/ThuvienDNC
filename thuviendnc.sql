@@ -139,12 +139,12 @@ CREATE TABLE `profileuser` (
 --
 
 INSERT INTO `profileuser` (`id_pro`, `name_pro`, `email`, `address`, `phone`) VALUES
-(1, 'Nguyễn Hoàng Giang Baby Cute', 'jasonnguyen0204@gmail.com', '2338/4 Mỹ hưng 1, Mỹ Hòa, Bình Minh, Vĩnh Long', '0789539650'),
-(2, 'Nguyễn Thị Diễm Hương handsome', 'admin@example.com', 'Sóc Tờ Răng', '0123456789'),
-(3, 'Nguyễn Thị Ạc Min', 'admin1@example.com', 'Com Bú Tơ', '0987654321'),
-(4, 'Nguyễn Thị Dú Sơ', 'user@example.com', 'Mai Sớ Vơ', '09876543210'),
-(5, 'Nguyễn Thị Dú Sơ Hai', 'user2@example.com', 'Mai Sái Lân', '09876543212'),
-(6, 'Nguyễn Thị Dú Sơ Ba', 'user3@example.com', 'Mai Sớ Vơ', '098765432102');
+(1, 'Nguyễn Hoàng Giang', 'jasonnguyen0204@gmail.com', '2338/4 Mỹ hưng 1, Mỹ Hòa, Bình Minh, Vĩnh Long', '0789539650'),
+(2, 'Nguyễn Thị Diễm Hương', 'admin@example.com', 'Sóc Tờ Răng', '0123456789'),
+(3, 'Đỗ Ngô Thúy Minh', 'dongothuyminh@gmail.com', 'Bạc Liêu', '0915369209'),
+(4, 'Nguyễn Thị Thùy Quyên', 'user@example.com', 'Vĩnh Long', '09876543210'),
+(5, 'Võ Văn Trí', 'user2@example.com', 'Cần Thơ', '09876543212'),
+(6, 'Võ Thị Thu Hiền', 'user3@example.com', 'Hậu Giang', '098765432102');
 
 -- --------------------------------------------------------
 
