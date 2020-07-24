@@ -25,6 +25,10 @@
     background: skyblue;
 }
 
+.navbar{
+    border-radius: 10px;
+}
+
 #thongbao .panel-heading{
     margin: 0px;
     padding: 0px;
@@ -37,6 +41,7 @@
     text-align: center;
     line-height: 40px;
     color: white;
+    border-radius: 5px;
 }
 
 #thongbao panel-body{
@@ -55,6 +60,7 @@
     text-align: center;
     line-height: 40px;
     color: white;
+    border-radius: 5px;
 }
 
 #gocanh .panel-heading{
@@ -69,6 +75,7 @@
     text-align: center;
     line-height: 40px;
     color: white;
+    border-radius: 5px;
 }
 
 #tinmoinhat .panel-heading h3{
@@ -78,13 +85,14 @@
     text-align: center;
     line-height: 40px;
     color: white;
+    border-radius: 5px;
 }
 
 #bodyright .panel-body ul li{
     display: block;
     text-decoration: none;
     line-height: 32px;
-    border-bottom: 1px solid #ccc
+    border-bottom: 1px solid #ccc;
 }
 
 #lienketwebsite .panel-heading h3{
@@ -94,6 +102,7 @@
     text-align: center;
     line-height: 40px;
     color: white;
+    border-radius: 5px;
 }
 
 #gioithieusach .panel-heading h3{
@@ -103,15 +112,7 @@
     text-align: center;
     line-height: 40px;
     color: white;
-}
-
-#gioithieusach .panel-heading h3{
-    background: #2A8DDD;
-    height: 40px;
-    margin-top: 1px;
-    text-align: center;
-    line-height: 40px;
-    color: white;
+    border-radius: 5px;
 }
 
 #video .panel-heading h3{
@@ -121,6 +122,7 @@
     text-align: center;
     line-height: 40px;
     color: white;
+    border-radius: 5px;
 }
 
 .carousel-inner img{
@@ -134,5 +136,8 @@
 
 #fooder{
     background: skyblue;
-
+    margin-bottom: 5px;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding: 10px;
 }

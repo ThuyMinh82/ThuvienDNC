@@ -84,34 +84,6 @@
     border-radius: 5px;
 }
 
-.noidung{
-    margin-top: 1px;
-    padding: 5px;
-    margin-left:0cm; 
-    margin-right:0cm; 
-    text-align:justify;            
-    font-family:Lato;
-    font-size:14.0pt;
-    background-color:white;
-}
-
-.tieude{
-    text-align:center;
-    color:blue;
-    font-weight: bold;
-    size: 50px;
-    font-family:Lato;
-    font-size: 16.0pt;
-}
-
-.muc{
-    margin-left:0cm;
-    margin-right:0cm;
-    font-family:Lato;
-    font-size:14.0pt;
-    color:red;
-}
- 
 #fooder{
     background: skyblue;
     margin-bottom: 5px;
