@@ -12,6 +12,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+        <script src="https://cdn.tiny.cloud/1/k9mtdxnj3fhwxu23dihw568a3bdvhqt2cba7r3cpqejj7610/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
     </head>
     <body> 
         <div class="container-fluid">
@@ -99,8 +101,8 @@
                 <div class="col-xl-1"></div>
             </div>
             <div class="row no-gutters">
-                <div class="col-md-3"></div>
-                <div class="col-md-6 col-sm-12 padding-0">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 col-sm-12 padding-0">
                     <div class="alert alert-success alert-dismissible">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
                         <strong>Đăng nhập thành công!</strong> Bạn có thể thay đổi thông tin cá nhân và sử dụng hệ thống.
@@ -113,8 +115,9 @@
                             <td>Nguyễn Hoàng Giang</td>
                         </tr>
                         <tr>
-                            <td id='bold'>Email:</td>
-                            <td>admin@example.com</td>
+                            <form action="" method="post" enctype="multipart/form-data">
+                                <textarea class="ckeditor" name="editor"></textarea>
+                            </form>   
                         </tr>
                         <tr>
                             <td id='bold'>Địa chỉ:</td>
@@ -127,12 +130,9 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-md-3"></div> 
+                <div class="col-md-2"></div> 
             </div>
             <button type="button" class="btn btn-primary"><a href="changepro.html" id="a-none">Thay đổi</a></button>
-        </div>  
-           
-        
-        
+        </div>
     </body>
 </html>
