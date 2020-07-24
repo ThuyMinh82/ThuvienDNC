@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Thư viện điện tử Đại học Nam Cần Thơ</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+    </head>
+    <body> 
+        <div class="container-fluid">
+            <div class="row no-gutters" id="banner">
+                <div class="col-xl-1"></div>
+                <div class="col-xl-6 col-lg-7 col-md-8 col-sm-12" id ="color">
+                    <a href="index.html"  class="logo"><img src="images/logo.png" id="logo"></a>
+                </div>
+                <div class="col-xl-4 col-lg-5 col-md-4" id = "color">
+                    <img src="images/block-banner.png" id="logo1">
+                </div>
+                <div class="col-xl-1"></div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-xl-1"></div>
+                <div class="col-xl-10 col-sm-12 padding-0">
+                    <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+                        <!-- Brand -->
+                        <a class="navbar-brand" href="#"><i class="fa fa-fw fa-home"></i>Home</a>
+                    
+                        <!-- Toggler/collapsibe Button -->
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                      
+                        <!-- Navbar links -->
+                        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                          <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                    <i class="fa fa-fw fa-user"></i>Quản Lí Tài Khoản
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Tạo Tài Khoản</a>
+                                    <a class="dropdown-item" href="#">Cấp Quyền</a>
+                                    <a class="dropdown-item" href="#">Xóa Tài Khoản</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                    <i class="fa fa-fw fa-pencil"></i>Quản Lí Bài Viết
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Thêm Bài Viết</a>
+                                    <a class="dropdown-item" href="#">Sửa Bài Viết</a>
+                                    <a class="dropdown-item" href="#">Xóa Bài Viết</a>
+                                    <a class="dropdown-item" href="#">Duyệt Bài Viết</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                    <i class="fa fa-fw fa-book"></i>Quản Lí Chủ Đề
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Thêm Chủ Đề</a>
+                                    <a class="dropdown-item" href="#">Sửa Chủ Đề</a>
+                                    <a class="dropdown-item" href="#">Xóa Chủ Đề</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                    <i class="fa fa-fw fa-image"></i>Quản Lí Hình Ảnh
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Thêm Ảnh</a>
+                                    <a class="dropdown-item" href="#">Đưa Ảnh Lên Slide</a>
+                                    <a class="dropdown-item" href="#">Xóa Ảnh</a>
+                                </div>
+                            </li>
+                            </ul>
+                            <ul class="nav navbar-nav ml-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Admin
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Đăng xuất</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                      </nav>
+                </div>
+                <div class="col-xl-1"></div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 col-sm-12 padding-0">
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>Đăng nhập thành công!</strong> Bạn có thể thay đổi thông tin cá nhân và sử dụng hệ thống.
+                    </div>
+                    <h4>THÔNG TIN TÀI KHOẢN</h4>       
+                    <table class="table table-hover">
+                        <tbody>
+                        <tr>
+                            <td id='bold'>Họ Tên:</td>
+                            <td>Nguyễn Hoàng Giang</td>
+                        </tr>
+                        <tr>
+                            <td id='bold'>Email:</td>
+                            <td>admin@example.com</td>
+                        </tr>
+                        <tr>
+                            <td id='bold'>Địa chỉ:</td>
+                            <td>2338/4, ấp Mỹ Hưng 1, xã Mỹ Hòa, thị xã Bình Minh, tỉnh Vĩnh Long</td>
+                        </tr>
+                        <tr>
+                            <td id='bold'>Số điện thoại:</td>
+                            <td>0789539650</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-3"></div> 
+            </div>
+            <button type="button" class="btn btn-primary">Thay đổi</button>
+        </div>  
+           
+        
+        
+    </body>
+</html>
