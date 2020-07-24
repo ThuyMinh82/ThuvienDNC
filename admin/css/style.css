@@ -52,6 +52,7 @@ h4{
 }
 #bold{
     font-weight:bold;
+    width: 25%;
 }
 .btn.btn-primary{
     margin-top: 5px;
@@ -59,4 +60,14 @@ h4{
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+
+#a-none{
+    text-decoration: none;
+    color: white;
+}
+
+#bold2{
+    font-weight:bold;
+    width: 40%;
 }
