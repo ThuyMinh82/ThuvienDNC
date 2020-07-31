@@ -40,7 +40,11 @@
 .navbar{
     border-radius: 10px;
     min-height: 10px;
-    margin: 10px;
+    margin: 10px 0px;
+}
+
+.nav-link .dropdown-toggle{
+    
 }
 
 .table{
@@ -54,7 +58,16 @@ h4{
     font-weight:bold;
     width: 25%;
 }
-.btn.btn-primary{
+
+.btn.btn-primary.bottom{
+    margin-top: 62px;
+}
+
+.btn.btn-primary.auto{
+    margin: 150% 0;
+}
+
+.btn.btn-primary.center{
     margin-top: 5px;
     position: absolute;
     left: 50%;
@@ -69,5 +82,10 @@ h4{
 
 #bold2{
     font-weight:bold;
+    width: 20%;
+}
+#bold3{
+    font-weight:bold;
     width: 40%;
 }
+
