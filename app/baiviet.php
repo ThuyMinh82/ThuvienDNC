@@ -21,6 +21,10 @@ class baiviet extends Model
 		return $this->belongsTo('App\users', 'user_id', 'id');
 	}
 
+	public function hinh(){
+		return $this->hasMany('App\hinhanh', 'bv_id', 'id');
+	}
+
 
 
 }

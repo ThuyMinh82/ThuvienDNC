@@ -13,5 +13,7 @@ class profileuser extends Model
 	protected $primaryKey = 'id';
 	protected $dateFormat = 'Y-m-d H:i:s'; 
 
-	
+	public function user(){
+		return $this->belongsTo('App\users', 'profileuser_id', 'id');
+	}
 }
