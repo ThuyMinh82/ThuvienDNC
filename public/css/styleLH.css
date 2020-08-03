@@ -17,18 +17,10 @@
     background-image: linear-gradient(#D2EDFB,white);
 }
 
-.banner logo{
-    width: 75%;
+#logo{
+    width: 100%;
     height: 110px;
     padding: 5px;
-}
- 
-.banner logo1{
-    width: 25%;
-    height: 95%;
-    background: skyblue;
-    position: absolute;
-    bottom: 0px;
 }
 
 .navbar{
