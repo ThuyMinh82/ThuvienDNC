@@ -1,0 +1,263 @@
+.container-fluid{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: Lato;
+    
+}
+
+#banner{
+    height: 110px;
+    background-size: 100%;
+    margin-bottom: 5px;
+    margin-left: 1px;
+    margin-right: 1px;
+    vertical-align: center;
+    background-color:#D2EDFB;
+    background-image: linear-gradient(#D2EDFB,white);
+}
+
+
+.banner logo{
+    width: 75%;
+    height: 110px;
+    padding: 5px;
+}
+
+#color #logo{
+    width: 100%;
+    height: 110px;
+    padding: 5px;
+}
+
+.banner logo1{
+    width: 25%;
+    height: 95%;
+    background: skyblue;
+    position: absolute;
+    bottom: 0px;
+}
+
+.navbar{
+    border-radius: 10px;
+   
+}
+
+#thongbao .panel-heading{
+    margin: 0px;
+    padding: 0px;
+}
+
+#thongbao .panel-heading h3{
+    background: #2A8DDD;
+    height: 40px;
+    margin-top: 1px;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    border-radius: 5px;
+}
+
+#thongbao .panel-body{
+    list-style: none;
+}
+
+#gioithieusach .panel-body{
+    border: 0px; 
+    background: #f3f2f1;
+    margin: 0px;
+}
+
+#giomocua .panel-heading{
+    margin: 0px;
+    padding: 0px;
+}
+
+#giomocua .panel-heading h3{
+    background: #2A8DDD;
+    height: 40px;
+    margin-top: 1px;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    border-radius: 5px;
+}
+
+#gocanh .panel-heading{
+    margin: 0px;
+    padding: 0px;
+}
+
+#gocanh .panel-heading h3{
+    background: #2A8DDD;
+    height: 40px;
+    margin-top: 1px;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    border-radius: 5px;
+}
+
+.carousel-body{
+    margin-top: 10px;
+}
+
+.duongvien{
+    margin-top: 10px;
+    padding: 4px;
+    border-bottom: 1px dotted #ccc;
+}
+
+#hinh{
+    max-width: 400px;
+    height: 250px;
+}
+
+#tinmoinhat .panel-heading h3{
+    background: #2A8DDD;
+    height: auto;
+    margin-top: 1px;
+    line-height: auto;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+}
+
+.panel-lib{
+    background: #fffcf0; 
+    height: 270px; 
+    overflow: hidden;
+}
+
+#latestnews{
+    border-bottom: none; 
+    position: relative; 
+    height: 182px; 
+    overflow: hidden;
+}
+
+#latestnews ul{
+    font-style: normal;
+    list-style-type: none; 
+    padding: 2px 10px; 
+    margin: 0px; 
+    position: absolute; 
+    top: 0px;
+}
+
+#latestnews ul li{
+    border-bottom: 1px dotted rgb(239, 239, 239);
+    padding: 3px 5px; 
+    text-transform: uppercase; 
+    margin: 0px; 
+    display: list-item;
+}
+
+#latestnews ul li a{
+    color: #222;
+}
+
+.date-newstick{
+    font-size: 11px;
+}
+
+#bodyright .panel-body ul li{
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+}
+
+#lienketwebsite .panel-heading h3{
+    background: #2A8DDD;
+    height: 40px;
+    margin-top: 1px;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    border-radius: 5px;
+}
+
+#gioithieusach .panel-heading h3{
+    background: #2A8DDD;
+    height: 40px;
+    margin-top: 1px;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    border-radius: 5px;
+}
+
+#video .panel-heading h3{
+    background: #2A8DDD;
+    height: 40px;
+    margin-top: 1px;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    border-radius: 5px;
+}
+
+.carousel-inner img{
+    width: 100%;
+}
+
+#slides{
+    width: 100%;
+    height: 200px;
+}
+
+#fooder{
+    background: skyblue;
+    margin-bottom: 5px;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding: 10px;
+}
+
+h4.title-ls-news {
+    background: #e4ecf5;
+    padding: 6px;
+    margin-bottom: 1px;
+    border-radius: 10px 0px 0px 0px;
+}
+.title-ls-news {
+    font-weight: bold;
+    color: blue;
+}
+.hr-lib {
+    padding: 4px;
+    border-bottom: 1px dotted #ccc;
+}
+@media(min-width:768px){
+    .w-main-right {
+        padding-left: 0px;
+    }
+    .img-avatar{
+        padding-left: 9px;
+        padding-right: 8px; 
+        height: 120px;
+        overflow: hidden;       
+    }
+}
+
+.support-tilte {
+    font-size: 12px;
+    font-weight: bold;
+    color: #000000;
+    margin-top: 3px;
+    text-transform: uppercase;
+}
+
+#footer-slide .sli01 {
+    padding: 2px;
+    border: 1px solid white;
+}
+
+#footer-slide .sli01:hover {
+    padding: 2px;
+    border: 1px solid red;
+}
+
+#footer-slide .opa01 {  
+    height: 180px;
+}
