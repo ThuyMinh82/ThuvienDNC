@@ -17,18 +17,10 @@
     background-image: linear-gradient(#D2EDFB,white);
 }
 
-.banner logo{
-    width: 75%;
+#logo{
+    width: 100%;
     height: 110px;
     padding: 5px;
-}
- 
-.banner logo1{
-    width: 25%;
-    height: 95%;
-    background: skyblue;
-    position: absolute;
-    bottom: 0px;
 }
 
 .navbar{
@@ -37,16 +29,15 @@
    
 }
 
-.row w-main div a{
-    border: 1px solid #ccc;
-    padding: 2px; 
-    max-width: 360px;
-}
-
 .duongvien{
     padding: 4px; 
     border-bottom: 1px dotted #ccc; 
     margin-bottom: 10px;
+}
+
+#hinh{
+    max-width: 460px;
+    height: 250px;
 }
 
 #gioithieusach .panel-body{
