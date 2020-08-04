@@ -43,7 +43,7 @@
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                                    <i class="fa fa-fw fa-user"></i>Quản Lí Tài Khoản
+                                    <i class="fa fa-fw fa-user"></i>Tài Khoản
                                 </a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="user_add.blade.php">Tạo Tài Khoản</a>
@@ -53,7 +53,7 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                                    <i class="fa fa-fw fa-pencil"></i>Quản Lí Bài Viết
+                                    <i class="fa fa-fw fa-pencil"></i>Bài Viết
                                 </a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="bv_add.blade.php">Thêm Bài Viết</a>
@@ -64,17 +64,16 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                                    <i class="fa fa-fw fa-book"></i>Quản Lí Chủ Đề
+                                    <i class="fa fa-fw fa-book"></i>Chủ Đề
                                 </a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="theme_add.blade.php">Thêm Chủ Đề</a>
-                                    <a class="dropdown-item" href="theme_change.blade.php">Sửa Chủ Đề</a>
-                                    <a class="dropdown-item" href="theme_drop.blade.php">Xóa Chủ Đề</a>
+                                    <a class="dropdown-item" href="danhsachchude.blade.php">Danh sách chủ đề</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                                    <i class="fa fa-fw fa-image"></i>Quản Lí Hình Ảnh
+                                    <i class="fa fa-fw fa-image"></i>Hình Ảnh
                                 </a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="image_add.blade.php">Thêm Ảnh</a>
