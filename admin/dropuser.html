@@ -8,6 +8,7 @@
         <link rel="stylesheet" type="text/css" href="./css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -101,27 +102,77 @@
             <div class="row no-gutters">
                 <div class="col-md-3"></div>
                 <div class="col-md-6 col-sm-12 padding-0">
-                    <h4>XÓA TÀI KHOẢN</h4>       
+                    <h4>DANH SÁCH TÀI KHOẢN</h4>       
                     <table class="table table-hover">
                         <tbody>
                         <tr>
-                            <td id='bold3'>Tài khoản:</td>
-                            <td>
-                                <select multiple class="form-control" id="select-user">
-                                <option>Admin2</option>
-                                <option>Admin3</option>
-                                <option>User1</option>
-                                <option>User2</option>
-                                <option>User3</option>
-                                </select>
-                            </td>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th></th>
+                            <th style="width: 200px;">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                    <div class="input-group-append">
+                                        <a href=""class="btn btn-link"><i class='fas fa-search'style='margin: 5px; color: black;'></i></a> 
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td><a href="">admin1</a></td>
+                            <td><a href=""><i class='fas fa-user-check'style='margin: 5px; color: black;'></i>Cấp quyền</a></td>
+                            <td><a href="" data-toggle="modal" data-target="#myModal"><i class='fas fa-trash'style='margin: 5px; color: red;'></i>Xóa</a></td>
                         </tr>
                         </tbody>
                     </table>
+                    <div class="row no-gutters">
+                        <div class="col-md-5"></div>
+                        <div class="col-md-1">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination pagination-sm">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                    </a>
+                                </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-md-6"></div>
+                    </div>
                 </div>
                 <div class="col-md-3"></div> 
             </div>
-            <button type="button" class="btn btn-primary center">Xóa</button>
+            <div class="modal" tabindex="-1" role="dialog" id="myModal">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Xóa User</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Bạn có chắc muốn xóa User này?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary">Xóa ngay</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
         </div>
         <br>
         <br>

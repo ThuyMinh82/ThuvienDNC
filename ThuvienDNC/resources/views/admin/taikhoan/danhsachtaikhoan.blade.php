@@ -1,19 +1,19 @@
 @extends('admin.layout.page')
 
 @section('header')
-<title>Sửa chủ đề</title>
+<title>Xóa tài khoản</title>
 @endsection
 
-@section('content')
-<div class="row no-gutters">
-    <div class="col-md-3"></div>
-    <div class="col-md-6 col-sm-12 padding-0">
-        <h4>Danh Sách Chủ Đề</h4>       
+    @section('content')
+    <div class="row no-gutters">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 col-sm-12 padding-0">
+            <h4>DANH SÁCH TÀI KHOẢN</h4>       
             <table class="table table-hover">
                 <tbody>
                 <tr>
                     <th>ID</th>
-                    <th>Tên chủ đề</th>
+                    <th>Username</th>
                     <th></th>
                     <th>
                         <div class="input-group">
@@ -25,10 +25,10 @@
                     </th>
                 </tr>
                 <tr>
-                    <td>01</td>
-                    <td>Tin tức - Sự kiện</td>
-                    <td><a href="" data-toggle="modal" data-target="#myModal"><i class='fas fa-trash'style='margin: 5px;'></i>Xóa</a></td>
-                    <td><a href=""><i class='fas fa-pen-alt'style='margin: 5px;'></i>Sửa</a></td>
+                    <td>1</td>
+                    <td><a href="">admin1</a></td>
+                    <td><a href=""><i class='fas fa-user-check'style='margin: 5px; color: black;'></i>Cấp quyền</a></td>
+                    <td><a href="" data-toggle="modal" data-target="#myModal"><i class='fas fa-trash'style='margin: 5px; color: red;'></i>Xóa</a></td>
                 </tr>
                 </tbody>
             </table>
@@ -57,26 +57,26 @@
                 </div>
                 <div class="col-md-6"></div>
             </div>
+        </div>
+        <div class="col-md-4"></div> 
     </div>
-    <div class="col-md-3"></div> 
-</div>
-<div class="modal" tabindex="-1" role="dialog" id="myModal">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Xóa Chủ Đề</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+    <div class="modal" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Xóa User</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Bạn có chắc muốn xóa User này?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Xóa ngay</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+            </div>
+          </div>
         </div>
-        <div class="modal-body">
-          <p>Bạn có chắc muốn xóa Chủ đề này?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Xóa ngay</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-        </div>
-      </div>
     </div>
-</div>
 @endsection()
