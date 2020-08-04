@@ -68,7 +68,7 @@
                                 </a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="theme_add.blade.php">Thêm Chủ Đề</a>
-                                    <a class="dropdown-item" href="theme_change.blade.php">Danh sách chủ đề</a>
+                                    <a class="dropdown-item" href="danhsachchude.blade.php">Danh sách chủ đề</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
