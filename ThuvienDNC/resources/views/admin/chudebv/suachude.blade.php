@@ -8,28 +8,23 @@
 <div class="row no-gutters">
     <div class="col-md-3"></div>
     <div class="col-md-6 col-sm-12 padding-0">
-        <h4>SỬA CHỦ ĐỀ</h4>       
-        <table class="table table-hover">
-            <tbody>
-            <tr>
-                <td id='bold2'>Chọn chủ đề:</td>
-                <td>
-                    <select multiple class="form-control" id="select-user">
-                        <option>Góc tản mạn sinh viên</option>
-                        <option>Tin tức & sự kiện</option>
-                        <option>Giới thiệu sách</option>
-                        <option>Sách tặng</option>
-                        <option value="">TRƯỜNG ĐẠI HỌC NAM CẦN THƠ- KHÁNH THÀNH TRUNG TÂM THƯ VIỆN ĐIỆN TỬ VÀ KHAI GIẢNG NĂM HỌC MỚI 2017-2018</option>
-                    </select>
-                </td>
-                <td><button type="button" class="btn btn-primary bottom">Chọn</button></td>
-            </tr>
-            <tr>
-                <td id='bold'>Sửa:</td>
-                <td colspan="2"><input class="form-control" id="focusedInput" type="text" value=></td>
-            </tr>
-            </tbody>
-        </table>
+        <h4>Danh Sách Chủ Đề</h4>       
+            <table class="table table-hover">
+                <tbody>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên chủ đề</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>01</td>
+                    <td>Tin tức - Sự kiện</td>
+                    <td><a href=""><i class='fas fa-trash'style='margin: 5px;'></i>Xóa</a></td>
+                    <td><a href=""><i class='fas fa-pen-alt'style='margin: 5px;'></i>Sửa</a></td>
+                </tr>
+                </tbody>
+            </table>
     </div>
     <div class="col-md-3"></div> 
 </div>
