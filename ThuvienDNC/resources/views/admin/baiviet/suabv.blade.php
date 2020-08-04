@@ -8,7 +8,7 @@
     <div class="row no-gutters">
         <div class="col-md-2"></div>
         <div class="col-md-8 col-sm-12 padding-0">
-            <h4>THÊM BÀI VIẾT</h4>     
+            <h4>SỬA BÀI VIẾT</h4>     
             <table class="table table-hover">
                 <tbody>
                 <!--Hàng thêm tên bài viết-->
