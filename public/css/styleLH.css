@@ -54,3 +54,13 @@
  	font-size: 17px;
  	line-height: 2;
  }
+
+#face{
+    color: blue;
+    font-size: 25px; 
+}
+
+#goo{
+    color: red;
+     font-size: 25px; 
+}
