@@ -36,7 +36,7 @@
     </div>
     <div class="col-md-3"></div> 
 </div>
-<button type="button" class="btn btn-primary center"><a href="changepro.html" id="a-none">Thay đổi</a></button>
+<button type="button" class="btn btn-primary center"><a href="changepro.html" id="a-none">Lưu</a></button>
 <br>
 <br>
 <br>

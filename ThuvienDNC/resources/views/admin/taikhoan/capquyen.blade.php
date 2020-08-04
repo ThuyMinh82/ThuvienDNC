@@ -13,15 +13,7 @@
             <tbody>
             <tr>
                 <td id='bold3'>Tài khoản:</td>
-                <td>
-                    <select multiple class="form-control" id="select-user">
-                    <option>Admin2</option>
-                    <option>Admin3</option>
-                    <option>User1</option>
-                    <option>User2</option>
-                    <option>User3</option>
-                    </select>
-                </td>
+                <td>admin1</td>
             </tr>
             <tr>
                 <td id='bold3'>Quyền:</td>
@@ -37,5 +29,5 @@
     </div>
     <div class="col-md-3"></div> 
 </div>
-<button type="button" class="btn btn-primary center">Gán</button>
+<button type="button" class="btn btn-primary center">Lưu    </button>
 @endsection

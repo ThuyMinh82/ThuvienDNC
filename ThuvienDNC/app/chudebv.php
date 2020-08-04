@@ -8,7 +8,7 @@ class chudebv extends Model
 {
     //
     protected $table = 'chudebv';
-    protected $fillable = ['ten_cd','alias','bv_id',];
+    protected $fillable = ['ten_cd','alias'];
 	protected $guarded = ['id'];
 	protected $primaryKey = 'id';
 	protected $dateFormat = 'Y-m-d H:i:s'; 

@@ -54,7 +54,7 @@
     </div>
     <div class="col-md-2"></div> 
 </div>
-<button type="button" class="btn btn-primary center">Thêm</a></button>
+<button type="button" class="btn btn-primary center">Lưu</a></button>
 <br>
 <br>
 <br>

@@ -1,34 +1,57 @@
 @extends('admin.layout.page')
 
 @section('header')
-<title>Xóa tài khoản</title>
+<title>Danh sách tài khoản</title>
 @endsection
 
     @section('content')
     <div class="row no-gutters">
-        <div class="col-md-4"></div>
-        <div class="col-md-4 col-sm-12 padding-0">
-            <h4>DANH SÁCH TÀI KHOẢN</h4>       
+        <div class="col-md-2"></div>
+        <div class="col-md-8 col-sm-12 padding-0">
+            <table style="width: 100%">
+            <tbody>
+                <tr>
+                    <th ><h4 style="text-align: left;">Danh Sách Tài Khoản</h4></th>
+                    <th style="width: 250px;">
+                        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search">
+            <div class="input-group-append">
+                <a href=""class="btn btn-link"><i class='fas fa-search'style='margin: 5px; color: black;'></i></a> 
+            </div>
+        </div>  
+                    </th>
+                </tr>
+            </tbody>
+        </table>      
             <table class="table table-hover">
                 <tbody>
                 <tr>
                     <th>ID</th>
                     <th>Username</th>
-                    <th></th>
-                    <th>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                            <div class="input-group-append">
-                                <a href=""class="btn btn-link"><i class='fas fa-search'style='margin: 5px; color: black;'></i></a> 
-                            </div>
-                        </div>
-                    </th>
+                    <th>Group</th>
+                    <th>Phân Quyền</th>
+                    <th>Status</th>
+                    <th>Xử Lý</th>
                 </tr>
                 <tr>
-                    <td>1</td>
+                    <td></td>
                     <td><a href="">admin1</a></td>
-                    <td><a href=""><i class='fas fa-user-check'style='margin: 5px; color: black;'></i>Cấp quyền</a></td>
-                    <td><a href="" data-toggle="modal" data-target="#myModal"><i class='fas fa-trash'style='margin: 5px; color: red;'></i>Xóa</a></td>
+                    <td>Quản trị</td>
+                    <td><a href="">Admin</a></td>
+                    <td>1</td>
+                    <td>
+                        <a href="" data-toggle="modal" data-target="#myModal"><i class='fas fa-trash'style='margin: 5px; color: red;'></i>Xóa</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="">user2</a></td>
+                    <td>Thành viên</td>
+                    <td><a href="">User</a></td>
+                    <td>2</td>
+                    <td>
+                        <a href="" data-toggle="modal" data-target="#myModal"><i class='fas fa-trash'style='margin: 5px; color: red;'></i>Xóa</a>
+                    </td>
                 </tr>
                 </tbody>
             </table>
@@ -58,7 +81,7 @@
                 <div class="col-md-6"></div>
             </div>
         </div>
-        <div class="col-md-4"></div> 
+        <div class="col-md-2"></div> 
     </div>
     <div class="modal" tabindex="-1" role="dialog" id="myModal">
         <div class="modal-dialog" role="document">
@@ -70,11 +93,11 @@
               </button>
             </div>
             <div class="modal-body">
-              <p>Bạn có chắc muốn xóa User này?</p>
+              <p>Bạn có chắc muốn xóa User này không?</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-primary">Xóa ngay</button>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
             </div>
           </div>
         </div>

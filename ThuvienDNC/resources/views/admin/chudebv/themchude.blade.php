@@ -5,24 +5,49 @@
 @endsection
 
 @section('content')
-<div class="row no-gutters">
-	<div class="col-md-3"></div>
-	<div class="col-md-6 col-sm-12 padding-0">
-	    <h4>THÊM CHỦ ĐỀ</h4>       
-	    <table class="table table-hover">
-	        <tbody>
-	        <tr>
-	            <td id='bold'>Tên chủ đề:</td>
-	            <td><input class="form-control" id="focusedInput" type="text" value="Tin tức - sự kiện"></td>
-	        </tr>
-	        </tbody>
-	    </table>
-	</div>
-	<div class="col-md-3"></div> 
+
+<div id="page-wrapper">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Thêm chủ đề
+					<small>Thêm</small>
+				</h1>
+			</div>
+			<!--/.col-lg-12-->
+	        <div class="col-lg-7" style="padding-bottom: 120px">
+		        @if(count($errors) > 0)
+		        	<div class="alert alert-danger">
+		        		@foreach($errors->all() as $err)
+		        			{{$err}}<br>
+		        		@endforeach
+		        	</div>
+		        @endif
+
+	        @if(session('thongbao'))
+                <div class="alert alert-success">
+                	{{session('thongbao')}}
+                </div>
+            @endif
+
+		        <form action="admin/chudebv/themchude" method="POST">
+		        <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+		        <div class="from-group">
+		        <label>Tên chủ đề</label>
+		        	<input class="form-control" name="ten_cd" placeholder="Nhập tên chủ đề ..." />
+		        </div>
+		        	<button type="submit" class="btn btn-default">Thêm
+		            </button>
+	            </form>
+	        </div>
+        </div>
+    </div>
 </div>
-<button type="button" class="btn btn-primary center">Sửa</button>
 <br>
 <br>
 <br>
 <br>
-@endsection()
+@endsection
+16:39
+
+1GB
