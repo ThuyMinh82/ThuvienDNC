@@ -48,6 +48,4 @@
 <br>
 <br>
 @endsection
-16:39
 
-1GB
