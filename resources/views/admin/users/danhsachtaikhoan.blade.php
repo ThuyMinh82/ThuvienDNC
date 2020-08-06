@@ -4,25 +4,25 @@
 <title>Danh sách tài khoản</title>
 @endsection
 
-    @section('content')
+@section('content')
     <div class="row no-gutters">
         <div class="col-md-2"></div>
         <div class="col-md-8 col-sm-12 padding-0">
             <table style="width: 100%">
-            <tbody>
-                <tr>
-                    <th ><h4 style="text-align: left;">Danh Sách Tài Khoản</h4></th>
-                    <th style="width: 250px;">
-                        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search">
-            <div class="input-group-append">
-                <a href=""class="btn btn-link"><i class='fas fa-search'style='margin: 5px; color: black;'></i></a> 
-            </div>
-        </div>  
-                    </th>
-                </tr>
-            </tbody>
-        </table>      
+                <tbody>
+                    <tr>
+                        <th ><h4 style="text-align: left;">Danh Sách Tài Khoản</h4></th>
+                        <th style="width: 250px;">
+                            <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <div class="input-group-append">
+                            <a href=""class="btn btn-link"><i class='fas fa-search'style='margin: 5px; color: black;'></i></a> 
+                            </div>
+                            </div>  
+                        </th>
+                    </tr>
+                </tbody>
+            </table>      
             <table class="table table-hover">
                 <tbody>
                 <tr>
@@ -34,24 +34,18 @@
                     <th>Xử Lý</th>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td><a href="">admin1</a></td>
-                    <td>Quản trị</td>
-                    <td><a href="">Admin</a></td>
-                    <td>1</td>
-                    <td>
-                        <a href="" data-toggle="modal" data-target="#myModal"><i class='fas fa-trash'style='margin: 5px; color: red;'></i>Xóa</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td><a href="">user2</a></td>
-                    <td>Thành viên</td>
-                    <td><a href="">User</a></td>
-                    <td>2</td>
-                    <td>
-                        <a href="" data-toggle="modal" data-target="#myModal"><i class='fas fa-trash'style='margin: 5px; color: red;'></i>Xóa</a>
-                    </td>
+                    @foreach($users as $tk)
+                        <tr class="odd gradeX" align="">
+                        <td>{{$tk->id}}</td>
+                        <td><a href="">{{$tk->username}}</a></td>
+                        <td>{{$tk->group->usergroup_id}}</td>
+                        <td><a href="">{{$tk->id}}</a></td>
+                        <td>{{$tk->status}}</td>
+                        <td>
+                            <a href="" data-toggle="modal" data-target="#myModal"><i class='fas fa-trash'style='margin: 5px; color: red;'></i>Xóa</a>
+                        </td>
+                    </tr>
+                    @endforeach
                 </tr>
                 </tbody>
             </table>
