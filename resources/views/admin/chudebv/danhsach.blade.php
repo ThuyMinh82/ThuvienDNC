@@ -1,76 +1,44 @@
-
-@extends('admin.layout.page')
+@extends('pages.page')
 
 @section('header')
 <title>Danh sách chủ đề</title>
 @endsection
 
 @section('content')
+<!-- Page content -->
 <div class="row no-gutters">
     <div class="col-md-2"></div>
     <div class="col-md-8 col-sm-12 padding-0">
-        <table style="width: 100%">
-            <tbody>
-                <tr>
-                    <th ><h4 style="text-align: left;">Danh Sách Chủ Đề</h4></th>
-                    <th style="width: 250px;">
-                        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search">
-            <div class="input-group-append">
-                <a href=""class="btn btn-link"><i class='fas fa-search'style='margin: 5px; color: black;'></i></a> 
-            </div>
-        </div>  
-                    </th>
-                </tr>
-            </tbody>
-        </table>    
-        <table class="table table-hover">
-            <tbody>
-            <tr>
-                <th>ID</th>
-                <th style="">Tên chủ đề</th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr>
-                @foreach($chudebv as $cd)
-                <tr class="odd gradeX" align="">
-                    <td>{{$cd->id}}</td>
-                    <td>{{$cd->ten_cd}}</td>
-                    <td style='text-align:right;'><a href="admin/chudebv/suachude/{{$cd->id}}"><i class='fas fa-pen-alt'style='margin: 5px;color:black;'></i>Sửa</a></td>
-
-                    <td style='text-align:left; width: 100px;'><a href="admin/chudebv/xoachude" data-toggle="modal" data-target="#myModal"><i class='fas fa-trash'style='margin: 5px;color:red;'></i>Xóa</a></td>
-                    
-                    </tr>
-                @endforeach
-            </tr>
-            </tbody>
-        </table>
-            <div class="row no-gutters">
-                <div class="col-md-5"></div>
-                <div class="col-md-1">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination pagination-sm">
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            <span class="sr-only">Previous</span>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                            </a>
-                        </li>
-                        </ul>
-                    </nav>
+          <h1 class="page-header">Danh sách chủ đề</h1>
+      <!--/.col-lg-12-->
+            @if(session('thongbao'))
+                <div class="alert alert-success">
+                    {{session('thongbao')}}
                 </div>
-                <div class="col-md-6"></div>
-            </div>
+            @endif
+      <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+          <thead>
+              <tr align="center">
+                  <th>ID</th>
+                  <th>Tên</th>
+                  <th>Sửa</th>
+                  <th>Xóa</th>
+              </tr>
+          </thead>
+          <tbody>
+              @foreach($chudebv as $cd)
+              <tr class="odd gradeX" align="center">
+                  <td>{{$cd->id}}</td>
+                  <td>{{$cd->ten_cd}}</td>
+                  <td class="center"><i class="fas fa-pen-alt"></i><a href="admin/chudebv/suachude/{{$cd->id}}">Sửa
+                  </a></td>
+                  <td class="center"><i class="fas fa-trash" data-toggle="modal" data-target="#myModal"></i><a href="admin/chudebv/xoachude/{{$cd->id}}">Xóa
+                  </a></td>
+              </tr>
+              @endforeach
+          </tbody>
+     </table>
+        </div>
     </div>
     <div class="col-md-2"></div> 
 </div>
@@ -93,4 +61,4 @@
       </div>
     </div>
 </div>
-@endsection()
+@endsection

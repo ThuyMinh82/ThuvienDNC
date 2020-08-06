@@ -11,6 +11,6 @@ class profileuserController extends Controller
      public function getIndex()
     {
         $profileuser= profileuser::all();
-        return view('admin.profileuser.index',['profileuser'=>$profileuser]);
+        return view('admin.profileuser.prouser',['profileuser'=>$profileuser]);
     }
 }

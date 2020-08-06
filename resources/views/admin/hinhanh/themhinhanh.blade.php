@@ -1,4 +1,4 @@
-@extends('admin.layout.page')
+@extends('pages.page')
 
 @section('header')
 <title>Thêm hình ảnh</title>

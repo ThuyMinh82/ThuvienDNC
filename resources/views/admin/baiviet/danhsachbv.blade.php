@@ -1,4 +1,4 @@
-@extends('admin.layout.page')
+@extends('pages.page')
 
 @section('header')
 <title>Danh sách bài viết</title>
@@ -38,7 +38,7 @@
                     <tr class="odd gradeX" align="">
                     <td>{{$bv->id}}</td>
                     <td>{{$bv->ten_bv}}</td>
-                    <td>{{$bv->cd_id}}</td>
+                    <td>{{$bv->chude->ten_cd}}</td>
                     <td></td>
                     <td></td>
                     

@@ -17,9 +17,6 @@ use Illuminate\Support\Facades\Route;
      return view('welcome');
  });
 
-Route::get('thu', function () {
-     return view('admin.taikhoan.user_add');
-});
 // Route::get('/admin','admin_controller@loginad');
 // Route::get('/admin_index','admin_controller@index');
 
@@ -29,32 +26,53 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::get('themchude','chudebvController@getThem');
 		Route::post('themchude','chudebvController@postThem');
 		
-		Route::get('suachude','chudebvController@getSua');
-		Route::get('xoachude','chudebvController@getXoa');
+		Route::get('suachude/{id}','chudebvController@getSua');
+	    Route::post('suachude/{id}','chudebvController@postSua');
+	    
+	    Route::get('xoachude/{id}','chudebvController@getXoa');
+
 		Route::get('danhsach','chudebvController@getDanhSach');
 		
 	});
 
 	Route::group(['prefix'=>'baiviet'],function(){
 		Route::get('thembv','baivietController@getThem');
+
 		Route::get('suabv','baivietController@getSua');
+
 		Route::get('xoabv','baivietController@getXoa');
+
 		Route::get('duyetbv','baivietController@getDuyet');
+
 		Route::get('danhsachbv','baivietController@getDanhSach');
+
 	});
 	Route::group(['prefix'=>'hinhanh'],function(){
 		Route::get('themhinhanh','hinhanhController@getThem');
+
 		Route::get('xoahinhanh','hinhanhController@getXoa');
+
 	});
 
-	Route::group(['prefix'=>'taikhoan'],function(){
-		Route::get('themtaikhoan','taikhoanController@getThem');
-		Route::get('doimatkhau','taikhoanController@getThaydoi');
-		Route::get('xoataikhoan','taikhoanController@getXoa');
-		Route::get('capquyen','taikhoanController@getQuyen');
-		Route::get('danhsachtaikhoan','taikhoanController@getDanhSach');
+	Route::group(['prefix'=>'users'],function(){
+		Route::get('themtaikhoan','usersController@getThem');
+
+		Route::get('doimatkhau','usersController@getThaydoi');
+
+		Route::get('xoataikhoan','usersController@getXoa');
+
+		Route::get('capquyen','usersController@getQuyen');
+
+		Route::get('danhsachtaikhoan','usersController@getDanhSach');
+
+		Route::get('index','usersController@getIndex');
+	});
+
+	Route::group(['prefix'=>'profileuser'],function(){
+
+		Route::get('prouser','profileuserController@getIndex');
 	});
 	
 });
 
-
+Route::get('trangchu','pagesController@index');

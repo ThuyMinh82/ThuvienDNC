@@ -1,4 +1,4 @@
-/@extends('admin.layout.page')
+@extends('pages.page')
 
 @section('header')
 <title>Duyệt bài viết</title>

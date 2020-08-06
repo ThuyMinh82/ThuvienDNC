@@ -5,7 +5,8 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use App\profileuser;
+use App\users;
 class users extends Authenticatable
 {
     use Notifiable;
@@ -45,8 +46,8 @@ class users extends Authenticatable
     public function group(){
         return $this->belongTo('App\usergroup', 'usergroup_id', 'id');
     }
-    public function profileuser(){
-        return $this->belongTo('App\profileuser', 'profileuser_id', 'id');
+    public function prouser(){
+        return $this->hasMany('App\profileuser', 'profileuser_id', 'id');
     }
     public function bai(){
         return $this->belongsTo('App\baiviet', 'bv_id', 'id');
