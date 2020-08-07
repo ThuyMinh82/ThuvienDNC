@@ -43,11 +43,11 @@ class users extends Authenticatable
     protected $primaryKey = 'id';
     protected $dateFormat = 'Y-m-d H:i:s'; 
 
-    public function group(){
-        return $this->belongTo('App\usergroup', 'usergroup_id', 'id');
+    public function usergroup(){
+        return $this->belongsTo('App\usergroup', 'usergroup_id', 'id');
     }
-    public function prouser(){
-        return $this->hasMany('App\profileuser', 'profileuser_id', 'id');
+    public function profileuser(){
+        return $this->belongsTo('App\profileuser', 'profileuser_id', 'id');
     }
     public function bai(){
         return $this->belongsTo('App\baiviet', 'bv_id', 'id');

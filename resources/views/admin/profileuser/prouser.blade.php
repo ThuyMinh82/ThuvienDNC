@@ -8,11 +8,7 @@
 <div class="row no-gutters">
     <div class="col-md-1"></div>
     <div class="col-md-10 col-sm-12 padding-0">
-        <div class="alert alert-success alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>Bạn có thể thay đổi thông tin cá nhân và sử dụng hệ thống.</strong> 
-        </div>
-        <h4>THÔNG TIN TÀI KHOẢN</h4>       
+        <h4 style="text-align: center;">Thông tin tài khoản</h4>       
         <table class="table table-hover s">
             <tbody>
             <tr>
