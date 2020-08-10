@@ -5,8 +5,9 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
-class User extends Authenticatable
+use App\profileuser;
+use App\users;
+class users extends Authenticatable
 {
     use Notifiable;
 
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'username','password','status','usergroup_id','profileuser_id'
     ];
 
     /**
@@ -36,4 +37,22 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $table = 'users';
+    protected $guarded = ['id'];
+    protected $primaryKey = 'id';
+    protected $dateFormat = 'Y-m-d H:i:s'; 
+
+    public function usergroup(){
+        return $this->belongsTo('App\usergroup', 'usergroup_id', 'id');
+    }
+    public function profileuser(){
+        return $this->belongsTo('App\profileuser', 'profileuser_id', 'id');
+    }
+    public function bai(){
+        return $this->belongsTo('App\baiviet', 'bv_id', 'id');
+    }
+
+
+  
 }
