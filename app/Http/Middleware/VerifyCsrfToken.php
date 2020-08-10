@@ -15,3 +15,5 @@ class VerifyCsrfToken extends Middleware
         //
     ];
 }
+
+

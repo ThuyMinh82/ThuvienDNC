@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <link rel="stylesheet" type="text/css" href="{{asset('backend/css/style.css')}}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -25,18 +25,31 @@
 </head>
 <!-- style="background-color: Lavender" -->
 <body >
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 <p class="text-center" >     
-                    <img style="width: 150px; height: 150px" src="./backend/images/namct.jpg" >
+                    <img style="width: 150px; height: 150px" src="{{asset('backend/images/namct.jpg')}}" >
                 </p>       
                 <div class="login-panel panel panel-default">
                     <div class="panel-body">
-                        <form role="form">
+                        @if(count($errors) > 0)
+                        <div class="alert alert-danger">
+                            @foreach($errors->all() as $err)
+                                {{$err}}<br>
+                            @endforeach
+                        </div>
+                        @endif
+
+                        @if(session('thongbao'))
+                            <div class="alert alert-success">
+                                {{session('thongbao')}}
+                            </div>
+                        @endif
+                        <form role="form" method="POST">
                             <fieldset>
+                                <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Username" name="username" type="username" autofocus>
                                 </div>
@@ -49,7 +62,7 @@
                                     </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a>
+                                <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
                             </fieldset>
                         </form>
                     </div>

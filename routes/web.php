@@ -63,7 +63,7 @@ Route::group(['prefix'=>'admin'],function(){
 
 		Route::get('capquyen','usersController@getQuyen');
 
-		Route::get('danhsachtaikhoan','usersController@getDanhSach');
+		Route::get('danhsach','usersController@getDanhSach');
 
 		Route::get('index','usersController@getIndex');
 	});
@@ -76,3 +76,5 @@ Route::group(['prefix'=>'admin'],function(){
 });
 
 Route::get('trangchu','pagesController@index');
+Route::get('admin/login','usersController@getloginAD');
+Route::post('admin/login','usersController@postloginAD');

@@ -50,7 +50,7 @@
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="admin/users/themtaikhoan">Tạo Tài Khoản</a>
                                         <a class="dropdown-item" href="admin/users/capquyen">Cấp Quyền</a>
-                                        <a class="dropdown-item" href="admin/users/xoataikhoan">Xóa Tài Khoản</a>
+                                        <a class="dropdown-item" href="admin/users/danhsach">Danh sách tài khoản</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
