@@ -13,15 +13,15 @@ class baiviet extends Model
 	protected $primaryKey = 'id';
 	protected $dateFormat = 'Y-m-d H:i:s'; 
 
-	public function chude(){
+	public function chudebv(){
 		return $this->belongsTo('App\chudebv', 'cd_id', 'id');
 	}
 
-	public function user(){
+	public function users(){
 		return $this->belongsTo('App\users', 'user_id', 'id');
 	}
 
-	public function hinh(){
+	public function hinhanh(){
 		return $this->hasMany('App\hinhanh', 'bv_id', 'id');
 	}
 

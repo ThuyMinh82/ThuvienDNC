@@ -29,7 +29,7 @@
                 <div class="col-md-6"><h1>Sửa chủ đề</h1>
                     <form action="admin/chudebv/suachude/{{$chudebv->id}}" method="POST">
                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
-                    <div class="from-group">
+                        <div class="from-group">
                         <input class="form-control" name="ten_cd" placeholder="Nhập tên chủ đề ..." value="{{$chudebv->ten_cd}}"/>
                     </div>
                         <button type="submit" class="btn btn-primary center"style="margin-top: 30px;">Sửa
@@ -40,5 +40,5 @@
         </div>
     </div>
 </div>
-
 @endsection
+

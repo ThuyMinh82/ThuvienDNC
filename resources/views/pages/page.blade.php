@@ -12,10 +12,16 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="{{asset('backend/jquery-1.11.3.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('backend/ckeditor/ckeditor.js')}}"></script>
+        <script type="text/javascript" src="{{asset('/jquery-1.11.3.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('/ckeditor/ckeditor.js')}}"></script>
         <base href="{{asset('')}}">
     </head>
+    <style>
+        .navbar-dark .navbar-nav .nav-link
+        {
+            color: white;
+        }
+    </style>
     <body> 
         <div class="container-fluid">
             <div class="row no-gutters" id="banner">
@@ -59,7 +65,7 @@
                                     </a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="admin/baiviet/thembv">Thêm Bài Viết</a>
-                                        <a class="dropdown-item" href="admin/baiviet/danhsachbv">Danh sách Bài Viết</a>
+                                        <a class="dropdown-item" href="admin/baiviet/danhsach">Danh sách Bài Viết</a>
                                         <a class="dropdown-item" href="admin/baiviet/duyetbaiviet">Duyệt Bài Viết</a>
                                     </div>
                                 </li>
@@ -118,6 +124,7 @@
                 </div>
             </div>
             <div class="col-xl-1"></div>
-        </div>  
+        </div> 
+        @yield('js') 
     </body>
 </html>

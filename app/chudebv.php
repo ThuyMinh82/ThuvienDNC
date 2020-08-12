@@ -12,7 +12,7 @@ class chudebv extends Model
 	protected $guarded = ['id'];
 	protected $primaryKey = 'id';
 	protected $dateFormat = 'Y-m-d H:i:s'; 
-	public function bai(){
+	public function baiviet(){
 		return $this->hasMany('App\baiviet', 'cd_id', 'id');
 	}
 }

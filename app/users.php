@@ -49,7 +49,7 @@ class users extends Authenticatable
     public function profileuser(){
         return $this->belongsTo('App\profileuser', 'profileuser_id', 'id');
     }
-    public function bai(){
+    public function baiviet(){
         return $this->belongsTo('App\baiviet', 'bv_id', 'id');
     }
 

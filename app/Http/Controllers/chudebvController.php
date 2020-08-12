@@ -68,4 +68,6 @@ class chudebvController extends Controller
 
         return redirect('admin/chudebv/themchude')->with('thongbao', 'Thêm chủ đề thành công');
     }
+    
+
 }

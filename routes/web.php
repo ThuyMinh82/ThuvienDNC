@@ -36,16 +36,13 @@ Route::group(['prefix'=>'admin'],function(){
 	});
 
 	Route::group(['prefix'=>'baiviet'],function(){
+		Route::get('danhsach','baivietController@getDanhSach');
 		Route::get('thembv','baivietController@getThem');
-
-		Route::get('suabv','baivietController@getSua');
-
-		Route::get('xoabv','baivietController@getXoa');
-
+		Route::post('thembv','baivietController@postThem');
+		Route::get('suabv/{id}','baivietController@getSua');
+		Route::post('suabv/{id}','baivietController@postSua');
+		Route::get('xoabv/{id}','baivietController@getXoa');
 		Route::get('duyetbv','baivietController@getDuyet');
-
-		Route::get('danhsachbv','baivietController@getDanhSach');
-
 	});
 	Route::group(['prefix'=>'hinhanh'],function(){
 		Route::get('themhinhanh','hinhanhController@getThem');

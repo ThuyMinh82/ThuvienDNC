@@ -13,7 +13,7 @@ class hinhanh extends Model
 	protected $primaryKey = 'id';
 	protected $dateFormat = 'Y-m-d H:i:s'; 
 
-	public function bai(){
+	public function baiviet(){
 		return $this->hasMany('App\baiviet', 'bv_id', 'id');
 	}
 
