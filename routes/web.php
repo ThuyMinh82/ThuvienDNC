@@ -53,6 +53,7 @@ Route::group(['prefix'=>'admin'],function(){
 
 	Route::group(['prefix'=>'users'],function(){
 		Route::get('themtaikhoan','usersController@getThem');
+		Route::post('themtaikhoan','usersController@postThem');
 
 		Route::get('doimatkhau','usersController@getThaydoi');
 

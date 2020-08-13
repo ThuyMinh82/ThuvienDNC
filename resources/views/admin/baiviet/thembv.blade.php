@@ -6,8 +6,8 @@
 
 @section('content')
 <div class="row no-gutters">
-    <div class="col-md-3"></div>
-    <div class="col-md-6 col-sm-12 padding-0">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 col-sm-12 padding-0">
             <!--/.col-lg-12-->
         <div style="padding-bottom: 120px">
             @if(count($errors) > 0)
@@ -52,7 +52,7 @@
                         <button type="submit" class="btn btn-primary center" style="margin-top: 30px;">Thêm</button>
                     </form>
                 </div>
-            <div class="col-md-3"></div>
+            <div class="col-md-2"></div>
             </div>
         </div>
     </div>

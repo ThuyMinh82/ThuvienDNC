@@ -17,8 +17,7 @@ class CreateHinhanhTable extends Migration
             $table->engine='InnoDB';         
             $table->increments('id');
             $table->string('link_anh');
-            $table->unsignedInteger('bv_id')->nullable();
-            $table->foreign('bv_id')->references('id')->on('baiviet');
+            $table->string('ten_anh');
             $table->timestamps('');
         });
     }

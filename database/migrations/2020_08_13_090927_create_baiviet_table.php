@@ -26,6 +26,8 @@ class CreateBaivietTable extends Migration
             $table->unsignedInteger('user_id');
             $table->foreign('cd_id')->references('id')->on('chudebv');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedInteger('hinhanh_id');
+            $table->foreign('hinhanh_id')->references('id')->on('hinhanh');
         });
     }
 

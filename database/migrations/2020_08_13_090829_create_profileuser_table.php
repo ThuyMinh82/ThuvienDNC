@@ -20,7 +20,9 @@ class CreateProfileuserTable extends Migration
             $table->string('email')->unique();
             $table->string('address');
             $table->string('sdt');
-            $table->timestamps('');
+            $table->unsignedInteger('users_id');
+            $table->timestamps();
+            $table->foreign('users_id')->references('id')->on('users');
         });
     }
 

@@ -14,7 +14,7 @@ class hinhanh extends Model
 	protected $dateFormat = 'Y-m-d H:i:s'; 
 
 	public function baiviet(){
-		return $this->hasMany('App\baiviet', 'bv_id', 'id');
+		return $this->belongTo('App\baiviet', 'bv_id', 'id');
 	}
 
 	

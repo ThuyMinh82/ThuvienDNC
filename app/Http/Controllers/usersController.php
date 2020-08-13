@@ -12,11 +12,32 @@ class usersController extends Controller
 {
     //
     public function getThem(){
-    	return view('admin.users.themtaikhoan');
+        $users = users::all();
+    	return view('admin.users.themtaikhoan',['users'=>$users]);
+    }
+    public function postThem(Request $Request){
+        $this -> validate ($Request,[
+            'username'=>'required|min:3',
+            'password'=>'required|min:3|max:32',
+        ],[
+            'username.required'=>'Bạn chưa nhập Tên đăng nhập',
+            'username.min'=>'Tên đăng nhập ít nhất 3 kí tự',
+            'username.unique'=>'Tên đăng nhập đã tồn tại',
+            'password.required'=>'Bạn chưa nhập Mật khẩu',
+            'password.min'=>'Mật khẩu không được nhỏ hơn 3 ký tự',
+            'password.max'=>'Mật khẩu không được lớn hơn 32 ký tự',
+        ]);
+
+        $users = new users;
+        $users->username = $Request->username;
+        $users->password = bcrypt($Request->password);
+        $users->save();
+        return view('admin/users/themtaikhoan')->with('thongbao', 'Thêm tài khoản thành công');
     }
 
     public function getThaydoi(){
-    	return view('admin.users.doimatkhau');
+        $users = users::all();
+    	return view('admin.users.doimatkhau',['users'=>$users]);
     }
 
     public function getXoa(){

@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Aug 07, 2020 at 10:20 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th8 13, 2020 lúc 11:46 AM
+-- Phiên bản máy phục vụ: 10.4.13-MariaDB
+-- Phiên bản PHP: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `thuviendnc`
+-- Cơ sở dữ liệu: `thuviendnc`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `baiviet`
+-- Cấu trúc bảng cho bảng `baiviet`
 --
 
 CREATE TABLE `baiviet` (
@@ -38,20 +37,14 @@ CREATE TABLE `baiviet` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `status` int(11) NOT NULL,
   `cd_id` int(10) UNSIGNED NOT NULL,
-  `user_id` int(10) UNSIGNED NOT NULL
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `hinhanh_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `baiviet`
---
-
-INSERT INTO `baiviet` (`id`, `ten_bv`, `mtngan_bv`, `noidung_bv`, `alias`, `created_at`, `updated_at`, `status`, `cd_id`, `user_id`) VALUES
-(4, 'Toggle main menu visibility  TRANG CHỦ GIỚI THIỆU TRA CỨU OPAC SÁCH ĐIỆN TỬ TÀI LIỆU NỘI SINH TIN TỨC HƯỚNG DẪN SỬ DỤNG GÓC TẢN MẠN SV Hướng dẫn khai thác tài liệu trên website thư viện DNC', 'Nhằm hỗ trợ sinh viên tìm kiếm tài liệu phục vụ cho việc học một cách hiệu quả và nhanh chóng, Thư viện DNC đã tổ chức nhiều', '<p>Nhằm hỗ trợ sinh vi&ecirc;n t&igrave;m kiếm t&agrave;i liệu phục vụ cho việc học một c&aacute;ch hiệu quả v&agrave; nhanh ch&oacute;ng, Thư viện DNC đ&atilde; tổ chức nhiều buổi hướng dẫn sinh vi&ecirc;n khai th&aacute;c nguồn t&agrave;i nguy&ecirc;n đang c&oacute; tại thư viện bao gồm: giới thiệu website thư viện,&nbsp;hướng dẫn c&aacute;ch t&igrave;m kiếm c&aacute;c nguồn&nbsp;t&agrave;i liệu điện tử tr&ecirc;n trang thư viện v&agrave; giới thiệu về kho s&aacute;ch của thư viện.</p>\r\n\r\n<p>H&igrave;nh ảnh hoạt động:</p>\r\n\r\n<p><img alt=\"\" src=\"http://thuvien.nctu.edu.vn/upload/dnc_ebook_train_3.PNG\" /></p>\r\n\r\n<p><img alt=\"\" src=\"http://thuvien.nctu.edu.vn/upload/dnc_ebook_train_2.PNG\" /></p>', 'toggle-main-menu-visibility-trang-chu-gioi-thieu-tra-cuu-opac-sach-dien-tu-tai-lieu-noi-sinh-tin-tuc-huong-dan-su-dung-goc-tan-man-sv-huong-dan-khai-thac-tai-lieu-tren-website-thu-vien-dnc', '2018-07-09 10:00:00', NULL, 1, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `chudebv`
+-- Cấu trúc bảng cho bảng `chudebv`
 --
 
 CREATE TABLE `chudebv` (
@@ -62,38 +55,24 @@ CREATE TABLE `chudebv` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `chudebv`
---
-
-INSERT INTO `chudebv` (`id`, `ten_cd`, `alias`, `created_at`, `updated_at`) VALUES
-(1, 'Góc tản mạn sinh viên', 'goc-tan-man-sinh-vien', NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hinhanh`
+-- Cấu trúc bảng cho bảng `hinhanh`
 --
 
 CREATE TABLE `hinhanh` (
   `id` int(10) UNSIGNED NOT NULL,
   `link_anh` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `bv_id` int(10) UNSIGNED DEFAULT NULL,
+  `ten_anh` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `hinhanh`
---
-
-INSERT INTO `hinhanh` (`id`, `link_anh`, `bv_id`, `created_at`, `updated_at`) VALUES
-(1, '1530587132.png', 4, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Cấu trúc bảng cho bảng `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -103,22 +82,22 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Đang đổ dữ liệu cho bảng `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(11, '2020_08_07_063356_create_chudebv_table', 1),
-(12, '2020_08_07_063510_create_profileuser_table', 1),
-(13, '2020_08_07_063535_create_phanquyen_table', 1),
-(14, '2020_08_07_063558_create_usergroup_table', 1),
-(15, '2020_08_07_063613_create_users_table', 1),
-(16, '2020_08_07_063635_create_baiviet_table', 1),
-(17, '2020_08_07_063654_create_hinhanh_table', 1);
+(1, '2020_08_13_090626_create_chudebv_table', 1),
+(2, '2020_08_13_090647_create_phanquyen_table', 1),
+(3, '2020_08_13_090731_create_usergroup_table', 1),
+(4, '2020_08_13_090804_create_users_table', 1),
+(5, '2020_08_13_090829_create_profileuser_table', 1),
+(6, '2020_08_13_090856_create_hinhanh_table', 1),
+(7, '2020_08_13_090927_create_baiviet_table', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phanquyen`
+-- Cấu trúc bảng cho bảng `phanquyen`
 --
 
 CREATE TABLE `phanquyen` (
@@ -128,17 +107,10 @@ CREATE TABLE `phanquyen` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `phanquyen`
---
-
-INSERT INTO `phanquyen` (`id`, `ten_pq`, `created_at`, `updated_at`) VALUES
-(1, 'Quyền Admin', NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `profileuser`
+-- Cấu trúc bảng cho bảng `profileuser`
 --
 
 CREATE TABLE `profileuser` (
@@ -147,21 +119,15 @@ CREATE TABLE `profileuser` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `sdt` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `users_id` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `profileuser`
---
-
-INSERT INTO `profileuser` (`id`, `name_prouser`, `email`, `address`, `sdt`, `created_at`, `updated_at`) VALUES
-(1, 'Nguyễn Hoàng Giang', 'jasonnguyen0204@gmail.com', '2338/4 Mỹ hưng 1, Mỹ Hòa, Bình Minh, Vĩnh Long', '0789539650', NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usergroup`
+-- Cấu trúc bảng cho bảng `usergroup`
 --
 
 CREATE TABLE `usergroup` (
@@ -172,178 +138,171 @@ CREATE TABLE `usergroup` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `usergroup`
---
-
-INSERT INTO `usergroup` (`id`, `name_group`, `pq_id`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 1, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
   `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `usergroup_id` int(10) UNSIGNED NOT NULL,
-  `profileuser_id` int(10) UNSIGNED NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `usergroup_id` int(10) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `status`, `usergroup_id`, `profileuser_id`, `created_at`, `updated_at`) VALUES
-(1, 'admin1', 'e00cf25ad42683b3df678c61f42c6bda', '1', 1, 1, NULL, NULL);
+INSERT INTO `users` (`id`, `username`, `password`, `status`, `usergroup_id`, `created_at`, `updated_at`) VALUES
+(1, 'user', '$2y$10$7In5wutWTJQ6o1G6qAm4/ec9HnEnAhY4yYcA7IceXlbRXgFngY5yS', NULL, NULL, '2020-08-13 02:43:35', '2020-08-13 02:43:35'),
+(2, 'user2', '$2y$10$MIvFCLUpYcyKjg.AOq7ou.bDVsA4mH1vMyKORH/ga5XZoou0jmBju', NULL, NULL, '2020-08-13 02:45:42', '2020-08-13 02:45:42');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `baiviet`
+-- Chỉ mục cho bảng `baiviet`
 --
 ALTER TABLE `baiviet`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `baiviet_ten_bv_unique` (`ten_bv`),
   ADD KEY `baiviet_cd_id_foreign` (`cd_id`),
-  ADD KEY `baiviet_user_id_foreign` (`user_id`);
+  ADD KEY `baiviet_user_id_foreign` (`user_id`),
+  ADD KEY `baiviet_hinhanh_id_foreign` (`hinhanh_id`);
 
 --
--- Indexes for table `chudebv`
+-- Chỉ mục cho bảng `chudebv`
 --
 ALTER TABLE `chudebv`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `chudebv_ten_cd_unique` (`ten_cd`);
 
 --
--- Indexes for table `hinhanh`
+-- Chỉ mục cho bảng `hinhanh`
 --
 ALTER TABLE `hinhanh`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `hinhanh_bv_id_foreign` (`bv_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migrations`
+-- Chỉ mục cho bảng `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `phanquyen`
+-- Chỉ mục cho bảng `phanquyen`
 --
 ALTER TABLE `phanquyen`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `profileuser`
+-- Chỉ mục cho bảng `profileuser`
 --
 ALTER TABLE `profileuser`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `profileuser_email_unique` (`email`);
+  ADD UNIQUE KEY `profileuser_email_unique` (`email`),
+  ADD KEY `profileuser_users_id_foreign` (`users_id`);
 
 --
--- Indexes for table `usergroup`
+-- Chỉ mục cho bảng `usergroup`
 --
 ALTER TABLE `usergroup`
   ADD PRIMARY KEY (`id`),
   ADD KEY `usergroup_pq_id_foreign` (`pq_id`);
 
 --
--- Indexes for table `users`
+-- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `users_usergroup_id_foreign` (`usergroup_id`),
-  ADD KEY `users_profileuser_id_foreign` (`profileuser_id`);
+  ADD KEY `users_usergroup_id_foreign` (`usergroup_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `baiviet`
+-- AUTO_INCREMENT cho bảng `baiviet`
 --
 ALTER TABLE `baiviet`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `chudebv`
+-- AUTO_INCREMENT cho bảng `chudebv`
 --
 ALTER TABLE `chudebv`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `hinhanh`
+-- AUTO_INCREMENT cho bảng `hinhanh`
 --
 ALTER TABLE `hinhanh`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `phanquyen`
+-- AUTO_INCREMENT cho bảng `phanquyen`
 --
 ALTER TABLE `phanquyen`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `profileuser`
+-- AUTO_INCREMENT cho bảng `profileuser`
 --
 ALTER TABLE `profileuser`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `usergroup`
+-- AUTO_INCREMENT cho bảng `usergroup`
 --
 ALTER TABLE `usergroup`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `baiviet`
+-- Các ràng buộc cho bảng `baiviet`
 --
 ALTER TABLE `baiviet`
   ADD CONSTRAINT `baiviet_cd_id_foreign` FOREIGN KEY (`cd_id`) REFERENCES `chudebv` (`id`),
+  ADD CONSTRAINT `baiviet_hinhanh_id_foreign` FOREIGN KEY (`hinhanh_id`) REFERENCES `hinhanh` (`id`),
   ADD CONSTRAINT `baiviet_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `hinhanh`
+-- Các ràng buộc cho bảng `profileuser`
 --
-ALTER TABLE `hinhanh`
-  ADD CONSTRAINT `hinhanh_bv_id_foreign` FOREIGN KEY (`bv_id`) REFERENCES `baiviet` (`id`);
+ALTER TABLE `profileuser`
+  ADD CONSTRAINT `profileuser_users_id_foreign` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `usergroup`
+-- Các ràng buộc cho bảng `usergroup`
 --
 ALTER TABLE `usergroup`
   ADD CONSTRAINT `usergroup_pq_id_foreign` FOREIGN KEY (`pq_id`) REFERENCES `phanquyen` (`id`);
 
 --
--- Constraints for table `users`
+-- Các ràng buộc cho bảng `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `users_profileuser_id_foreign` FOREIGN KEY (`profileuser_id`) REFERENCES `profileuser` (`id`),
   ADD CONSTRAINT `users_usergroup_id_foreign` FOREIGN KEY (`usergroup_id`) REFERENCES `usergroup` (`id`);
 COMMIT;
 

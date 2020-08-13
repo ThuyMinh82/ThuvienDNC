@@ -20,10 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('status');
             $table->unsignedInteger('usergroup_id');
-            $table->unsignedInteger('profileuser_id');
             $table->timestamps();
             $table->foreign('usergroup_id')->references('id')->on('usergroup');
-            $table->foreign('profileuser_id')->references('id')->on('profileuser');
         });
     }
 

@@ -44,12 +44,6 @@ class chudebvController extends Controller
     	return view('admin.chudebv.themchude',['chudebv'=>$chudebv]);
     }
 
-    public function getDanhSach()
-    {
-        $chudebv = chudebv::all();
-        return view('admin.chudebv.danhsach',['chudebv'=>$chudebv]);
-    }
-
     public function postThem(Request $request)
     {
         $this->validate($request,
@@ -69,5 +63,11 @@ class chudebvController extends Controller
         return redirect('admin/chudebv/themchude')->with('thongbao', 'Thêm chủ đề thành công');
     }
     
+    public function getDanhSach()
+    {
+        $chudebv = chudebv::all();
+        return view('admin.chudebv.danhsach',['chudebv'=>$chudebv]);
+    }
+
 
 }
