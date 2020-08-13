@@ -11,21 +11,16 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-        <script>
-            $(document).ready(function(){
-                
-            });
-        </script>
     </head>
 
     <body> 
         <div class="container-fluid">
             <div class="row" id="banner">
-                <div class="col-xl-7 col-lg-7 col-md-8 col-sm-12" id="color">
-                    <a href="index.html" class="logo"><img src="images/logo.png" logo="logo"></a>
+                 <div class="col-xl-7 col-lg-7 col-md-8 col-sm-12" id="color">
+                    <a href="index.html" class ="logo"><img src="images/logo.png" id="logo"></a>
                 </div>
 
-                <div class="col-xl-5 col-lg-5 col-md-4" id="color">
+                <div class="col-xl-5 col-lg-5 col-md-4 d-none d-sm-block d-sm-none d-md-block">
                     <img src="images/block-banner.png" id="logo1">
                 </div>
             </div>
@@ -40,11 +35,11 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">TRANG CHỦ</a>
+                            <a class="nav-link" href="index.html"  style="color: white">TRANG CHỦ</a>
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">GIỚI THIỆU</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"  style="color: white">GIỚI THIỆU</a>
 
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" active href="gioithieu.html">GIỚI THIỆU CHUNG</a>
@@ -54,7 +49,7 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">TÌM KIẾM TÀI LIỆU</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"  style="color: white">TÌM KIẾM TÀI LIỆU</a>
 
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="http://thuvien.nctu.edu.vn:8000" target="_blank">SÁCH TRONG THƯ VIỆN</a>
@@ -66,7 +61,7 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">TIN TỨC</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"  style="color: white">TIN TỨC</a>
 
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="tintuc.html">TIN TỨC MỚI</a>
@@ -78,22 +73,22 @@
                         </li>    
 
                         <li class="nav-item">
-                            <a class="nav-link" href="https://drive.google.com/file/d/1BUBjjFkaOJINwtCvNR4p7YPSHqnH0xec/view?usp=sharing" target="_blank">HƯỚNG DẪN SỬ DỤNG</a>
+                            <a class="nav-link" href="https://drive.google.com/file/d/1BUBjjFkaOJINwtCvNR4p7YPSHqnH0xec/view?usp=sharing" target="_blank"  style="color: white">HƯỚNG DẪN SỬ DỤNG</a>
                         </li> 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="http://thuvien.nctu.edu.vn:8000/cgi-bin/koha/opac-user.pl" target="_blank">GIA HẠN SÁCH</a>
+                            <a class="nav-link" href="http://thuvien.nctu.edu.vn:8000/cgi-bin/koha/opac-user.pl" target="_blank"  style="color: white">GIA HẠN SÁCH</a>
                         </li> 
 
                         <li class="nav-item">
-                        	<a class="nav-link" href="lienhe.html">ĐỊA CHỈ</a>
+                        	<a class="nav-link" href="lienhe.html"  style="color: white">ĐỊA CHỈ</a>
                         </li>
                     </ul>
                 </div>
             </nav>
 
             <div class="row">
-                <div class="col-sm-9 col-md-pull-6 col-sm-6 col-xs-12">
+                <div class="col-sm-8 col-md-pull-8 col-sm-8 col-xs-12">
                     <div class="noidung">
                         <p class="tieude">
                             <strong>GIỚI THIỆU CHUNG THƯ VIỆN ĐẠI HỌC NAM CẦN THƠ</strong>
@@ -189,11 +184,11 @@
                     </div>
                 </div>
                 
-                <div class="col-md-3 col-md-pull-6 col-sm-6 col-xs-12" id="bodyright">
+                <div class="col-md-4 col-md-pull-4 col-sm-4 col-xs-12" id="bodyright">
                     <div class="panel-group">
                         <div class="panel panel-default" id="tinmoinhat">
                 	        <a href="tintuc.html">
-                                <div class="panel-heading"><span class="glyphicon glyphicon-bullhorn"></span><h3> Tin mới nhất </h3>
+                                <div class="panel-heading"><span class="glyphicon glyphicon-bullhorn"></span><h4> Tin mới nhất </h4>
                                 </div>
                             </a>
                             
@@ -202,13 +197,25 @@
                                     <div id="latestnews" class="vticker col-content-search-nctu">
                                         <ul>
                                             <li>
-                                                <a title="Sách Tham Khảo Bài Tập Và Bài Giải Kế Toán Tài Chính" href="http://thuvien.nctu.edu.vn/index.php/news/sach-tham-khao-bai-tap-va-bai-giai-ke-toan-tai-chinh">Sách Tham Khảo Bài Tập Và Bài Giải Kế Toán Tài Chính</a><span class="date-newstick"> <i>GIỚI THIỆU SÁCH - 15/07/2020</i></span>
+                                                <a href="http://thuvien.nctu.edu.vn/index.php/news/sach-tham-khao-bai-tap-va-bai-giai-ke-toan-tai-chinh"class="text-primary">Sách Tham Khảo Bài Tập Và Bài Giải Kế Toán Tài Chính</a><span class="date-newstick"> <i>Giới thiệu sách - 15/07/2020</i></span>
                                             </li>
 
-                                            <li><a title="Luật Doanh Nghiệp Việt Nam Tình huống - Dẫn giải - Bình luận" href="http://thuvien.nctu.edu.vn/index.php/news/luat-doanh-nghiep-viet-nam-tinh-huong-dan-giai-binh-luan">Luật Doanh Nghiệp Việt Nam Tình huống - Dẫn giải - Bình luận</a><span class="date-newstick"> <i>GIỚI THIỆU SÁCH - 10/07/2020</i></span>
+                                            <li><a href="http://thuvien.nctu.edu.vn/index.php/news/luat-doanh-nghiep-viet-nam-tinh-huong-dan-giai-binh-luan"class="text-primary">Luật Doanh Nghiệp Việt Nam Tình huống - Dẫn giải - Bình luận</a><span class="date-newstick"> <i>Giới thiệu sách - 10/07/2020</i></span>
                                             </li>
 
-                                            <li><a title="CHÙM ẢNH VỀ THƯ VIỆN ĐẠI HỌC NAM CẦN THƠ" href="http://thuvien.nctu.edu.vn/index.php/news/chum-anh-ve-thu-vien-dai-hoc-nam-can-tho">CHÙM ẢNH VỀ THƯ VIỆN ĐẠI HỌC NAM CẦN THƠ</a><span class="date-newstick"> <i>Góc ảnh - 10/07/2020</i></span>
+                                            <li><a href="http://thuvien.nctu.edu.vn/index.php/news/chum-anh-ve-thu-vien-dai-hoc-nam-can-tho"class="text-primary">Chùm ảnh về thư viện đại học Nam Cần Thơ</a><span class="date-newstick"> <i>Góc ảnh - 10/07/2020</i></span>
+                                            </li>
+
+                                            <li>
+                                            <a href="http://thuvien.nctu.edu.vn/index.php/news/danh-sach-sinh-vien-tre-han-tra-sach-tinh-den-30062020" class="text-primary">Danh sách sinh viên trễ hạn trả sách tính đến 30/06/2020</a><span class="date-newstick"> <i>Thông báo - 09/07/2020</i></span>
+                                            </li>
+
+                                            <li>
+                                            <a href="http://thuvien.nctu.edu.vn/index.php/news/nguoi-ban-hang-gioi-phai-ban-minh-truoc"  class="text-primary">Người Bán Hàng Giỏi Phải Bán Mình Trước</a><span class="date-newstick"> <i>Giới thiệu sách - 03/07/2020</i></span>
+                                            </li>
+
+                                            <li>
+                                            <a href="http://thuvien.nctu.edu.vn/index.php/news/100-phuong-phap-truyen-dong-luc-cho-doi-nhom-chien-thang" class="text-primary">100 Phương Pháp Truyền Động Lực Cho Đội Nhóm Chiến Thắng</a><span class="date-newstick"> <i>Giới thiệu sách - 29/06/2020</i></span>
                                             </li>
                                         </ul>
                                     </div>
@@ -217,7 +224,7 @@
                         </div>
                 
                         <div class="panel panel-default" id="lienketwebsite">
-                            <div class="panel-heading"><span class="glyphicon glyphicon-bullhorn"></span><h3> Liên kết website </h3></div>
+                            <div class="panel-heading"><span class="glyphicon glyphicon-bullhorn"></span><h4> Liên kết website </h4></div>
 
                             <div class="panel-body">
                                 <div class="panel-lib">
@@ -258,15 +265,18 @@
                     
                         <div class="panel panel-default" id="gioithieusach">
                             <a href="http://thuvien.nctu.edu.vn/index.php/topic/7">
-                                <div class="panel-heading"><span class="glyphicon glyphicon-bullhorn"></span><h3> Giới thiệu sách </h3></div>
+                                <div class="panel-heading"><span class="glyphicon glyphicon-bullhorn"></span><h4> Giới thiệu sách </h4></div>
                             </a>
-                                                                                                     
+                            
                             <div class="panel-body">
                                 <div class="col-content-search-nctu">
                                     <div id="secondary-carousel" class="indicator owl-carousel owl-theme owl-loaded owl-drag">
                                         <div class="owl-stage-outer">
                                             <div class="row">
                                                 <div class="col-sm-12 pad0">
+                                                    <a href="http://thuvien.nctu.edu.vn/index.php/news/viet-nam-non-song-gam-voc-mien-bac-trung-nam">
+                                                        <img src="http://thuvien.nctu.edu.vn/upload/vnnsgvbia1.jpg" class="owlC1">
+                                                    </a>
                                                     <a href="http://thuvien.nctu.edu.vn/index.php/news/viet-nam-non-song-gam-voc-mien-bac-trung-nam">
                                                         <img src="http://thuvien.nctu.edu.vn/upload/vnnsgvbia1.jpg" class="owlC1">
                                                     </a>
@@ -279,10 +289,10 @@
                         </div>
                         
                         <div class="panel panel-default" id="video">
-                            <div class="panel-heading"><span class="glyphicon glyphicon-bullhorn"></span><h3> Video </h3></div>
+                            <div class="panel-heading"><span class="glyphicon glyphicon-bullhorn"></span><h4> Video </h4></div>
                         
                             <div class="panel-body">
-                                <iframe width="300" height="200" src="https://www.youtube.com/embed/zg1S-2vNg20?start=213" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/zg1S-2vNg20?start=213" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </iframe>
                         </div>
                     </div>

@@ -17,36 +17,34 @@
     background-image: linear-gradient(#D2EDFB,white);
 }
 
-.banner logo{
-    width: 75%;
+#color #logo{
+    width: 100%;
     height: 110px;
     padding: 5px;
 }
- 
-.banner logo1{
-    width: 25%;
+
+#logo1{
+    width: 80%;
     height: 95%;
-    background: skyblue;
     position: absolute;
     bottom: 0px;
 }
 
 .navbar{
     border-radius: 10px;
-    margin-bottom: 10px;
+    font-size: 20px;
    
-}
-
-.row w-main div a{
-    border: 1px solid #ccc;
-    padding: 2px; 
-    max-width: 360px;
 }
 
 .duongvien{
     padding: 4px; 
     border-bottom: 1px dotted #ccc; 
     margin-bottom: 10px;
+}
+
+#hinh{
+    max-width: 450px;
+    height : 450px;
 }
 
 #gioithieusach .panel-body{
@@ -63,8 +61,7 @@
 
 #latestnews{
     border-bottom: none; 
-    position: relative; 
-    height: 182px; 
+    height: 265px; 
     overflow: hidden;
 }
 
@@ -73,14 +70,12 @@
     list-style-type: none; 
     padding: 2px 10px; 
     margin: 0px; 
-    position: absolute; 
     top: 0px;
 }
 
 #latestnews ul li{
     border-bottom: 1px dotted rgb(239, 239, 239);
-    padding: 3px 5px; 
-    text-transform: uppercase; 
+    padding: 3px 5px;  
     margin: 0px; 
     display: list-item;
 }
@@ -93,8 +88,8 @@
     font-size: 11px;
 }
 
-#tinmoinhat .panel-heading h3{
-    background: #2A8DDD;
+#tinmoinhat .panel-heading h4{
+    background: #43AAFE;
     height: 40px;
     margin-top: 1px;
     text-align: center;
@@ -111,8 +106,8 @@
     float: left;
 }
 
-#lienketwebsite .panel-heading h3{
-    background: #2A8DDD;
+#lienketwebsite .panel-heading h4{
+    background: #43AAFE;
     height: 40px;
     margin-top: 1px;
     text-align: center;
@@ -121,8 +116,8 @@
     border-radius: 5px;
 }
 
-#gioithieusach .panel-heading h3{
-    background: #2A8DDD;
+#gioithieusach .panel-heading h4{
+    background: #43AAFE;
     height: 40px;
     margin-top: 1px;
     text-align: center;
@@ -131,8 +126,8 @@
     border-radius: 5px;
 }
 
-#video .panel-heading h3{
-    background: #2A8DDD;
+#video .panel-heading h4{
+    background: #43AAFE;
     height: 40px;
     margin-top: 1px;
     text-align: center;
@@ -181,5 +176,5 @@ h5.title-ls-news {
     font-weight: bold;
     color: #000000;
     margin-top: 3px;
-    text-transform: uppercase;
+
 }
