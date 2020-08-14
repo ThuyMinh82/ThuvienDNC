@@ -6,36 +6,33 @@
 
 @section('content')
 <div class="row no-gutters">
-    <div class="col-md-3"></div>
-    <div class="col-md-6 col-sm-12 padding-0">
-        <h4 style="text-align: center;">Thông tin cá nhân</h4>       
-        <table class="table table-hover s">
-          <tbody>
-            @foreach($profileuser as $pu)
-              <tr>
-                <td id='bold3'style="width: 25%;">Họ Tên</td>
-                <td>{{$pu->name_prouser}}</td>
-              </tr>
-              <tr>
-                <td id='bold3'style="width: 20%;">Email</td>
-                <td>{{$pu->email}}</td>
-              </tr>
-              <tr>
-                <td id='bold3'>Địa chỉ</td>
-                <td>{{$pu->address}}</td>
-              </tr>
-              <tr>
-                <td id='bold3'>Số điện thoại</td>
-                <td>{{$pu->sdt}}</td>
-              </tr>               
-            @endforeach
-          </tbody>
-        </table>
-        <button type="button" class="btn btn-primary center"><a href="admin/profileuser/thaydoi" id="a-none">Sửa</a></button>
-    </div>
-    <div class="col-md-3"></div> 
+  <div class="col-md-3"></div>
+  <div class="col-md-6 col-sm-12 padding-0">
+    <h4>THÔNG TIN NGƯỜI DÙNG</h4> 
+    @foreach($profileuser as $pro)
+    <table class="table table-hover">
+      <tbody>
+        <tr>
+          <th style="width: 35%">Họ Tên:</th>
+          <td>{{$pro->name_prouser}}</td>
+        </tr>
+        <tr>
+          <th>Email:</th>
+          <td>{{$pro->email}}</td>
+        </tr>
+        <tr>
+          <th>Địa chỉ:</th>
+           <td>{{$pro->address}}</td>
+        </tr>
+        <tr>
+          <th>SĐT:</th>
+          <td>{{$pro->sdt}}</td>
+        </tr>
+      </tbody>                   
+    </table>
+    @endforeach
+    <a href="admin/profileuser/thaydoi" class="btn btn-primary center">Thay đổi</a>
+  </div>
+  <div class="col-md-3"></div> 
 </div>
 @endsection()
-
-
-

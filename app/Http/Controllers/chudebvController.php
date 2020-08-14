@@ -48,10 +48,11 @@ class chudebvController extends Controller
     {
         $this->validate($request,
             [
-                'ten_cd' => 'required|min:3|max:255'
+                'ten_cd' => 'required|min:3|max:255|unique:chudebv,ten_cd'
             ],
             [
                 'ten_cd.required' => 'Bạn chưa nhập tên chủ đề',
+                'ten_cd.unique' => 'Tên chủ đề đã tồn tại',
                 'ten_cd.min' => 'Tên chủ đề phải có độ dài từ 3 cho đến 255 ký tự',
                 'ten_cd.max' => 'Tên chủ đề phải có độ dài từ 3 cho đến 255 ký tự',
             ]);
@@ -65,7 +66,7 @@ class chudebvController extends Controller
     
     public function getDanhSach()
     {
-        $chudebv = chudebv::all();
+        $chudebv = chudebv::orderBy('id','DESC')->paginate(5);
         return view('admin.chudebv.danhsach',['chudebv'=>$chudebv]);
     }
 

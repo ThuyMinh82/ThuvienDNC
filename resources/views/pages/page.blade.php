@@ -54,7 +54,7 @@
                                         <i class="fa fa-fw fa-user"></i>Tài Khoản
                                     </a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="admin/users/themtaikhoan">Tạo Tài Khoản</a>
+                                        <a class="dropdown-item" href="admin/users/themtaikhoan">Thêm Tài Khoản</a>
                                         <a class="dropdown-item" href="admin/users/capquyen">Cấp Quyền</a>
                                         <a class="dropdown-item" href="admin/users/danhsach">Danh sách tài khoản</a>
                                     </div>
@@ -91,12 +91,18 @@
                             </ul>
                             <ul class="nav navbar-nav ml-auto">
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Admin1
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"><?php
+                                         $username = Session::get('username');
+                                            if($username){
+                                                echo $username;
+                                                
+                                            }
+                                    ?>
                                     </a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="admin/users/doimatkhau">Đổi mật khẩu</a>
                                         <a class="dropdown-item" href="admin/profileuser/prouser">Xem thông tin</a>
-                                        <a class="dropdown-item" href="login">Đăng xuất</a>
+                                        <a href="{{URL::to('/logout')}}" class="dropdown-item" href="login">Đăng xuất</a>
                                     </div>
                                 </li>
                             </ul>
