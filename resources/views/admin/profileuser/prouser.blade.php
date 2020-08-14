@@ -13,16 +13,8 @@
           <tbody>
             @foreach($profileuser as $pu)
               <tr>
-                <td id='bold3' style="width: 30px;">STT</td>
-                <td>{{$pu->id}}</td>
-              </tr>
-              <tr>
                 <td id='bold3'style="width: 25%;">Họ Tên</td>
                 <td>{{$pu->name_prouser}}</td>
-              </tr>
-              <tr>
-                <td id='bold3'>Tên hiển thị</td>
-                <td>{{$pu->users->username}}</td>
               </tr>
               <tr>
                 <td id='bold3'style="width: 20%;">Email</td>

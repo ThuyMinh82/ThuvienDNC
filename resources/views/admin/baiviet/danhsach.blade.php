@@ -31,32 +31,31 @@
                 </div>
             @endif
         <table class="table table-hover">
-        <tbody>                
-        <tr>
-          <th>ID</th>
-          <th>Tên Bài Viết</th>
-          <th style="width: 150px;">Tên chủ Đề </th>
-          <th style="width: 150px;">Ngày Đăng</th>
-          <th>Ảnh Đại Diện</th>
-          <th style="text-align: center;">Xử Lý</th>
-        </tr>
-        <tr>
-          @foreach($baiviet as $bv)
-            <tr class="odd gradeX" align="">
-            <td>{{$bv->id}}</td>
-            <td>{{$bv->ten_bv}}</td>
-            <td>{{$bv->chudebv->ten_cd}}</td>
-            <td></td>
-            <td></td>                
-            <td style=' width: 150px;'>
-            <a href="admin/baiviet/suabv/{{$bv->id}}"><i class='fas fa-pen-alt'style='margin: 5px;color:black'></i>Sửa</a>
-            <a href="admin/baiviet/xoabv/{{$bv->id}}" data-toggle="modal" data-target="#myModal"><i class='fas fa-trash'style='margin: 5px;color: red'></i>Xóa</a></td>
-          @endforeach
+          <tbody>                
+          <tr>
+            <th>ID</th>
+            <th>Tên Bài Viết</th>
+            <th style="width: 150px;">Tên chủ Đề </th>
+            <th style="width: 150px;">Ngày Đăng</th>
+            <th>Ảnh Đại Diện</th>
+            <th style="text-align: center;">Xử Lý</th>
           </tr>
-          </tbody>
-          </table>
-        </div>
+            @foreach($baiviet as $bv)
+              <tr class="odd gradeX" align="">
+              <td>{{$bv->id}}</td>
+              <td>{{$bv->ten_bv}}</td>
+              <td>{{$bv->chudebv->ten_cd}}</td>
+              <td></td>
+              <td></td>                
+              <td style=' width: 150px;'>
+              <a href="admin/baiviet/suabv/{{$bv->id}}"><i class='fas fa-pen-alt'style='margin: 5px;color:black'></i>Sửa</a>
+              <a href="admin/baiviet/xoabv/{{$bv->id}}"><i class='fas fa-trash'style='margin: 5px;color: red'></i>Xóa</a></td>
+            @endforeach
+            </tr>
+            </tbody>
+        </table>
     </div>
+    <div class="col-md-1"></div>
 </div>
 <div class="row no-gutters">
   <div class="col-md-5"></div>
