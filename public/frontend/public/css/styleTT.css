@@ -137,12 +137,13 @@
 }
 
 #fooder{
-    background: skyblue;
+    background: #168BFF;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 1px;
     margin-right: 1px;
     padding: 10px;
+    color:white;
 }
 
 h5.title-ls-news {
