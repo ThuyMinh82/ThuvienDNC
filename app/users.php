@@ -47,7 +47,7 @@ class users extends Authenticatable
         return $this->belongsTo('App\usergroup', 'usergroup_id', 'id');
     }
     public function profileuser(){
-        return $this->belongsTo('App\profileuser', 'profileuser_id', 'id');
+        return $this->belongsTo('App\profileuser', 'users_id', 'id');
     }
     public function baiviet(){
         return $this->belongsTo('App\baiviet', 'bv_id', 'id');

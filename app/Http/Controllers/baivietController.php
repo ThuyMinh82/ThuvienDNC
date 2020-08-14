@@ -16,7 +16,6 @@ class baivietController extends Controller
       $chudebv = chudebv::all();
       $baiviet = baiviet::orderBy('id','ASC')->get();
       return view('admin.baiviet.danhsach',['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
-
     }
 
     public function getThem()

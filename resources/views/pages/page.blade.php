@@ -120,7 +120,7 @@
                             <i class="fa fa-fw fa-phone"></i> Điện thoại: (0292) 3 798 222 - 3 798 668
                         </p>            
                     </footer>  
-                    <div class="text-center" style="color: #e2dcdc; font-size: 12px;">COPYRIGHT © 2017 THƯ VIỆN ĐIỆN TỬ ĐẠI HỌC NAM CẦN THƠ. ALL RIGHTS RESERVED.</div>
+                    <div class="text-center" style="color: #e2dcdc; font-size: 12px;">COPYRIGHT © 2020 THƯ VIỆN ĐIỆN TỬ ĐẠI HỌC NAM CẦN THƠ. ALL RIGHTS RESERVED.</div>
                 </div>
             </div>
             <div class="col-xl-1"></div>

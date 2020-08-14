@@ -30,7 +30,7 @@ class usersController extends Controller
 
         $users = new users;
         $users->username = $Request->username;
-        $users->password = bcrypt($Request->password);
+        $users->password = $Request->password;
         $users->save();
         return view('admin/users/themtaikhoan')->with('thongbao', 'Thêm tài khoản thành công');
     }

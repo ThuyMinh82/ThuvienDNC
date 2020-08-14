@@ -69,6 +69,8 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::group(['prefix'=>'profileuser'],function(){
 
 		Route::get('prouser','profileuserController@getIndex');
+		Route::get('thaydoi','profileuserController@getThaydoi');
+		Route::post('thaydoi','profileuserController@postThaydoi');
 	});
 	
 });

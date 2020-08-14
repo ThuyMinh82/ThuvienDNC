@@ -6,8 +6,8 @@
 
 @section('content')
 <div class="row no-gutters">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 col-sm-12 padding-0">
+    <div class="col-md-1"></div>
+    <div class="col-md-10 col-sm-12 padding-0">
             <!--/.col-lg-12-->
         <div style="padding-bottom: 120px">
             @if(count($errors) > 0)
@@ -24,8 +24,8 @@
                 </div>
             @endif
             <div class="row no-gutters">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
                     <h1>Thêm bài viết</h1>
                     <form action="admin/baiviet/thembv" method="POST">
                         <input type="hidden" name="_token" value="{{csrf_token()}}"/>
@@ -56,6 +56,7 @@
             </div>
         </div>
     </div>
+    <div class="col-md-1"></div>
 </div>
 <br>
 @endsection

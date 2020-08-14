@@ -54,8 +54,6 @@
     </div>
     <div class="col-md-3"></div> 
 </div>
-
-<!-- <button type="button" class="btn btn-primary center">Thêm</button> -->
 <br>
 <br>
 <br>

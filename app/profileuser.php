@@ -15,6 +15,6 @@ class profileuser extends Model
 	protected $dateFormat = 'Y-m-d H:i:s'; 
 
 	public function users(){
-		return $this->belongsTo('App\users', 'profileuser_id', 'id');
+		return $this->belongsTo('App\users', 'users_id', 'id');
 	}
 }
