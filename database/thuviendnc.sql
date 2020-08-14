@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 14, 2020 at 03:42 AM
+-- Generation Time: Aug 14, 2020 at 09:59 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -35,10 +35,10 @@ CREATE TABLE `baiviet` (
   `alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `status` int(11) NOT NULL,
+  `status` int(11) DEFAULT NULL,
   `cd_id` int(10) UNSIGNED NOT NULL,
-  `user_id` int(10) UNSIGNED NOT NULL,
-  `hinhanh_id` int(10) UNSIGNED NOT NULL
+  `user_id` int(10) UNSIGNED DEFAULT NULL,
+  `hinhanh_id` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -46,7 +46,29 @@ CREATE TABLE `baiviet` (
 --
 
 INSERT INTO `baiviet` (`id`, `ten_bv`, `mtngan_bv`, `noidung_bv`, `alias`, `created_at`, `updated_at`, `status`, `cd_id`, `user_id`, `hinhanh_id`) VALUES
-(1, 'Đây là bài viết thứ nhất', 'Đây là bài viết thứ nhất không phải bài viết thứ 2', 'Nội dung bài viết dài lắm', '', NULL, NULL, 1, 1, 3, 1);
+(1, 'Đây là bài viết có tên 123', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 123</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 123</p>', 'day-la-bai-viet-co-ten-123', '2020-08-14 00:40:14', '2020-08-14 00:40:14', NULL, 1, NULL, NULL),
+(2, 'Đây là bài viết có tên 1231', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 1231</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 1231</p>', 'day-la-bai-viet-co-ten-1231', '2020-08-14 00:40:56', '2020-08-14 00:40:56', NULL, 1, NULL, NULL),
+(3, 'Đây là bài viết có tên 12311', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 12311</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 12311</p>', 'day-la-bai-viet-co-ten-12311', '2020-08-14 00:41:20', '2020-08-14 00:41:20', NULL, 1, NULL, NULL),
+(4, 'Đây là bài viết có tên 123111', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 123111</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 123111</p>', 'day-la-bai-viet-co-ten-123111', '2020-08-14 00:42:06', '2020-08-14 00:42:06', NULL, 1, NULL, NULL),
+(5, 'Đây là bài viết có tên 1231111', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 1231111</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 1231111</p>', 'day-la-bai-viet-co-ten-1231111', '2020-08-14 00:42:13', '2020-08-14 00:42:13', NULL, 1, NULL, NULL),
+(6, 'Đây là bài viết có tên 12311111', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 12311111</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 12311111</p>', 'day-la-bai-viet-co-ten-12311111', '2020-08-14 00:42:21', '2020-08-14 00:42:21', NULL, 1, NULL, NULL),
+(7, 'Đây là bài viết có tên 123111111', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 123111111</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 123111111</p>', 'day-la-bai-viet-co-ten-123111111', '2020-08-14 00:42:32', '2020-08-14 00:42:32', NULL, 1, NULL, NULL),
+(8, 'Đây là bài viết có tên 1231111111', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 1231111111</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 1231111111</p>', 'day-la-bai-viet-co-ten-1231111111', '2020-08-14 00:42:40', '2020-08-14 00:42:40', NULL, 1, NULL, NULL),
+(9, 'Đây là bài viết có tên 12311111111', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 12311111111</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 12311111111</p>', 'day-la-bai-viet-co-ten-12311111111', '2020-08-14 00:42:48', '2020-08-14 00:42:48', NULL, 1, NULL, NULL),
+(10, 'Đây là bài viết có tên 123111111111', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 123111111111</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 123111111111</p>', 'day-la-bai-viet-co-ten-123111111111', '2020-08-14 00:42:59', '2020-08-14 00:42:59', NULL, 1, NULL, NULL),
+(11, 'Đây là bài viết có tên 1231111111111', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 1231111111111</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 1231111111111</p>', 'day-la-bai-viet-co-ten-1231111111111', '2020-08-14 00:43:21', '2020-08-14 00:43:21', NULL, 1, NULL, NULL),
+(12, 'Đây là bài viết có tên 12311111111111', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 12311111111111</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 12311111111111</p>', 'day-la-bai-viet-co-ten-12311111111111', '2020-08-14 00:43:29', '2020-08-14 00:43:29', NULL, 1, NULL, NULL),
+(13, 'Đây là bài viết có tên 123111111111111', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 123111111111111</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 123111111111111</p>', 'day-la-bai-viet-co-ten-123111111111111', '2020-08-14 00:43:35', '2020-08-14 00:43:35', NULL, 1, NULL, NULL),
+(14, 'Đây là bài viết có tên 1231111111111111', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 1231111111111111</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 1231111111111111</p>', 'day-la-bai-viet-co-ten-1231111111111111', '2020-08-14 00:43:50', '2020-08-14 00:43:50', NULL, 1, NULL, NULL),
+(15, 'Đây là bài viết có tên 12311111111111111', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 12311111111111111</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 12311111111111111</p>', 'day-la-bai-viet-co-ten-12311111111111111', '2020-08-14 00:44:31', '2020-08-14 00:44:31', NULL, 1, NULL, NULL),
+(16, 'Đây là bài viết có tên 123111111111111111', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 123111111111111111</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 123111111111111111</p>', 'day-la-bai-viet-co-ten-123111111111111111', '2020-08-14 00:44:40', '2020-08-14 00:44:40', NULL, 1, NULL, NULL),
+(17, 'Đây là bài viết có tên 1231111111111111111', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 1231111111111111111</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 1231111111111111111</p>', 'day-la-bai-viet-co-ten-1231111111111111111', '2020-08-14 00:44:52', '2020-08-14 00:44:52', NULL, 1, NULL, NULL),
+(18, 'Đây là bài viết có tên 12311111111111111111', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 12311111111111111111</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 12311111111111111111</p>', 'day-la-bai-viet-co-ten-12311111111111111111', '2020-08-14 00:45:01', '2020-08-14 00:45:01', NULL, 1, NULL, NULL),
+(19, 'Đây là bài viết có tên 123111111111111111111', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 123111111111111111111</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 123111111111111111111</p>', 'day-la-bai-viet-co-ten-123111111111111111111', '2020-08-14 00:45:18', '2020-08-14 00:45:18', NULL, 1, NULL, NULL),
+(20, 'Đây là bài viết có tên 1231111111111111111111', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 1231111111111111111111</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 1231111111111111111111</p>', 'day-la-bai-viet-co-ten-1231111111111111111111', '2020-08-14 00:45:27', '2020-08-14 00:45:27', NULL, 1, NULL, NULL),
+(21, 'Đây là bài viết có tên 12311111111111111111111', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 12311111111111111111111</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 12311111111111111111111</p>', 'day-la-bai-viet-co-ten-12311111111111111111111', '2020-08-14 00:45:38', '2020-08-14 00:45:38', NULL, 1, NULL, NULL),
+(22, 'Đây là bài viết có tên 123111111111111111111111', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 123111111111111111111111</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 123111111111111111111111</p>', 'day-la-bai-viet-co-ten-123111111111111111111111', '2020-08-14 00:45:47', '2020-08-14 00:45:47', NULL, 1, NULL, NULL),
+(23, 'Đây là bài viết có tên 1231111111111111111111111', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 1231111111111111111111111</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 1231111111111111111111111</p>', 'day-la-bai-viet-co-ten-1231111111111111111111111', '2020-08-14 00:46:05', '2020-08-14 00:46:05', NULL, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -67,7 +89,7 @@ CREATE TABLE `chudebv` (
 --
 
 INSERT INTO `chudebv` (`id`, `ten_cd`, `alias`, `created_at`, `updated_at`) VALUES
-(1, 'Tin tức - Sự kiện', '', NULL, NULL);
+(1, 'Tin tức - Sự kiện', 'tin-tuc-su-kien', '2020-08-14 00:39:39', '2020-08-14 00:39:39');
 
 -- --------------------------------------------------------
 
@@ -82,13 +104,6 @@ CREATE TABLE `hinhanh` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `hinhanh`
---
-
-INSERT INTO `hinhanh` (`id`, `link_anh`, `ten_anh`, `created_at`, `updated_at`) VALUES
-(1, '123/456', 'hình ảnh 123', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -128,13 +143,6 @@ CREATE TABLE `phanquyen` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `phanquyen`
---
-
-INSERT INTO `phanquyen` (`id`, `ten_pq`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -152,13 +160,6 @@ CREATE TABLE `profileuser` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `profileuser`
---
-
-INSERT INTO `profileuser` (`id`, `name_prouser`, `email`, `address`, `sdt`, `users_id`, `created_at`, `updated_at`) VALUES
-(1, 'Họ Văn Tên', 'admin@exaple.com', 'Thư viện điên tử, Đại học Nam Cần Thơ', '0808150830', 3, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -173,13 +174,6 @@ CREATE TABLE `usergroup` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `usergroup`
---
-
-INSERT INTO `usergroup` (`id`, `name_group`, `pq_id`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 1, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -191,17 +185,10 @@ CREATE TABLE `users` (
   `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `usergroup_id` int(10) UNSIGNED DEFAULT NULL,
+  `usergroup_id` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `username`, `password`, `status`, `usergroup_id`, `created_at`, `updated_at`) VALUES
-(3, 'admin', 'e10adc3949ba59abbe56e057f20f883e', '1', NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -272,7 +259,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `baiviet`
 --
 ALTER TABLE `baiviet`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `chudebv`
@@ -284,7 +271,7 @@ ALTER TABLE `chudebv`
 -- AUTO_INCREMENT for table `hinhanh`
 --
 ALTER TABLE `hinhanh`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -296,25 +283,25 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `phanquyen`
 --
 ALTER TABLE `phanquyen`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `profileuser`
 --
 ALTER TABLE `profileuser`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `usergroup`
 --
 ALTER TABLE `usergroup`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
