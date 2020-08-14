@@ -39,8 +39,9 @@
       </tbody>
     </table>
     </div>
-</div>
     <div class="col-md-2"></div> 
+</div>
+    
 <!-- <div class="modal" tabindex="-1" role="dialog" id="myModal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">

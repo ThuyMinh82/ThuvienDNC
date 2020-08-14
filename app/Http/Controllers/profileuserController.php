@@ -29,7 +29,6 @@ class profileuserController extends Controller
         $this->validate($Request,
             [
                 'name_prouser' => 'required|unique:name_prouser|min:5|max:255',
-                //'username'=>'required',
                 'email'=>'required',
                 'address'=>'required',
                 'sdt'=>'required',
@@ -42,10 +41,12 @@ class profileuserController extends Controller
                 'sdt.max' => 'Số điện thoại phải đủ 10 ký tự',
 
             ]);
-        //$chudebv = new chudebv;
-        $chudebv->ten_cd = $Request->ten_cd;
-        $chudebv->alias = changeTitle($Request->ten_cd);
-        $chudebv->save();
-        return redirect('admin/chudebv/suachude/'.$id)->with('thongbao','Sửa thành công');
+        $profileuser= new profileuser;
+        $profileuser->name_prouser=$request->name_prouser;
+        $profileuser->email = $request->email;
+        $profileuser->address = $request->address;
+        $profileuser->sdt = $request->sdt;
+        $profileuser->save();
+        return redirect('admin/profileuser/thaydoi/'.$id)->with('thongbao','Bạn đã thay đổi thành công');
     }
 }
