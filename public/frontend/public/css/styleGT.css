@@ -160,9 +160,10 @@
 }
  
 #fooder{
-    background: skyblue;
+    background: #168BFF;
     margin-bottom: 5px;
     margin-left: 1px;
     margin-right: 1px;
     padding: 10px;
+    color: white;
 }
