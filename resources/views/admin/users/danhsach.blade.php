@@ -42,6 +42,9 @@
                     @endforeach
                 </tbody>
         </table>
+        <nav aria-label="Page navigation example" style='float: right;'>
+            {{ $users->links() }}
+        </nav>
     </div>
     <div class="col-md-2"></div> 
 </div>

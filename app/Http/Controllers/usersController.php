@@ -49,7 +49,7 @@ class usersController extends Controller
     }
     public function getDanhSach()
     {
-        $users = users::all();
+        $users = users::orderBy('id','DESC')->paginate(5);
         return view('admin.users.danhsach',['users'=>$users]);
     }
     public function getIndex()
