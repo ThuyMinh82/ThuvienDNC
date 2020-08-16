@@ -97,4 +97,11 @@ class baivietController extends Controller
         $baiviet -> delete();
         return redirect('admin/baiviet/danhsach')->with('thongbao','Xóa thành công!');
     }
+    public function getDuyetbv()
+    {
+      $chudebv = chudebv::all();
+      $baiviet = baiviet::orderBy('id','DESC')->paginate(5);
+      return view('admin.baiviet.duyetbv',['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
+
+    }
 }

@@ -24,7 +24,7 @@
                 </div>
             @endif
 			<h1 style="text-align:center;">Thêm Hình Ảnh</h1>
-			<form action="admin/chudebv/themchude" method="POST">
+			<form action="admin/hinhanh/themhinhanh" method="POST">
 			    <input type="hidden" name="_token" value="{{csrf_token()}}"/>
 			    <div class="from-group">
                     <table class="table table-borderless">
