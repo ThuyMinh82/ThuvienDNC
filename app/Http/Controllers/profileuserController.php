@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\profileuser;
 use App\users;
 use DB;
+session_start();
 class profileuserController extends Controller
 {
     //

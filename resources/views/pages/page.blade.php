@@ -91,13 +91,13 @@
                             </ul>
                             <ul class="nav navbar-nav ml-auto">
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"><?php
-                                         $username = Session::get('username');
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                        <?php
+                                        $username = Session::get('username');
                                             if($username){
                                                 echo $username;
-                                                
                                             }
-                                    ?>
+                                        ?>
                                     </a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="admin/users/doimatkhau">Đổi mật khẩu</a>

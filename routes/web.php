@@ -17,8 +17,10 @@ use Illuminate\Support\Facades\Route;
      return view('welcome');
  });
 
-// Route::get('/admin','admin_controller@loginad');
-// Route::get('/admin_index','admin_controller@index');
+Route::get('home','HomeController@index');
+Route::get('giaodien/gioithieu','HomeController@gioithieu');
+Route::get('giaodien/tintuc','HomeController@tintuc');
+Route::get('giaodien/lienhe','HomeController@lienhe');
 
 Route::group(['prefix'=>'admin'],function(){
 	Route::group(['prefix'=>'chudebv'],function(){
