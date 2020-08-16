@@ -66,22 +66,24 @@ class baivietController extends Controller
             'chudebv'=>'required',
             'ten_bv'=>'required|min:3|unique:baiviet,ten_bv',
             'mtngan_bv'=>'required',
-            'noidung_bv'=>'required'
+            'noidung_bv'=>'required',
+            'alias' => 'required'
             ],[
 
-            'chudebv.required'=>'Bạn chưa chọn chủ để bài viết',
+            'chudebv.required'=>'Bạn chưa chọn chủ đề bài viết',
             'ten_bv.required'=>'Bạn chưa nhập tên bài viết',
             'ten_bv.min'=>'Tên bài viết phải có ít nhất 3 ký tự',
             'ten_bv.unique'=>'Tên bài viết đã tồn tại ',
             'mtngan_bv.required'=>'Bạn chưa viết mô tả ngắn',
-            'noidung_bv.required'=>'Bạn chưa nhập nội dung bài viết'
+            'noidung_bv.required'=>'Bạn chưa nhập nội dung bài viết',
+            'alias.required' => 'Bạn chưa nhập alias'
         ]);
 
 
         $baiviet->ten_bv=$request->ten_bv;
         $baiviet->mtngan_bv = $request->mtngan_bv;
         $baiviet->noidung_bv = $request->noidung_bv;
-        $baiviet->alias = changeTitle($request->ten_bv);
+        $baiviet->alias = changeTitle($request->alias);
         $baiviet->cd_id = $request->chudebv;
         $baiviet->status = $request->status;
         $baiviet->user_id = $request->users;

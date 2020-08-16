@@ -33,6 +33,10 @@
                         <div class="from-group">
                         <input class="form-control" name="ten_bv" placeholder="Nhập tên bài viết ..." value="{{$baiviet->ten_bv}}"/>
                         </div>
+                        <td id='bold2'>Alias bài viết:</td>
+                        <div class="from-group">
+                        <input class="form-control" name="alias" placeholder="Nhập alias bài viết ..." value="{{$baiviet->alias}}"/>
+                        </div>
                         <td id='bold2'>Chọn chủ đề:</td>
                         <div class="from-group">
                             <select class="form-control" name="chudebv" id="select-user" >
