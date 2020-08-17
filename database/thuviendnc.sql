@@ -45,7 +45,7 @@ CREATE TABLE `baiviet` (
 -- Dumping data for table `baiviet`
 --
 
-INSERT INTO `baiviet` (`id`, `ten_bv`, `mtngan_bv`, `noidung_bv`, `alias`, `created_at`, `updated_at`, `status`, `cd_id`, `user_id`, `hinhanh_id`) VALUES
+INSERT INTO `baiviet` (`id`, `ten_bv`, `mtngan_bv`, `noidung_bv`, `alias`, `created_at`, `updated_at`, `status`, `cd_id`, `user_id`, `anhdaidien`) VALUES
 (1, 'Đây là bài viết có tên 123', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 123</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 123</p>', 'day-la-bai-viet-co-ten-123', '2020-08-14 00:40:14', '2020-08-14 00:40:14', NULL, 1, NULL, NULL),
 (2, 'Đây là bài viết có tên 1231', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 1231</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 1231</p>', 'day-la-bai-viet-co-ten-1231', '2020-08-14 00:40:56', '2020-08-14 00:40:56', NULL, 1, NULL, NULL),
 (3, 'Đây là bài viết có tên 12311', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 12311</p>', '<p>Đ&acirc;y l&agrave; b&agrave;i viết c&oacute; t&ecirc;n 12311</p>', 'day-la-bai-viet-co-ten-12311', '2020-08-14 00:41:20', '2020-08-14 00:41:20', NULL, 1, NULL, NULL),
