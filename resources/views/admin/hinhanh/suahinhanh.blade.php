@@ -1,7 +1,7 @@
 @extends('pages.page')
 
 @section('header')
-<title>Thêm hình ảnh</title>
+<title>Sửa hình ảnh</title>
 @endsection
 
 @section('content')
@@ -23,24 +23,30 @@
                 	{{session('thongbao')}}
                 </div>
             @endif
-			<h1 style="text-align:center;">Thêm Hình Ảnh</h1>
-			<form action="admin/hinhanh/themhinhanh" method="POST">
+			<h1 style="text-align:center;">Sửa Hình Ảnh</h1>
+			<form action="admin/hinhanh/suahinhanh/{{$hinhanh->id}}" method="POST">
 			    <input type="hidden" name="_token" value="{{csrf_token()}}"/>
 			    <div class="from-group">
                     <table class="table table-borderless">
                         <tbody>
                             <tr>
                                 <td colspan='2'>
-                                    <input class="form-control" name="ten_anh" placeholder="Nhập tên ảnh ..." />
+                                    <input class="form-control" name="ten_anh" placeholder="Nhập tên ảnh ..." value="{{$hinhanh->ten_anh}}" />
                                 </td>
                             </tr>
                             <tr>
-                                <td style='width: 81%;'>
-                                    <input id="ckfinder-input-1" name="link_anh" class="form-control" type="text">
+                                <td style='width: 76%;'>
+                                    <input id="ckfinder-input-1" name="link_anh" class="form-control" type="text" value="{{$hinhanh->link_anh}}"/>
                                 </td>
                                 <td>
-                                    <a class="btn btn-success" id="ckfinder-popup-1">Chọn ảnh</a>
+                                    <a class="btn btn-success" id="ckfinder-popup-1">Chọn ảnh mới</a>
                                 </td>
+                            </tr>
+                            <tr>
+                            <th style="text-align:right;">Ảnh hiện tại:</th>
+                            <td>
+                                <a href="{{$hinhanh->link_anh}}"> <img style='width:80px; height:60px' src="{{$hinhanh->link_anh}}"></a>
+                            </td>
                             </tr>
                         </tbody>
                     </table>
@@ -73,7 +79,7 @@
                             }
                     </script>
 			    </div>
-			    <button type="submit" class="btn btn-primary center" style="margin-top: 30px;">Thêm</button>
+			    <button type="submit" class="btn btn-primary center" style="margin-top: 30px;">Sửa</button>
             </form>
         </div>
     </div>
