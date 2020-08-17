@@ -1,7 +1,7 @@
 @extends('pages.page')
 
 @section('header')
-<title>Danh sách hình ảnh</title>
+<title>Danh sách chủ đề</title>
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
 <div class="row no-gutters">
     <div class="col-md-2"></div>
     <div class="col-md-8 col-sm-12 padding-0">
-      <h1 class="page-header" style="text-align: center;">Danh sách hình ảnh</h1>
+      <h1 class="page-header" style="text-align: center;">Danh sách chủ đề</h1>
       <!--/.col-lg-12-->
         @if(session('thongbao'))
             <div class="alert alert-success">

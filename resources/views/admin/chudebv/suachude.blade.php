@@ -34,16 +34,14 @@
                         <input class="form-control" name="ten_cd" placeholder="Nhập tên chủ đề ..." value="{{$chudebv->ten_cd}}"/>
                         <h6>Alias chủ đề:</h6>
                         <input class="form-control" name="alias" placeholder="Nhập alias ..." value="{{$chudebv->alias}}"/>
-                        </div>
+                    </div>
                         <button type="submit" class="btn btn-primary center"style="margin-top: 30px;">Sửa
                         </button>
                     </form>
                 </div>
-                <div class="col-md-3"></div>
             </div>
         </div>
     </div>
-    <div class="col-md-3"></div>
 </div>
 @endsection
 

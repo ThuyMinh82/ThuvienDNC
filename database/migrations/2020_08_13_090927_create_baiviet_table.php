@@ -16,10 +16,10 @@ class CreateBaivietTable extends Migration
         Schema::create('baiviet', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->increments('id');
-            $table->string('ten_bv'); 
+            $table->string('ten_bv')->unique(); 
             $table->text('mtngan_bv');
             $table->text('noidung_bv');
-            $table->string('alias')->unique();
+            $table->string('alias');
             $table->timestamps('');
             $table->integer('status');
             $table->unsignedInteger('cd_id');
