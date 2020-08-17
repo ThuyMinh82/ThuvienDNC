@@ -44,8 +44,10 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::get('suabv/{id}','baivietController@getSua');
 		Route::post('suabv/{id}','baivietController@postSua');
 		Route::get('xoabv/{id}','baivietController@getXoa');
-		Route::get('duyetbv','baivietController@getDuyet');
+		Route::get('duyetbv/{id}','baivietController@getDuyet');
 		//Route::post('duyetbv','baivietController@postDuyet');
+		Route::get('danhsachchuaduyet','baivietController@getDanhSachChuaDuyet');
+		Route::get('xembaiviet/{id}','baivietController@getXemBV');
 	});
 	Route::group(['prefix'=>'hinhanh'],function(){
 		Route::get('themhinhanh','hinhanhController@getThem');

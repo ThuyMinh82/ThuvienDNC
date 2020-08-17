@@ -30,7 +30,7 @@ class hinhanhController extends Controller
         $hinhanh->link_anh = $request->link_anh;
         $hinhanh->save();
 
-        return redirect('admin/hinhanh/themhinhanh')->with('thongbao', 'Thêm hình ảnh thành công');
+        return redirect('admin/hinhanh/danhsach')->with('thongbao', 'Thêm hình ảnh thành công');
     }
 
     public function getDanhSach()
@@ -68,6 +68,6 @@ class hinhanhController extends Controller
         $hinhanh->ten_anh = $request->ten_anh;
         $hinhanh->link_anh = $request->link_anh;
         $hinhanh->save();
-        return redirect('admin/hinhanh/suahinhanh/'.$id)->with('thongbao','Sửa thành công');
+        return redirect('admin/hinhanh/danhsach')->with('thongbao','Sửa thành công');
     }
 }

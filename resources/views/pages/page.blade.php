@@ -13,7 +13,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="{{asset('/jquery-1.11.3.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('/ckeditor/ckeditor.js')}}"></script>
+        <script type="text/javascript" src="{{asset('/ckeditor/ckeditor.js')}}" charset="utf-8"></script>
         <base href="{{asset('')}}">
     </head>
     <style>
@@ -66,7 +66,7 @@
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="admin/baiviet/thembv">Thêm Bài Viết</a>
                                         <a class="dropdown-item" href="admin/baiviet/danhsach">Danh sách Bài Viết</a>
-                                        <a class="dropdown-item" href="admin/baiviet/duyetbaiviet">Duyệt Bài Viết</a>
+                                        <a class="dropdown-item" href="admin/baiviet/danhsachchuaduyet">Duyệt Bài Viết</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">

@@ -41,7 +41,7 @@
       </tbody>
     </table>
     <nav aria-label="Page navigation example" style='float: right;'>
-      {{ $hinhanh ?? ''->links() }}
+      {{ $hinhanh->links() }}
     </nav>
     </div>
     <div class="col-md-2"></div> 

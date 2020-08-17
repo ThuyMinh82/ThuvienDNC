@@ -34,7 +34,7 @@ class chudebvController extends Controller
         $chudebv->ten_cd = $request->ten_cd;
         $chudebv->alias = changeTitle($request->alias);
         $chudebv->save();
-        return redirect('admin/chudebv/suachude/'.$id)->with('thongbao','Sửa thành công');
+        return redirect('admin/chudebv/danhsach')->with('thongbao','Sửa thành công');
     }
     public function getXoa($id){
         $chudebv = chudebv::find($id);
@@ -64,7 +64,7 @@ class chudebvController extends Controller
         $chudebv->alias = changeTitle($request->ten_cd);
         $chudebv->save();
 
-        return redirect('admin/chudebv/themchude')->with('thongbao', 'Thêm chủ đề thành công');
+        return redirect('admin/chudebv/danhsach')->with('thongbao', 'Thêm chủ đề thành công');
     }
     
     public function getDanhSach()

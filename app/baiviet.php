@@ -8,7 +8,7 @@ class baiviet extends Model
 {
     //
     protected $table = 'baiviet';
-    protected $fillable = ['ten_bv', 'mtngan_bv','noidung_bv','alias','status','cd_id','user_id'];
+    protected $fillable = ['ten_bv', 'anhdaidien', 'created_at', 'mtngan_bv','noidung_bv','alias','status','cd_id','user_id'];
 	protected $guarded = ['id'];
 	protected $primaryKey = 'id';
 	protected $dateFormat = 'Y-m-d H:i:s'; 

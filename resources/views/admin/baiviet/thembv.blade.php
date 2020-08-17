@@ -41,6 +41,11 @@
                             @endforeach
                             </select>
                         </div>
+                        <td id='bold'>Ảnh đại diện:</td>
+                        <div class="from-group">
+                            <input id="ckfinder-input-1" name="anhdaidien" class="form-control" type="text" style='width:86%;'>
+                            <a style='float:right; margin-top:-38.25px;' class="btn btn-success" id="ckfinder-popup-1">Chọn ảnh</a>
+                        </div>
                         <td id='bold'>Mô tả ngắn</td>
                         <div class="from-group">
                             <td><textarea class="ckeditor" name="mtngan_bv" id="" cols="80" rows="5"></textarea>
@@ -59,4 +64,32 @@
     <div class="col-md-1"></div>
 </div>
 <br>
+<script type="text/javascript" src="{{asset('/ckfinder/ckfinder.js')}}"></script>
+<script>
+        var button1 = document.getElementById( 'ckfinder-popup-1' );
+
+        button1.onclick = function() {
+            selectFileWithCKFinder( 'ckfinder-input-1' );
+        };
+
+        function selectFileWithCKFinder( elementId ) {
+            CKFinder.popup( {
+                chooseFiles: true,
+                width: 800,
+                height: 600,
+                onInit: function( finder ) {
+                    finder.on( 'files:choose', function( evt ) {
+                        var file = evt.data.files.first();
+                        var output = document.getElementById( elementId );
+                        output.value = file.getUrl();
+                    } );
+
+                    finder.on( 'file:choose:resizedImage', function( evt ) {
+                        var output = document.getElementById( elementId );
+                        output.value = evt.data.resizedUrl;
+                    } );
+                }
+            } );
+        }
+</script>
 @endsection
