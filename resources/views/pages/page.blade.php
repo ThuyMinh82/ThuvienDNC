@@ -84,8 +84,7 @@
                                     </a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="admin/hinhanh/themhinhanh">Thêm Ảnh</a>
-                                        <a class="dropdown-item" href="admin/hinhanh/">Đưa Ảnh Lên Slide</a>
-                                        <a class="dropdown-item" href="admin/hinhanh/xoahinhanh">Xóa Ảnh</a>
+                                        <a class="dropdown-item" href="admin/hinhanh/danhsach">Danh sách hình ảnh</a>
                                     </div>
                                 </li>
                             </ul>
