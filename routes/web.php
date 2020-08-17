@@ -48,9 +48,11 @@ Route::group(['prefix'=>'admin'],function(){
 	});
 	Route::group(['prefix'=>'hinhanh'],function(){
 		Route::get('themhinhanh','hinhanhController@getThem');
-
-		Route::get('xoahinhanh','hinhanhController@getXoa');
-
+		Route::post('themhinhanh','hinhanhController@postThem');
+		Route::get('xoahinhanh/{id}','hinhanhController@getXoa');
+		Route::get('suahinhanh/{id}','hinhanhController@getSua');
+		Route::post('suahinhanh/{id}','hinhanhController@postSua');
+		Route::get('danhsach','hinhanhController@getDanhsach');
 	});
 
 	Route::group(['prefix'=>'users'],function(){
