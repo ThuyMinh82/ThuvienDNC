@@ -58,9 +58,10 @@
           <nav aria-label="Page navigation example" style='float: right;'>
               {{ $baiviet->links() }}
           </nav>
-        </div>
     </div>
-  </div>
+    <div class="col-md-1"></div>
+    
+  
 </div>
 
 @endsection

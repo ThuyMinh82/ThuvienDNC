@@ -43,19 +43,15 @@
               <tr class="odd gradeX" align="">
               <td>{{$bv->id}}</td>
               <td>{{$bv->ten_bv}}</td>
-              <td>{{$bv->chudebv->ten_cd}}</td>               
+              <td>{{$bv->chudebv->ten_cd}}</td>             
               <td style=' width: 150px;'>
-              <a href="admin/baiviet/duyetbv/{{$bv->id}}"><i class='fas fa-check-square'style='margin: 5px;color:black'></i>Duyệt</a></td>
+              <a href="admin/baiviet/duyetbv/{{$bv->id}}"><i class='fas fa-check-square'style='margin: 5px;color:black'></i>Duyệt</a>
+              </td>
             @endforeach
             </tr>
           </tbody>
         </table>
-          <nav aria-label="Page navigation example" style='float: right;'>
-              {{ $baiviet->links() }}
-          </nav>
-        </div>
     </div>
-  </div>
+    <div class="col-md-1"></div>
 </div>
-
 @endsection

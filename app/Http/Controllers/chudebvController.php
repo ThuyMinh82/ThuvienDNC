@@ -19,15 +19,14 @@ class chudebvController extends Controller
         $chudebv = chudebv::find($id);
         $this->validate($request,
             [
-                'ten_cd' => 'required|unique:chudebv,ten_cd|min:3|max:255',
-                'alias' => 'required'
+                'ten_cd' => 'required|min:3|max:255',
+                'alias' => 'required|unique:chudebv,alias'
             ],
             [
                 'ten_cd.required' => 'Bạn chưa nhập tên chủ đề',
-                'ten_cd.unique' => 'Tên chủ đề đã tồn tại',
                 'ten_cd.min' => 'Tên chủ đề phải có độ dài từ 3 cho đến 255 ký tự',
                 'ten_cd.max' => 'Tên chủ đề phải có độ dài từ 3 cho đến 255 ký tự',
-                //'alias' => 'Bạn chưa nhập tên chủ đề'
+                'alias.unique' => 'alias đã tồn tại',
                 'alias.required' => 'Bạn chưa nhập alias tên chủ đề'
             ]);
         //$chudebv = new chudebv;
