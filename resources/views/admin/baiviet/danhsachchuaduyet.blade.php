@@ -1,7 +1,7 @@
 @extends('pages.page')
 
 @section('header')
-<title>Danh sách bài viết</title>
+<title>Duyệt bài viết</title>
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
         <table style="width: 100%">
           <tbody>
               <tr>
-                  <th ><h3 style="text-align: center;">Danh Sách Bài Viết</h3></th>
+                  <th ><h3 style="text-align: center;">Danh Sách Bài Viết Chưa Duyệt</h3></th>
                   <th style="width: 250px;">
                       <div class="input-group">
                           <input type="text" class="form-control" placeholder="Search">
@@ -49,7 +49,7 @@
               <td>{{$bv->created_at}}</td>
               <td><a href="{{$bv->anhdaidien}}"> <img style='width:80px; height:60px' src="{{$bv->anhdaidien}}"></a></td>                
               <td style=' width: 150px;'>
-              <a href="admin/baiviet/suabv/{{$bv->id}}"><i class='fas fa-pen-alt'style='margin: 5px;color:black'></i>Sửa</a>
+              <a href="admin/baiviet/duyetbv/{{$bv->id}}"><i class='fas fa-check'style='margin: 5px;color:black'></i>Duyệt</a>
               <a href="admin/baiviet/xoabv/{{$bv->id}}"><i class='fas fa-trash'style='margin: 5px;color: red'></i>Xóa</a></td>
             @endforeach
             </tr>
@@ -58,10 +58,9 @@
           <nav aria-label="Page navigation example" style='float: right;'>
               {{ $baiviet->links() }}
           </nav>
+        </div>
     </div>
-    <div class="col-md-1"></div>
-    
-  
+  </div>
 </div>
 
 @endsection

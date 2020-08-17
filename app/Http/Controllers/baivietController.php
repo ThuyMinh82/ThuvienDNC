@@ -14,7 +14,7 @@ class baivietController extends Controller
     public function getDanhSach()
     {
       $chudebv = chudebv::all();
-      $baiviet = baiviet::orderBy('id','DESC')->paginate(5);
+      $baiviet = baiviet::where('status','1')->orderBy('id','DESC')->paginate(5);
       return view('admin.baiviet.danhsach',['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
 
     }
@@ -30,12 +30,15 @@ class baivietController extends Controller
         $this->validate($request, [
             'chudebv'=>'required',
             'ten_bv'=>'required|min:3|unique:baiviet,ten_bv',
+            'anhdaidien'=>'required|unique:baiviet,anhdaidien',
             'mtngan_bv'=>'required',
             'noidung_bv'=>'required'
             ],[
 
             'chudebv.required'=>'Bạn chưa chọn chủ đề bài viết',
             'ten_bv.required'=>'Bạn chưa nhập tên bài viết',
+            'anhdaidien.required'=>'Bạn chưa chọn ảnh đại diện',
+            'anhdaidien.unique'=>'Ảnh đại diện đã tồn tại',
             'ten_bv.min'=>'Tên bài viết phải có ít nhất 3 ký tự',
             'ten_bv.unique'=>'Tên bài viết đã tồn tại ',
             'mtngan_bv.required'=>'Bạn chưa viết mô tả ngắn',
@@ -44,14 +47,15 @@ class baivietController extends Controller
 
         $baiviet= new baiviet;
         $baiviet->ten_bv=$request->ten_bv;
+        $baiviet->anhdaidien=$request->anhdaidien;
         $baiviet->mtngan_bv = $request->mtngan_bv;
         $baiviet->noidung_bv = $request->noidung_bv;
         $baiviet->alias = changeTitle($request->ten_bv);
         $baiviet->cd_id = $request->chudebv;
-        $baiviet->status = $request->status;
+        $baiviet->status = 0;
         $baiviet->user_id = $request->users;
         $baiviet->save();
-        return redirect('admin/baiviet/thembv')->with('thongbao','Bạn đã thêm bài viết thành công');
+        return redirect('admin/baiviet/danhsachchuaduyet')->with('thongbao','Bạn đã thêm bài viết thành công');
     }
     public function getSua($id)
     {
@@ -64,18 +68,20 @@ class baivietController extends Controller
         $baiviet = baiviet::find($id);
         $this->validate($request,[
             'chudebv'=>'required',
-            'ten_bv'=>'required|min:3',
+            'ten_bv'=>'required|min:3|unique:baiviet,ten_bv',
+            'anhdaidien'=>'required|unique:baiviet,anhdaidien',
             'mtngan_bv'=>'required',
             'noidung_bv'=>'required',
-            'alias' => 'required|unique:baiviet,alias'
+            'alias' => 'required'
             ],[
 
             'chudebv.required'=>'Bạn chưa chọn chủ đề bài viết',
             'ten_bv.required'=>'Bạn chưa nhập tên bài viết',
-            'ten_bv.min'=>'Tên bài viết phải có ít nhất 3 ký tự',            
+            'ten_bv.min'=>'Tên bài viết phải có ít nhất 3 ký tự',
+            'anhdaidien.unique'=>'Ảnh đại diện đã tồn tại',
+            'ten_bv.unique'=>'Tên bài viết đã tồn tại ',
             'mtngan_bv.required'=>'Bạn chưa viết mô tả ngắn',
             'noidung_bv.required'=>'Bạn chưa nhập nội dung bài viết',
-            'alias.unique'=>'Alias bài viết đã tồn tại ',
             'alias.required' => 'Bạn chưa nhập alias'
         ]);
 
@@ -85,10 +91,9 @@ class baivietController extends Controller
         $baiviet->noidung_bv = $request->noidung_bv;
         $baiviet->alias = changeTitle($request->alias);
         $baiviet->cd_id = $request->chudebv;
-        $baiviet->status = $request->status;
         $baiviet->user_id = $request->users;
         $baiviet->save();
-        return redirect('admin/baiviet/suabv/'.$id)->with('thongbao','Bạn đã sửa bài viết thành công');
+        return redirect('admin/baiviet/danhsach')->with('thongbao','Bạn đã sửa bài viết thành công');
     }
 
     public function getXoa($id)
@@ -97,11 +102,25 @@ class baivietController extends Controller
         $baiviet -> delete();
         return redirect('admin/baiviet/danhsach')->with('thongbao','Xóa thành công!');
     }
-    public function getDuyet()
+    public function getDanhSachChuaDuyet()
     {
-      $chudebv = chudebv::all();
-      $baiviet = baiviet::orderBy('id','DESC');
-      return view('admin.baiviet.duyetbv',['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
+        $chudebv = chudebv::all();
+        $baiviet = baiviet::where('status','0')->orderBy('id','DESC')->paginate(5);
+        return view('admin.baiviet.danhsachchuaduyet',['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
+    }
 
+    public function getDuyet($id)
+    {
+        $baiviet = baiviet::find($id);
+        $baiviet->status = 1;
+        $baiviet->save();
+        return redirect('admin/baiviet/danhsach')->with('thongbao','Duyệt thành công!');
+    }
+
+    public function getXemBV($id)
+    {
+        $chudebv = chudebv::all();
+        $baiviet = baiviet::find($id);
+        return view('admin.baiviet.xembaiviet',['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
     }
 }
