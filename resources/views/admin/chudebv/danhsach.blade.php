@@ -32,7 +32,7 @@
               <td>{{$cd->ten_cd}}</td>
               <td class="center"><i class="fas fa-pen-alt"></i><a href="admin/chudebv/suachude/{{$cd->id}}">Sửa
               </a></td>
-              <td class="center"><i class="fas fa-trash" data-toggle="modal" data-target="#myModal"></i><a href="admin/chudebv/xoachude/{{$cd->id}}">Xóa
+              <td class="center"><i class="fas fa-trash" style="color: red;"></i><a href="admin/chudebv/xoachude/{{$cd->id}}">Xóa
               </a></td>
           </tr>
           @endforeach

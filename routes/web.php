@@ -45,6 +45,7 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::post('suabv/{id}','baivietController@postSua');
 		Route::get('xoabv/{id}','baivietController@getXoa');
 		Route::get('duyetbv','baivietController@getDuyet');
+		//Route::post('duyetbv','baivietController@postDuyet');
 	});
 	Route::group(['prefix'=>'hinhanh'],function(){
 		Route::get('themhinhanh','hinhanhController@getThem');

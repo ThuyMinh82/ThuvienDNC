@@ -30,7 +30,10 @@
                     <form action="admin/chudebv/suachude/{{$chudebv->id}}" method="POST">
                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                         <div class="from-group">
+                        <h6>Tên chủ đề:</h6>
                         <input class="form-control" name="ten_cd" placeholder="Nhập tên chủ đề ..." value="{{$chudebv->ten_cd}}"/>
+                        <h6>Alias chủ đề:</h6>
+                        <input class="form-control" name="alias" placeholder="Nhập alias ..." value="{{$chudebv->alias}}"/>
                     </div>
                         <button type="submit" class="btn btn-primary center"style="margin-top: 30px;">Sửa
                         </button>
