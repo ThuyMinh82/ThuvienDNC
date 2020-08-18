@@ -60,19 +60,19 @@
 
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{asset('frontend/images/block-banner.png')}}">
+                    <img style="width: 700px; height: 250px;" src="{{asset('frontend/images/1.jpg')}}">
                 </div>
 
                 <div class="carousel-item">
-                    <img src="{{asset('frontend/images/logo.png')}}">
+                    <img style="width: 700px; height: 250px;" src="{{asset('frontend/images/2.jpg')}}">
                 </div>
 
                 <div class="carousel-item">
-                    <img src="{{asset('frontend/images/block-banner.png')}}">
+                    <img style="width: 700px; height: 250px;" src="{{asset('frontend/images/3.jpg')}}">
                 </div>
 
                 <div class="carousel-item">
-                    <img src="{{asset('frontend/images/logo.png')}}">
+                    <img style="width: 700px; height: 250px;" src="{{asset('frontend/images/4.jpg')}}">
                 </div>
             </div>
 
@@ -85,7 +85,7 @@
             </a>
         </div>
 
-        <div class="carousel-body">
+        <div class="carousel-body" style="margin-top: 70px;">
 
             <div class="row w-main">
                 <div class="col-sm-4 img-avatar text-center">

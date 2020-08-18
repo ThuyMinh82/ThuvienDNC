@@ -14,12 +14,13 @@ class usersController extends Controller
     //
     public function getThem(){
         $users = users::all();
-    	return view('admin.users.themtaikhoan',['users'=>$users]);
+        return view('admin.users.themtaikhoan',['users'=>$users]);
     }
-    public function postThem(Request $Request){
-        $this -> validate ($Request,[
+    public function postThem(Request $request){
+        $this -> validate ($request,[
             'username'=>'required|min:3',
             'password'=>'required|min:3|max:32',
+            ''
         ],[
             'username.required'=>'Bạn chưa nhập Tên đăng nhập',
             'username.min'=>'Tên đăng nhập ít nhất 3 kí tự',
@@ -27,13 +28,19 @@ class usersController extends Controller
             'password.required'=>'Bạn chưa nhập Mật khẩu',
             'password.min'=>'Mật khẩu không được nhỏ hơn 3 ký tự',
             'password.max'=>'Mật khẩu không được lớn hơn 32 ký tự',
+            'passwordAgain.required'=>'Bạn chưa nhập lại mật khẩu',
+            'passwordAgain.same'=>'Mật khẩu nhập lại chưa khớp'
+
         ]);
 
         $users = new users;
-        $users->username = $Request->username;
-        $users->password = $Request->password;
+        $users->username = $request->username;
+        $users->password = bcrypt($request->password);
+        $users->status=1;
+        $users->usergroup_id = $request->usergroup_id;
+
         $users->save();
-        return view('admin/users/themtaikhoan')->with('thongbao', 'Thêm tài khoản thành công');
+        return redirect('admin/users/themtaikhoan')->with('thongbao', 'Thêm tài khoản thành công');
     }
 
     public function getThaydoi(){

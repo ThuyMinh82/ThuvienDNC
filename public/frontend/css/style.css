@@ -87,7 +87,7 @@
 }
 
 #carousel-body{
-    margin-top: 10px;
+    margin-top: 200px;
 }
 
 .duongvien{
@@ -104,6 +104,11 @@
 .text-center {
     text-align: center;
 }
+
+#hinh1{
+    width: 524px; eight: 200px;
+}
+
 
 .text-center nav ul{
     display: block;
@@ -275,3 +280,4 @@ h4.title-ls-news {
 #footer-slide .opa01 {  
     height: 180px;
 }
+
