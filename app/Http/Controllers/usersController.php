@@ -49,22 +49,8 @@ class usersController extends Controller
     }
 
     public function postThaydoi(Request $request, $id){
-        $this -> validate ($request,[
-            'username'=>'required|min:3',
-        ],[
-            'username.required'=>'Bạn chưa nhập Tên đăng nhập',
-            'username.min'=>'Tên đăng nhập ít nhất 3 kí tự',
-            'username.unique'=>'Tên đăng nhập đã tồn tại'
-        ]);
-
         $users = users::find($id);
-        $users->username = $request->username;
-        $users->status=1;
-        $users->usergroup_id = $request->usergroup_id;
-
-        if($request->changePassword == "on")
-        {
-             $this -> validate ($request,[
+        $this -> validate ($request,[
             'password'=>'required|min:3|max:32',
         ],[
             'password.required'=>'Bạn chưa nhập Mật khẩu',
@@ -74,8 +60,11 @@ class usersController extends Controller
             'passwordAgain.same'=>'Mật khẩu nhập lại chưa khớp'
 
         ]);
+
         $users->password =md5($request->password) ;
-        }
+        $users->username = $users->username;
+        $users->status=1;
+        $users->usergroup_id = $users->usergroup_id;
         $users->save();
         return redirect('admin/users/doimatkhau/'.$id)->with('thongbao', 'Bạn đã sửa thành công');
 
