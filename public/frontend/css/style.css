@@ -13,8 +13,7 @@
     margin-left: 1px;
     margin-right: 1px;
     vertical-align: center;
-    background-color:#D2EDFB;
-    background-image: linear-gradient(#D2EDFB,white);
+    
 }
 .banner logo{
     width: 75%;
@@ -22,10 +21,11 @@
     padding: 5px;
 }
 
-#color #logo{
-    width: 90%;
+#color{
     height: 110px;
     padding: 5px;
+    background-color:#D2EDFB;
+    background-image: linear-gradient(#D2EDFB,white);
 }
 
 .banner logo1{
@@ -41,50 +41,33 @@
     font-size: 20px;
 }
 
-#thongbao .panel-heading{
-    margin: 0px;
-    padding: 0px;
+.panel-heading{
+    margin: 2px 0;
+    padding:0;
     background: #43AAFE;
     border-radius: 5px;
+    height: 30px;
 }
 
-#thongbao .panel-heading h4{
-    height: 40px;
-    margin-top: 1px;
+.panel-heading h5{
     text-align: center;
-    line-height: 40px;
+    line-height: 30px;
     color: white;
 }
 
-#thongbao .panel-body{
-    list-style: none;
-    background: #F8FAF1;
-}
 
-#gioithieusach .panel-body{
+
+.panel-body{
     border: 0px; 
     background: #F8FAF1;
     margin: 0px;
+    padding: 10px;
 }
 
-#giomocua .panel-heading{
-    margin: 0px;
-    padding: 0px;
-    background: #43AAFE;
-    border-radius: 5px;
-}
 
-#giomocua .panel-heading h4{
-    height: 40px;
-    margin-top: 1px;
-    text-align: center;
-    line-height: 40px;
-    color: white;
-}
 
-#giomocua .panel-body{
-    background: #F8FAF1;
-}
+
+
 
 #carousel-body{
     margin-top: 10px;
@@ -274,4 +257,12 @@ h4.title-ls-news {
 
 #footer-slide .opa01 {  
     height: 180px;
+}
+
+.w-main {
+    width: 100%;
+}
+
+#center{
+    margin:0 20px;
 }

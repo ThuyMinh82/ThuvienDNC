@@ -35,7 +35,7 @@ class hinhanhController extends Controller
 
     public function getDanhSach()
     {
-        $hinhanh = hinhanh::orderBy('id','DESC')->paginate(5);
+        $hinhanh = hinhanh::orderBy('id','DESC')->paginate(2);
         return view('admin.hinhanh.danhsach',['hinhanh'=>$hinhanh]);
     }
 

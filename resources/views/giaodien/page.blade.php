@@ -6,9 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/style.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/styleGT.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/styleLH.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/styleTT.css')}}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
@@ -21,19 +18,22 @@
     
     <body> 
         <div class="container-fluid">
-            <div class="row" id="banner">
-                 <div class="col-xl-7 col-lg-7 col-md-8 col-sm-12" id="color">
-                    <a href="" class ="logo"><img src="{{asset('frontend/images/logo.png')}}" id="logo"></a>
+            <div class="row no-gutters">
+                <div class="col-xl-1"></div>
+                 <div class="col-xl-6 col-lg-7 col-md-8 col-sm-12" id="color" style="background-color:#D2EDFB; background-image: linear-gradient(#D2EDFB,white);">
+                    <a href="" class ="logo"><img style='width:80%' src="{{asset('frontend/images/logo.png')}}" id="logo"></a>
                 </div>
 
-                <div class="col-xl-5 col-lg-5 col-md-4 d-none d-sm-block d-sm-none d-md-block">
-                    <img src="{{asset('frontend/images/block-banner.png')}}" id="logo1">
+                <div class="col-xl-4 col-lg-5 col-md-4 d-none d-sm-block d-sm-none d-md-block" id="color" style="background-color:#D2EDFB; background-image: linear-gradient(#D2EDFB,white);">
+                    <img style="margin-left:85px;" src="{{asset('frontend/images/block-banner.png')}}" id="logo1" >
                 </div>
+                <div class="col-xl-1"></div>
             </div>
 
-            <div class="row">
-                <div class="col-xl-12 col-sm-12 padding-0">
-                    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+            <div class="row no-gutters">
+                <div class="col-xl-1"></div>
+                <div class="col-xl-10 col-sm-12 padding-0">
+                    <nav class="navbar navbar-dark py-0 bg-primary navbar-expand-lg py-md-0" style='font-size: 18px;'>
                         <a class="navbar-brand" href="" ><i class="fa fa-fw fa-home"></i></a>
 
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -95,6 +95,7 @@
                         </div>
                     </nav>
                 </div>
+                <div class="col-xl-1"></div>
             </div>
             @yield('content')
 

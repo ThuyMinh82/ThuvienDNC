@@ -6,7 +6,8 @@
 
 @section('content')
 <div class="row">
-    <div class="col-sm-8 col-md-pull-8 col-sm-8 col-xs-12">
+    <div class="col-xl-1"></div>
+    <div class="col-sm-8 col-md-pull-8 col-xl-7">
         <div class="noidung">
             <p class="tieude">
                 <strong>GIỚI THIỆU CHUNG THƯ VIỆN ĐẠI HỌC NAM CẦN THƠ</strong>
@@ -101,7 +102,6 @@
             <p>(Nguồn <a href="http://thuvien.nctu.edu.vn/index.php/news/gioi-thieu">http://thuvien.nctu.edu.vn/index.php/news/gioi-thieu</a>)</p>
         </div>
     </div>
-    
     @include('giaodien.bodyright')
 </div>
 @endsection

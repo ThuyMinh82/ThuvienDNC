@@ -69,7 +69,7 @@ class chudebvController extends Controller
     
     public function getDanhSach()
     {
-        $chudebv = chudebv::orderBy('id','DESC')->paginate(5);
+        $chudebv = chudebv::orderBy('id','DESC')->paginate(2);
         return view('admin.chudebv.danhsach',['chudebv'=>$chudebv]);
     }
 
