@@ -61,12 +61,13 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::group(['prefix'=>'users'],function(){
 		Route::get('themtaikhoan','usersController@getThem');
 		Route::post('themtaikhoan','usersController@postThem');
-
-		Route::get('doimatkhau','usersController@getThaydoi');
+		Route::get('doimatkhau/{id}','usersController@getThaydoi');
+		Route::post('doimatkhau/{id}','usersController@postThaydoi');
 
 		Route::get('xoataikhoan','usersController@getXoa');
 
-		Route::get('capquyen','usersController@getQuyen');
+		Route::get('capquyen/{id}','usersController@getQuyen');
+		Route::post('capquyen/{id}','usersController@postQuyen');
 
 		Route::get('danhsach','usersController@getDanhSach');
 
