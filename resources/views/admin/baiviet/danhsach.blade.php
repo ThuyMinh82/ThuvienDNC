@@ -52,15 +52,15 @@
               <a href="admin/baiviet/suabv/{{$bv->id}}"><i class='fas fa-pen-alt'style='margin: 5px;color:black'></i>Sửa</a>
               <a href="admin/baiviet/xoabv/{{$bv->id}}"><i class='fas fa-trash'style='margin: 5px;color: red'></i>Xóa</a></td>
             @endforeach
-            </tr>
+              </tr>
           </tbody>
         </table>
           <nav aria-label="Page navigation example" style='float: right;'>
               {{ $baiviet->links() }}
           </nav>
-        </div>
     </div>
-  </div>
+    <div class="col-md-1"></div>
 </div>
+
 
 @endsection

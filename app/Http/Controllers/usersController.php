@@ -35,29 +35,52 @@ class usersController extends Controller
 
         $users = new users;
         $users->username = $request->username;
-        $users->password = bcrypt($request->password);
+        $users->password = md5($request->password);
         $users->status=1;
         $users->usergroup_id = $request->usergroup_id;
 
         $users->save();
-        return redirect('admin/users/themtaikhoan')->with('thongbao', 'Thêm tài khoản thành công');
+        return redirect('admin/users/danhsach')->with('thongbao', 'Thêm tài khoản thành công');
     }
 
-    public function getThaydoi(){
-        $users = users::all();
-    	return view('admin.users.doimatkhau',['users'=>$users]);
+    public function getThaydoi($id){
+        $users = users::find($id);
+        return view('admin.users.doimatkhau',['users'=>$users]);
+    }
+
+    public function postThaydoi(Request $request, $id){
+        $users = users::find($id);
+        $this -> validate ($request,[
+            'password'=>'required|min:3|max:32',
+        ],[
+            'password.required'=>'Bạn chưa nhập Mật khẩu',
+            'password.min'=>'Mật khẩu không được nhỏ hơn 3 ký tự',
+            'password.max'=>'Mật khẩu không được lớn hơn 32 ký tự',
+            'passwordAgain.required'=>'Bạn chưa nhập lại mật khẩu',
+            'passwordAgain.same'=>'Mật khẩu nhập lại chưa khớp'
+
+        ]);
+
+        $users->password =md5($request->password) ;
+        $users->username = $users->username;
+        $users->status=1;
+        $users->usergroup_id = $users->usergroup_id;
+        $users->save();
+        return redirect('admin/users/doimatkhau/'.$id)->with('thongbao', 'Bạn đã sửa thành công');
+
     }
 
     public function getXoa(){
     	return view('admin.users.xoataikhoan');
     }
 
-    public function getQuyen(){
+    public function getQuyen($id){
     	return view('admin.users.capquyen');
     }
+    
     public function getDanhSach()
     {
-        $users = users::orderBy('id','DESC')->paginate(5);
+        $users = users::orderBy('id','DESC')->paginate(2);
         return view('admin.users.danhsach',['users'=>$users]);
     }
     public function getIndex()

@@ -8,24 +8,65 @@
 <div class="row no-gutters">
     <div class="col-md-3"></div>
     <div class="col-md-6 col-sm-12 padding-0">
-        <h4>CẤP QUYỀN TÀI KHOẢN</h4>       
-        <table class="table table-hover">
-            <tbody>
-            <tr>
-                <td id='bold3'>Tài khoản:</td>
-                <td>admin1</td>
-            </tr>
-            <tr>
-                <td id='bold3'>Quyền:</td>
-                <td>
-                    <select class="form-control" id="usergroup">
-                    <option>Quyền Admin</option>
-                    <option>Quyền User</option>>
-                    </select>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+        <div style="padding-bottom: 120px">
+            @if(count($errors) > 0)
+                <div class="alert alert-danger">
+                    @foreach($errors->all() as $err)
+                        {{$err}}<br>
+                    @endforeach
+                </div>
+            @endif
+
+            @if(session('thongbao'))
+                <div class="alert alert-success">
+                    {{session('thongbao')}}
+                </div>
+            @endif
+            <div class="row no-gutters">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <h1 style="text-align: center;">Cấp quyền</h1>
+                    <form action="admin/users/capquyen/{{$users->id}}" method="POST">
+                        <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input class="form-control" name="username" placeholder="Nhập username" value = "{{$users->username}}" readonly="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="changePassword" name="changePassword">
+                            <label>Đổi mật khẩu</label>
+                            <input type="password" class="form-control password" name="password" placeholder="Nhập mật khẩu mới"
+                            disabled="" />
+                        </div>
+                        <div class="form-group">
+                            <label>Nhập lại mật khẩu</label>
+                            <input type="password" class="form-control password" name="passwordAgain" placeholder="Nhập lại mật khẩu" disabled="" />
+                        </div>
+                        <div class="form-group" >
+                            <label>Quyền người dùng</label>
+                            <form action="admin/users/doimatkhau" method="POST">
+                            <input type="hidden" name="_token" value="{{csrf_token()}} "/>
+                            <label class="radio-inline">
+                            <input name="usergroup_id" value="1" 
+                            @if($users->usergroup_id == 1)
+                            {{"checked"}}
+                            @endif
+                              type="radio" >Admin 
+                            </label>
+                            <label class="radio-inline">
+                            <input name="usergroup_id" value="2" 
+                            @if($users->usergroup_id == 2)
+                            {{"checked"}}
+                            @endif
+                             type="radio" >Thành viên
+                            </label>
+
+                        </div>
+                        <button type="submit" class="btn btn-primary center" style="margin-top: 30px;">Sửa</button>
+                    </form>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
     </div>
     <div class="col-md-3"></div> 
 </div>

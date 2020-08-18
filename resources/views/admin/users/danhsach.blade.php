@@ -30,14 +30,17 @@
                     @foreach($users as $us)
                     <tr class="odd gradeX" align="center">
                         <td>{{$us->id}}</td>
-                        <td>{{$us->username}}</td>
+                        <td><a href="admin/baiviet/xemthongtin/{{$us->id}}">{{$us->username}}</td>
                         <td>
                             {{$us->usergroup->phanquyen->ten_pq}}
                         </td>
                         <td>
                             {{$us->usergroup->name_group}}
                         </td>
-                        <td class="center"><i class="fas fa-trash"></i><a href="admin/users/xoataikhoan/{{$us->id}}">Xóa</a></td>
+                        <td style=' width: 150px;'>
+                          <a href="admin/users/doimatkhau/{{$us->id}}"><i class='fas fa-pen-alt'style='margin: 5px;color:black'></i>Sửa</a>
+                          <a href="admin/users/xoataikhoan/{{$us->id}}"><i class='fas fa-trash'style='margin: 5px;color: red'></i>Xóa</a>
+                        </td>                        
                     </tr>
                     @endforeach
                 </tbody>

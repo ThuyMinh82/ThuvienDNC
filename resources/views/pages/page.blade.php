@@ -130,6 +130,7 @@
             </div>
             <div class="col-xl-1"></div>
         </div> 
-        @yield('js') 
+        @yield('js')
+        @yield('script') 
     </body>
 </html>
