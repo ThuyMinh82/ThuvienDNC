@@ -49,7 +49,7 @@
                             <input name="usergroup_id" value="1" checked= ""  type="radio" >Admin
                         </label>
                             <label class="radio-inline">
-                            <input name="usergroup_id" value="2" checked= ""  type="radio" >Thường
+                            <input name="usergroup_id" value="2" checked= ""  type="radio" >Thành viên
                         </label>
 
                         </div>

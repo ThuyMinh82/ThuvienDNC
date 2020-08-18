@@ -35,7 +35,7 @@ class usersController extends Controller
 
         $users = new users;
         $users->username = $request->username;
-        $users->password = $request->password;
+        $users->password = md5($request->password);
         $users->status=1;
         $users->usergroup_id = $request->usergroup_id;
 
@@ -91,7 +91,7 @@ class usersController extends Controller
     
     public function getDanhSach()
     {
-        $users = users::orderBy('id','DESC')->paginate(5);
+        $users = users::orderBy('id','DESC')->paginate(2);
         return view('admin.users.danhsach',['users'=>$users]);
     }
     public function getIndex()

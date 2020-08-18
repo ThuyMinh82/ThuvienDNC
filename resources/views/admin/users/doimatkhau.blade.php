@@ -1,7 +1,7 @@
 @extends('pages.page')
 
 @section('header')
-<title>Sửa tài khoản</title>
+<title>Đổi mật khẩu</title>
 @endsection
 
 @section('content')
@@ -26,12 +26,12 @@
             <div class="row no-gutters">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
-                    <h1>Đổi mật khẩu</h1>
+                    <h1 style="text-align: center;">Đổi mật khẩu</h1>
                     <form action="admin/users/doimatkhau/{{$users->id}}" method="POST">
                         <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                         <div class="form-group">
                             <label>Username</label>
-                            <input class="form-control" name="username" placeholder="Nhập username" value = "{{$users->username}}"/>
+                            <input class="form-control" name="username" placeholder="Nhập username" value = "{{$users->username}}" readonly="" />
                         </div>
                         <div class="form-group">
                             <input type="checkbox" id="changePassword" name="changePassword">
@@ -59,7 +59,7 @@
                             @if($users->usergroup_id == 2)
                             {{"checked"}}
                             @endif
-                             type="radio" >Thường 
+                             type="radio" >Thành viên
                             </label>
 
                         </div>
