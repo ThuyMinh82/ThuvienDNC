@@ -6,10 +6,11 @@
 
 @section('content')
 <div class="row">
-        <div class="col-sm-8 col-md-pull-8 col-sm-8 col-xs-12">
+        <div class='col-xl-1'></div>
+        <div class="col-sm-12 col-md-pull-8 col-sm-8 col-xl-7">
             <div class="row w-main">
                 <div class="col-md-4 img-avatar text-center">
-                    <a href="http://thuvien.nctu.edu.vn/index.php/news/tam-phap-nguyen-ly-can-bang"><img src="http://thuvien.nctu.edu.vn/upload/opac-image13.png" id="hinh">
+                    <a href="http://thuvien.nctu.edu.vn/index.php/news/tam-phap-nguyen-ly-can-bang"><img style="width: 190px; height: 120px;" src="http://thuvien.nctu.edu.vn/upload/opac-image13.png" id="hinh">
                     </a>
                 </div>
 
@@ -28,7 +29,7 @@
 
             <div class="row w-main">
                 <div class="col-sm-4 img-avatar text-center">
-                    <a href="http://thuvien.nctu.edu.vn/index.php/news/danh-sach-sinh-vien-tre-han-tra-sach-tinh-den-30062020"><img src="http://thuvien.nctu.edu.vn/upload/gocgtsmoi-bia.jpg" id="hinh">
+                    <a href="http://thuvien.nctu.edu.vn/index.php/news/danh-sach-sinh-vien-tre-han-tra-sach-tinh-den-30062020"><img style="width: 190px; height: 120px;" src="http://thuvien.nctu.edu.vn/upload/gocgtsmoi-bia.jpg" id="hinh">
                     </a>
                 </div>
 
@@ -47,7 +48,7 @@
 
             <div class="row w-main">
                 <div class="col-sm-4 img-avatar text-center">
-                    <a href="http://thuvien.nctu.edu.vn/index.php/news/tam-phap-ung-dung"><img src="http://thuvien.nctu.edu.vn/upload/tamphapungdung-bia.png" id="hinh"></a>
+                    <a href="http://thuvien.nctu.edu.vn/index.php/news/tam-phap-ung-dung"><img style="width: 190px; height: 120px;" src="http://thuvien.nctu.edu.vn/upload/tamphapungdung-bia.png" id="hinh"></a>
                 </div>
 
                 <div class="col-sm-8 w-main-right">
@@ -65,7 +66,7 @@
 
             <div class="row w-main">
                 <div class="col-sm-4 img-avatar text-center">
-                    <a href="http://thuvien.nctu.edu.vn/index.php/news/viet-nam-non-song-gam-voc-mien-bac-trung-nam"><img src="http://thuvien.nctu.edu.vn/upload/vnnsgvbia1.jpg" id="hinh">
+                    <a href="http://thuvien.nctu.edu.vn/index.php/news/viet-nam-non-song-gam-voc-mien-bac-trung-nam"><img style="width: 190px; height: 120px;" src="http://thuvien.nctu.edu.vn/upload/vnnsgvbia1.jpg" id="hinh">
                     </a>
                 </div>
 
@@ -84,7 +85,7 @@
             
             <div class="row w-main">
                 <div class="col-sm-4 img-avatar text-center">
-                    <a href="http://thuvien.nctu.edu.vn/index.php/news/goc-gioi-thieu-sach-moi-thu-vien-dnc"><img src="http://thuvien.nctu.edu.vn/upload/gocgtsmoi-bia.jpg" id="hinh"></a>
+                    <a href="http://thuvien.nctu.edu.vn/index.php/news/goc-gioi-thieu-sach-moi-thu-vien-dnc"><img style="width: 190px; height: 120px;" src="http://thuvien.nctu.edu.vn/upload/gocgtsmoi-bia.jpg" id="hinh"></a>
                 </div>
 
                 <div class="col-sm-8 w-main-right">
@@ -102,7 +103,7 @@
 
             <div class="row w-main">
                 <div class="col-sm-4 img-avatar text-center">
-                    <a href="http://thuvien.nctu.edu.vn/index.php/news/giao-trinh-xac-suat-va-thong-ke"><img src="http://thuvien.nctu.edu.vn/upload/giaotrinhxacsuatvathongke-bia.png" id="hinh"></a>
+                    <a href="http://thuvien.nctu.edu.vn/index.php/news/giao-trinh-xac-suat-va-thong-ke"><img style="width: 190px; height: 120px;" src="http://thuvien.nctu.edu.vn/upload/giaotrinhxacsuatvathongke-bia.png" id="hinh"></a>
                 </div>
                 
                 <div class="col-sm-8 w-main-right">
@@ -120,7 +121,7 @@
 
             <div class="row w-main">
                 <div class="col-sm-4 img-avatar text-center">
-                    <a href="http://thuvien.nctu.edu.vn/index.php/news/sach-tham-khao-bai-tap-va-bai-giai-ke-toan-tai-chinh"><img src="http://thuvien.nctu.edu.vn/upload/baigiangvabaitapkttc-bia.png" id="hinh"></a>
+                    <a href="http://thuvien.nctu.edu.vn/index.php/news/sach-tham-khao-bai-tap-va-bai-giai-ke-toan-tai-chinh"><img style="width: 190px; height: 120px;" src="http://thuvien.nctu.edu.vn/upload/baigiangvabaitapkttc-bia.png" id="hinh"></a>
                 </div>
                 
                 <div class="col-sm-8 w-main-right">
@@ -138,7 +139,7 @@
 
             <div class="row w-main">
                 <div class="col-sm-4 img-avatar text-center">
-                    <a href="http://thuvien.nctu.edu.vn/index.php/news/nghe-thuat-tro-chuyen-thay-doi-cuoc-doi-nho-giao-tiep-tu-tin"><img src="http://thuvien.nctu.edu.vn/upload/nghethuattrochuyen-bia.png" id="hinh"></a>
+                    <a href="http://thuvien.nctu.edu.vn/index.php/news/nghe-thuat-tro-chuyen-thay-doi-cuoc-doi-nho-giao-tiep-tu-tin"><img style="width: 190px; height: 120px;" src="http://thuvien.nctu.edu.vn/upload/nghethuattrochuyen-bia.png" id="hinh"></a>
                 </div>
                 
                 <div class="col-sm-8 w-main-right">
@@ -156,7 +157,7 @@
         
             <div class="row w-main">
                 <div class="col-sm-4 img-avatar text-center">
-                    <a href="http://thuvien.nctu.edu.vn/index.php/news/luat-doanh-nghiep-viet-nam-tinh-huong-dan-giai-binh-luan"><img src="http://thuvien.nctu.edu.vn/upload/opac-image12.png" id="hinh"></a>
+                    <a href="http://thuvien.nctu.edu.vn/index.php/news/luat-doanh-nghiep-viet-nam-tinh-huong-dan-giai-binh-luan"><img style="width: 190px; height: 120px;" src="http://thuvien.nctu.edu.vn/upload/opac-image12.png" id="hinh"></a>
                 </div>
                 
                 <div class="col-sm-8 w-main-right">
@@ -174,7 +175,7 @@
 
             <div class="row w-main">
                 <div class="col-sm-4 img-avatar text-center">
-                    <a href="http://thuvien.nctu.edu.vn/index.php/news/chum-anh-ve-thu-vien-dai-hoc-nam-can-tho"><img src="http://thuvien.nctu.edu.vn/upload/biadnc1.jpg" id="hinh"></a>
+                    <a href="http://thuvien.nctu.edu.vn/index.php/news/chum-anh-ve-thu-vien-dai-hoc-nam-can-tho"><img style="width: 190px; height: 120px;" src="http://thuvien.nctu.edu.vn/upload/biadnc1.jpg" id="hinh"></a>
                 </div>
                 
                 <div class="col-sm-8 w-main-right">
