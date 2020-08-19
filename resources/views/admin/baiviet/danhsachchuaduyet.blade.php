@@ -1,7 +1,7 @@
 @extends('pages.page')
 
 @section('header')
-<title>Duyệt bài viết</title>
+<title>Danh Sách Bài Viết Chưa Duyệt</title>
 @endsection
 
 @section('content')

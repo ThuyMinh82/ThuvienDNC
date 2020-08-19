@@ -8,7 +8,7 @@
 <div class="row no-gutters">
   <div class="col-md-3"></div>
   <div class="col-md-6 col-sm-12 padding-0">
-    <h4>THÔNG TIN NGƯỜI DÙNG</h4> 
+    <h4>Thông tin cá nhân</h4> 
     @foreach($profileuser as $pro)
     <table class="table table-hover">
       <tbody>

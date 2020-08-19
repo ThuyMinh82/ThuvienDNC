@@ -23,7 +23,6 @@
     
 
 </head>
-<!-- style="background-color: Lavender" -->
 <body >
     <div class="container-fluid">
         <div class="row">
