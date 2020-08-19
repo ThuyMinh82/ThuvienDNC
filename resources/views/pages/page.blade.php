@@ -38,6 +38,7 @@
             <div class="row no-gutters">
                 <div class="col-xl-1"></div>
                 <div class="col-xl-10 col-sm-12 padding-0">
+                    @if($ten_pq=='admin')
                     <nav class="navbar navbar-expand-md bg-primary navbar-dark">
                         <!-- Brand -->
                         <a class="navbar-brand" href="/ThuvienDNC/public/trangchu"><i class="fa fa-fw fa-home"></i>Home</a>
@@ -67,7 +68,7 @@
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="admin/baiviet/thembv">Thêm Bài Viết</a>
                                         <a class="dropdown-item" href="admin/baiviet/danhsach">Danh sách Bài Viết</a>
-                                        <a class="dropdown-item" href="admin/baiviet/danhsachchuaduyet">Duyệt Bài Viết</a>
+                                        <a class="dropdown-item" href="admin/baiviet/danhsachchuaduyet">Danh sách chưa duyệt</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -101,6 +102,71 @@
                             </ul>
                         </div>
                     </nav>
+                    @else
+                    <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+                        <!-- Brand -->
+                        <a class="navbar-brand" href="/ThuvienDNC/public/trangchu"><i class="fa fa-fw fa-home"></i>Home</a>
+                    
+                        <!-- Toggler/collapsibe Button -->
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                      
+                        <!-- Navbar links -->
+                        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle disabled" href="#" id="navbardrop" data-toggle="dropdown">
+                                        <i class="fa fa-fw fa-user"></i>Tài Khoản
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="admin/users/themtaikhoan">Thêm Tài Khoản</a>
+                                        <a class="dropdown-item" href="admin/users/capquyen">Cấp Quyền</a>
+                                        <a class="dropdown-item" href="admin/users/danhsach">Danh sách tài khoản</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                        <i class="fa fa-fw fa-pen"></i>Bài Viết
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="admin/baiviet/thembv">Thêm Bài Viết</a>
+                                        <a class="dropdown-item" href="admin/baiviet/danhsach">Danh sách Bài Viết</a>
+                                        <a class="dropdown-item" href="admin/baiviet/danhsachchuaduyet">Danh sách chưa duyệt</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle disabled" href="#" id="navbardrop" data-toggle="dropdown">
+                                        <i class="fa fa-fw fa-book"></i>Chủ Đề
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="admin/chudebv/themchude">Thêm Chủ Đề</a>
+                                        <a class="dropdown-item" href="admin/chudebv/danhsach">Danh sách chủ đề</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                        <i class="fa fa-fw fa-image"></i>Hình Ảnh
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="admin/hinhanh/themhinhanh">Thêm Ảnh</a>
+                                        <a class="dropdown-item" href="admin/hinhanh/danhsach">Danh sách hình ảnh</a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav ml-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">{{ Auth::user()->username }}</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="admin/users/doimatkhau">Đổi mật khẩu</a>
+                                        <a class="dropdown-item" href="admin/profileuser/prouser">Xem thông tin</a>
+                                        <a class="dropdown-item" href="logout">Đăng xuất</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    @endif
                 </div>
                 <div class="col-xl-1"></div>
             </div>

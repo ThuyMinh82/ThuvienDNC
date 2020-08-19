@@ -49,8 +49,12 @@
               <td>{{$bv->created_at}}</td>
               <td><a href="{{$bv->anhdaidien}}"> <img style='width:80px; height:60px' src="{{$bv->anhdaidien}}"></a></td>                
               <td style=' width: 150px;'>
-              <a href="admin/baiviet/duyetbv/{{$bv->id}}"><i class='fas fa-check'style='margin: 5px;color:black'></i>Duyệt</a>
-              <a href="admin/baiviet/xoabv/{{$bv->id}}"><i class='fas fa-trash'style='margin: 5px;color: red'></i>Xóa</a></td>
+              @if($ten_pq=='admin')
+                <a href="admin/baiviet/duyetbv/{{$bv->id}}"><i class='fas fa-check'style='margin: 5px;color:black'></i>Duyệt</a>
+              @else
+                <a href="admin/baiviet/suabv/{{$bv->id}}"><i class='fas fa-pen-alt'style='margin: 5px;color:black'></i>Sửa</a>
+              @endif
+                <a href="admin/baiviet/xoabv/{{$bv->id}}"><i class='fas fa-trash'style='margin: 5px;color: red'></i>Xóa</a></td>
             @endforeach
             </tr>
           </tbody>

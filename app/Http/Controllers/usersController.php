@@ -7,14 +7,22 @@ use App\users;
 use App\phanquyen;
 use App\usergroup;
 use DB;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 session_start();
 class usersController extends Controller
 {
     //
     public function getThem(){
         $users = users::all();
-        return view('admin.users.themtaikhoan',['users'=>$users]);
+
+        #lay tên phân quyền
+        $usergroup_id = Auth::user()->usergroup_id;
+        $usergroup = usergroup::where('id',$usergroup_id)->first();
+        $pq_id = $usergroup->pq_id;
+        $phanquyen = phanquyen::where('id',$pq_id)->first();
+        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+
+        return view('admin.users.themtaikhoan',$ten_pq,['users'=>$users]);
     }
     public function postThem(Request $request){
         $this -> validate ($request,[
@@ -45,7 +53,15 @@ class usersController extends Controller
 
     public function getThaydoi($id){
         $users = users::find($id);
-        return view('admin.users.doimatkhau',['users'=>$users]);
+
+        #lay tên phân quyền
+        $usergroup_id = Auth::user()->usergroup_id;
+        $usergroup = usergroup::where('id',$usergroup_id)->first();
+        $pq_id = $usergroup->pq_id;
+        $phanquyen = phanquyen::where('id',$pq_id)->first();
+        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+
+        return view('admin.users.doimatkhau',$ten_pq,['users'=>$users]);
     }
 
     public function postThaydoi(Request $request, $id){
@@ -85,6 +101,16 @@ class usersController extends Controller
     {
         $users = users::orderBy('id','DESC')->paginate(5);
         return view('admin.users.danhsach',['users'=>$users]);
+        $users = users::orderBy('id','DESC')->paginate(2);
+
+        #lay tên phân quyền
+        $usergroup_id = Auth::user()->usergroup_id;
+        $usergroup = usergroup::where('id',$usergroup_id)->first();
+        $pq_id = $usergroup->pq_id;
+        $phanquyen = phanquyen::where('id',$pq_id)->first();
+        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+
+        return view('admin.users.danhsach',$ten_pq,['users'=>$users,'ten_pq'=>$ten_pq]);
     }
     public function getIndex()
     {
@@ -98,6 +124,23 @@ class usersController extends Controller
     public function postloginAD(Request $Request){
         $username = $Request->username;
         $password = md5($Request->password);
+        
+        $this -> validate ($Request,[
+             'username'=>'required|min:3',
+            'password'=>'required|min:3|max:32',
+            ''
+        ],[
+            'username.required'=>'Bạn chưa nhập Tên đăng nhập',
+            'username.min'=>'Tên đăng nhập ít nhất 3 kí tự',
+            'username.unique'=>'Tên đăng nhập đã tồn tại',
+            'password.required'=>'Bạn chưa nhập Mật khẩu',
+            'password.min'=>'Mật khẩu không được nhỏ hơn 3 ký tự',
+            'password.max'=>'Mật khẩu không được lớn hơn 32 ký tự',
+            'passwordAgain.required'=>'Bạn chưa nhập lại mật khẩu',
+            'passwordAgain.same'=>'Mật khẩu nhập lại chưa khớp'
+
+        ]);
+
         
         if(Auth::attempt(['username'=>$username,'password'=>$password]))
         {
