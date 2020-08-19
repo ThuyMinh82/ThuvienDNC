@@ -120,6 +120,23 @@ class usersController extends Controller
         $username = $Request->username;
         $password = md5($Request->password);
         
+        $this -> validate ($Request,[
+             'username'=>'required|min:3',
+            'password'=>'required|min:3|max:32',
+            ''
+        ],[
+            'username.required'=>'Bạn chưa nhập Tên đăng nhập',
+            'username.min'=>'Tên đăng nhập ít nhất 3 kí tự',
+            'username.unique'=>'Tên đăng nhập đã tồn tại',
+            'password.required'=>'Bạn chưa nhập Mật khẩu',
+            'password.min'=>'Mật khẩu không được nhỏ hơn 3 ký tự',
+            'password.max'=>'Mật khẩu không được lớn hơn 32 ký tự',
+            'passwordAgain.required'=>'Bạn chưa nhập lại mật khẩu',
+            'passwordAgain.same'=>'Mật khẩu nhập lại chưa khớp'
+
+        ]);
+
+        
         if(Auth::attempt(['username'=>$username,'password'=>$password]))
         {
             return redirect('trangchu');
