@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\profileuser;
 use App\users;
 use DB;
+use App\phanquyen;
+use App\usergroup;
 use Illuminate\Support\Facades\Auth;
 class profileuserController extends Controller
 {
@@ -13,15 +15,31 @@ class profileuserController extends Controller
     public function getIndex(Request $Request)
     {
         $id = Auth::user()->id;
-        $profileuser = DB::table('profileuser')->where('users_id',$id)->get();
-        return view('admin.profileuser.prouser',['profileuser'=>$profileuser]);
+        $profileuser = profileuser::where('users_id',$id)->get();
+
+        #lay tên phân quyền
+        $usergroup_id = Auth::user()->usergroup_id;
+        $usergroup = usergroup::where('id',$usergroup_id)->first();
+        $pq_id = $usergroup->pq_id;
+        $phanquyen = phanquyen::where('id',$pq_id)->first();
+        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+
+        return view('admin.profileuser.prouser',$ten_pq,['profileuser'=>$profileuser]);
     }
 
     public function getThaydoi($id)
     {
     	$users = users::all();
         $profileuser = profileuser::find($id);
-        return view('admin.profileuser.thaydoi',['profileuser'=>$profileuser,'users'=>$users]);
+
+        #lay tên phân quyền
+        $usergroup_id = Auth::user()->usergroup_id;
+        $usergroup = usergroup::where('id',$usergroup_id)->first();
+        $pq_id = $usergroup->pq_id;
+        $phanquyen = phanquyen::where('id',$pq_id)->first();
+        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+
+        return view('admin.profileuser.thaydoi',$ten_pq,['profileuser'=>$profileuser,'users'=>$users]);
     }
     public function postThaydoi(Request $Request,$id)
     {

@@ -3,14 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use App\phanquyen;
+use App\usergroup;
 use App\hinhanh;
 class hinhanhController extends Controller
 {
     //
     public function getThem(){
-    	$hinhanh = hinhanh::all();
-    	return view('admin.hinhanh.themhinhanh',['hinhanh'=>$hinhanh]);
+        $hinhanh = hinhanh::all();
+        
+        #lay tên phân quyền
+        $usergroup_id = Auth::user()->usergroup_id;
+        $usergroup = usergroup::where('id',$usergroup_id)->first();
+        $pq_id = $usergroup->pq_id;
+        $phanquyen = phanquyen::where('id',$pq_id)->first();
+        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+
+    	return view('admin.hinhanh.themhinhanh',$ten_pq,['hinhanh'=>$hinhanh]);
     }
 
     public function postThem(Request $request)
@@ -36,7 +46,15 @@ class hinhanhController extends Controller
     public function getDanhSach()
     {
         $hinhanh = hinhanh::orderBy('id','DESC')->paginate(2);
-        return view('admin.hinhanh.danhsach',['hinhanh'=>$hinhanh]);
+
+        #lay tên phân quyền
+        $usergroup_id = Auth::user()->usergroup_id;
+        $usergroup = usergroup::where('id',$usergroup_id)->first();
+        $pq_id = $usergroup->pq_id;
+        $phanquyen = phanquyen::where('id',$pq_id)->first();
+        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+
+        return view('admin.hinhanh.danhsach',$ten_pq,['hinhanh'=>$hinhanh]);
     }
 
     public function getXoa($id){
@@ -48,7 +66,15 @@ class hinhanhController extends Controller
     public function getSua($id)
     {
         $hinhanh = hinhanh::find($id);
-        return view('admin.hinhanh.suahinhanh',['hinhanh'=>$hinhanh]);
+
+        #lay tên phân quyền
+        $usergroup_id = Auth::user()->usergroup_id;
+        $usergroup = usergroup::where('id',$usergroup_id)->first();
+        $pq_id = $usergroup->pq_id;
+        $phanquyen = phanquyen::where('id',$pq_id)->first();
+        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+
+        return view('admin.hinhanh.suahinhanh',$ten_pq,['hinhanh'=>$hinhanh]);
     }
 
     public function postSua(Request $request,$id)

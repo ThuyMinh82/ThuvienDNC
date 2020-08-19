@@ -7,14 +7,22 @@ use App\users;
 use App\phanquyen;
 use App\usergroup;
 use DB;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 session_start();
 class usersController extends Controller
 {
     //
     public function getThem(){
         $users = users::all();
-        return view('admin.users.themtaikhoan',['users'=>$users]);
+
+        #lay tên phân quyền
+        $usergroup_id = Auth::user()->usergroup_id;
+        $usergroup = usergroup::where('id',$usergroup_id)->first();
+        $pq_id = $usergroup->pq_id;
+        $phanquyen = phanquyen::where('id',$pq_id)->first();
+        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+
+        return view('admin.users.themtaikhoan',$ten_pq,['users'=>$users]);
     }
     public function postThem(Request $request){
         $this -> validate ($request,[
@@ -45,7 +53,15 @@ class usersController extends Controller
 
     public function getThaydoi($id){
         $users = users::find($id);
-        return view('admin.users.doimatkhau',['users'=>$users]);
+
+        #lay tên phân quyền
+        $usergroup_id = Auth::user()->usergroup_id;
+        $usergroup = usergroup::where('id',$usergroup_id)->first();
+        $pq_id = $usergroup->pq_id;
+        $phanquyen = phanquyen::where('id',$pq_id)->first();
+        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+
+        return view('admin.users.doimatkhau',$ten_pq,['users'=>$users]);
     }
 
     public function postThaydoi(Request $request, $id){
@@ -81,7 +97,15 @@ class usersController extends Controller
     public function getDanhSach()
     {
         $users = users::orderBy('id','DESC')->paginate(2);
-        return view('admin.users.danhsach',['users'=>$users]);
+
+        #lay tên phân quyền
+        $usergroup_id = Auth::user()->usergroup_id;
+        $usergroup = usergroup::where('id',$usergroup_id)->first();
+        $pq_id = $usergroup->pq_id;
+        $phanquyen = phanquyen::where('id',$pq_id)->first();
+        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+
+        return view('admin.users.danhsach',$ten_pq,['users'=>$users,'ten_pq'=>$ten_pq]);
     }
     public function getIndex()
     {
@@ -98,11 +122,7 @@ class usersController extends Controller
         
         if(Auth::attempt(['username'=>$username,'password'=>$password]))
         {
-            /*$user_id = Auth::user()->id;
-            $usergroup_id = DB::table('users')->where('id',$user_id)->usergroup_id->get();
-            $pq_id = DB::table('usergroup')->where('id',$usergroup_id)->pq_id->get();
-            $ten_pq['ten_pq'] = DB::table('phanquyen')->where('id',$pq_id)->ten_pq->get();*/
-            return view('pages.index');
+            return redirect('trangchu');
         }
         else
         {

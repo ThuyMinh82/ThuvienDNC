@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use App\phanquyen;
+use App\usergroup;
 use App\chudebv;
 class chudebvController extends Controller
 {
@@ -11,7 +13,15 @@ class chudebvController extends Controller
     public function getSua($id)
     {
         $chudebv = chudebv::find($id);
-        return view('admin.chudebv.suachude',['chudebv'=>$chudebv]);
+
+        #lay tên phân quyền
+        $usergroup_id = Auth::user()->usergroup_id;
+        $usergroup = usergroup::where('id',$usergroup_id)->first();
+        $pq_id = $usergroup->pq_id;
+        $phanquyen = phanquyen::where('id',$pq_id)->first();
+        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+
+        return view('admin.chudebv.suachude',$ten_pq,['chudebv'=>$chudebv]);
     }
 
     public function postSua(Request $request,$id)
@@ -43,8 +53,16 @@ class chudebvController extends Controller
         return redirect('admin/chudebv/danhsach')->with('thongbao','Bạn đã xóa thành công');
     }
     public function getThem(){
-    	$chudebv = chudebv::all();
-    	return view('admin.chudebv.themchude',['chudebv'=>$chudebv]);
+        $chudebv = chudebv::all();
+        
+        #lay tên phân quyền
+        $usergroup_id = Auth::user()->usergroup_id;
+        $usergroup = usergroup::where('id',$usergroup_id)->first();
+        $pq_id = $usergroup->pq_id;
+        $phanquyen = phanquyen::where('id',$pq_id)->first();
+        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+
+    	return view('admin.chudebv.themchude',$ten_pq,['chudebv'=>$chudebv]);
     }
 
     public function postThem(Request $request)
@@ -70,7 +88,15 @@ class chudebvController extends Controller
     public function getDanhSach()
     {
         $chudebv = chudebv::orderBy('id','DESC')->paginate(2);
-        return view('admin.chudebv.danhsach',['chudebv'=>$chudebv]);
+
+        #lay tên phân quyền
+        $usergroup_id = Auth::user()->usergroup_id;
+        $usergroup = usergroup::where('id',$usergroup_id)->first();
+        $pq_id = $usergroup->pq_id;
+        $phanquyen = phanquyen::where('id',$pq_id)->first();
+        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+
+        return view('admin.chudebv.danhsach',$ten_pq,['chudebv'=>$chudebv]);
     }
 
 
