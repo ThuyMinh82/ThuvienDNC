@@ -1,7 +1,7 @@
 @extends('pages.page')
 
 @section('header')
-<title>Thêm tài khoản</title>
+<title>Danh sách tài khoản</title>
 @endsection
 
 @section('content')

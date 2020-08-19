@@ -70,8 +70,11 @@ class usersController extends Controller
 
     }
 
-    public function getXoa(){
-    	return view('admin.users.xoataikhoan');
+    public function getXoa($id){
+        $users = users::find($id);
+        $users->status = 0;
+        $users->save();
+        return redirect('admin/users/danhsach')->with('thongbao','Xóa thành công!');
     }
 
     public function getQuyen($id){
@@ -80,7 +83,7 @@ class usersController extends Controller
     
     public function getDanhSach()
     {
-        $users = users::orderBy('id','DESC')->paginate(2);
+        $users = users::orderBy('id','DESC')->paginate(5);
         return view('admin.users.danhsach',['users'=>$users]);
     }
     public function getIndex()
@@ -102,7 +105,7 @@ class usersController extends Controller
             $usergroup_id = DB::table('users')->where('id',$user_id)->usergroup_id->get();
             $pq_id = DB::table('usergroup')->where('id',$usergroup_id)->pq_id->get();
             $ten_pq['ten_pq'] = DB::table('phanquyen')->where('id',$pq_id)->ten_pq->get();*/
-            return view('pages.index');
+            return redirect('trangchu');
         }
         else
         {

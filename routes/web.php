@@ -45,7 +45,6 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::post('suabv/{id}','baivietController@postSua');
 		Route::get('xoabv/{id}','baivietController@getXoa');
 		Route::get('duyetbv/{id}','baivietController@getDuyet');
-		//Route::post('duyetbv','baivietController@postDuyet');
 		Route::get('danhsachchuaduyet','baivietController@getDanhSachChuaDuyet');
 		Route::get('xembaiviet/{id}','baivietController@getXemBV');
 	});
@@ -63,14 +62,10 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::post('themtaikhoan','usersController@postThem');
 		Route::get('doimatkhau/{id}','usersController@getThaydoi');
 		Route::post('doimatkhau/{id}','usersController@postThaydoi');
-
-		Route::get('xoataikhoan','usersController@getXoa');
-
+		Route::get('xoataikhoan/{id}','usersController@getXoa');
 		Route::get('capquyen/{id}','usersController@getQuyen');
 		Route::post('capquyen/{id}','usersController@postQuyen');
-
 		Route::get('danhsach','usersController@getDanhSach');
-
 		Route::get('index','usersController@getIndex');
 	});
 
