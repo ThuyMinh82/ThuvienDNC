@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\profileuser;
 use App\users;
+use Auth;
 class users extends Authenticatable
 {
     use Notifiable;
@@ -17,7 +18,7 @@ class users extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username','password','status','usergroup_id','profileuser_id','hinhanh_id'
+        'username','password','status','usergroup_id'
     ];
 
     /**
@@ -27,15 +28,6 @@ class users extends Authenticatable
      */
     protected $hidden = [
         'password', 'remember_token',
-    ];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
     ];
 
     protected $table = 'users';

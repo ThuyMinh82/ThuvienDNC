@@ -7,6 +7,7 @@ use App\Http\Requests\baivietRequest;
 use App\baiviet;
 use App\chudebv;
 use DB;
+use Illuminate\Support\Facades\Auth;
 
 class baivietController extends Controller
 {
@@ -53,7 +54,7 @@ class baivietController extends Controller
         $baiviet->alias = changeTitle($request->ten_bv);
         $baiviet->cd_id = $request->chudebv;
         $baiviet->status = 0;
-        $baiviet->user_id = $request->users;
+        $baiviet->user_id = Auth::user()->id;
         $baiviet->save();
         return redirect('admin/baiviet/danhsachchuaduyet')->with('thongbao','Bạn đã thêm bài viết thành công');
     }

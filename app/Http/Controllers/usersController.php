@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 use Session;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\users; 
 use App\phanquyen;
 use App\usergroup;
 use DB;
+use Auth;
 session_start();
 class usersController extends Controller
 {
@@ -35,7 +35,7 @@ class usersController extends Controller
 
         $users = new users;
         $users->username = $request->username;
-        $users->password = md5($request->password);
+        $users->password = bcrypt(md5($request->password));
         $users->status=1;
         $users->usergroup_id = $request->usergroup_id;
 
@@ -61,7 +61,7 @@ class usersController extends Controller
 
         ]);
 
-        $users->password =md5($request->password) ;
+        $users->password = bcrypt(md5($request->password)) ;
         $users->username = $users->username;
         $users->status=1;
         $users->usergroup_id = $users->usergroup_id;
@@ -90,28 +90,30 @@ class usersController extends Controller
     }
 
     public function getloginAD(){
-        $users = users::all();
-        return view('admin.login',['users'=>$users]);
+        return view('admin.login');
     }
     public function postloginAD(Request $Request){
         $username = $Request->username;
         $password = md5($Request->password);
-
-        $result = DB::table('users')->where('username',$username)->where('password',$password)->first();
-        if($result){
-            Session::put('username',$Request->username);
-            Session::put('password',md5($Request->password));
-            return redirect('trangchu');   
+        
+        if(Auth::attempt(['username'=>$username,'password'=>$password]))
+        {
+            /*$user_id = Auth::user()->id;
+            $usergroup_id = DB::table('users')->where('id',$user_id)->usergroup_id->get();
+            $pq_id = DB::table('usergroup')->where('id',$usergroup_id)->pq_id->get();
+            $ten_pq['ten_pq'] = DB::table('phanquyen')->where('id',$pq_id)->ten_pq->get();*/
+            return view('pages.index');
         }
-        else{
-            
+        else
+        {
             Session::flash('thongbao', 'Tài khoản hoặc mật khẩu không chính xác');
-            return redirect('admin/login');
+            return view('admin.login');
         }
     }
-    public function logout(){
-        return redirect('admin/login');
 
+    public function logout(){
+        Auth::logout();
+        return redirect('admin/login');
     }
 }
 

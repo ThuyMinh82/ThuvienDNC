@@ -1,3 +1,4 @@
+
 @extends('pages.page')
 
 @section('header')
@@ -27,6 +28,7 @@
         		<div class="col-md-3"></div>
 				<div class="col-md-6">
 					<h1>Thêm chủ đề</h1>
+					
 			        <form action="admin/chudebv/themchude" method="POST">
 			        	<input type="hidden" name="_token" value="{{csrf_token()}}"/>
 			        	<div class="from-group">
@@ -41,5 +43,9 @@
 	</div>
 </div>
 <br>
+<br>
+<br>
+
 @endsection
+
 

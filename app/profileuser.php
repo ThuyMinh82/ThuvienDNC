@@ -9,7 +9,7 @@ class profileuser extends Model
 {
     //
     protected $table = 'profileuser';
-    protected $fillable = ['name_prouser','email','address','sdt'];
+    protected $fillable = ['name_prouser','email','address','sdt', 'users_id'];
 	protected $guarded = ['id'];
 	protected $primaryKey = 'id';
 	protected $dateFormat = 'Y-m-d H:i:s'; 

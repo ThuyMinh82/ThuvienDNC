@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 use App\profileuser;
 use App\users;
 use DB;
-session_start();
+use Illuminate\Support\Facades\Auth;
 class profileuserController extends Controller
 {
     //
-    public function getIndex()
+    public function getIndex(Request $Request)
     {
-    	$users = users::all();
-        $profileuser= profileuser::all();
+        $id = Auth::user()->id;
+        $profileuser = DB::table('profileuser')->where('users_id',$id)->get();
         return view('admin.profileuser.prouser',['profileuser'=>$profileuser]);
     }
 

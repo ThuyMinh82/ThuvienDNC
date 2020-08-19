@@ -31,7 +31,7 @@
             <div class="row no-gutters">
                 <div class="col-xl-1"></div>
                 <div class="col-xl-10 col-sm-12 padding-0">
-                    <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+                    <nav class="navbar navbar-dark py-0 bg-primary navbar-expand-lg py-md-0">
                         <!-- Brand -->
                         <a class="navbar-brand" href="index.blade.php"><i class="fa fa-fw fa-home"></i>Home</a>
                     

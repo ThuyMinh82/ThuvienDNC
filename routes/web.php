@@ -76,7 +76,7 @@ Route::group(['prefix'=>'admin'],function(){
 
 	Route::group(['prefix'=>'profileuser'],function(){
 
-		Route::get('prouser','profileuserController@getIndex');
+		Route::get('prouser/','profileuserController@getIndex');
 		Route::get('thaydoi/{id}','profileuserController@getThaydoi');
 		Route::post('thaydoi/{id}','profileuserController@postThaydoi');
 	});
@@ -86,4 +86,4 @@ Route::group(['prefix'=>'admin'],function(){
 Route::get('trangchu','pagesController@index');
 Route::get('admin/login','usersController@getloginAD');
 Route::post('admin/login','usersController@postloginAD');
-Route::get('/logout','usersController@logout');
+Route::get('logout','usersController@logout');
