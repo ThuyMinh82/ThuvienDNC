@@ -54,7 +54,7 @@
                         {{$us->usergroup->name_group}}
                     </td>
                     <td>
-                        <button class="btn btn-link" type='button' data-toggle="modal" data-target="#myModal{{$us->id}}"><i class='fas fa-trash'style='margin: 5px;color: red'></i>Phục hồi</button>
+                        <button class="btn btn-link" type='button' data-toggle="modal" data-target="#myModal{{$us->id}}"><i class='fas fa-undo'style='margin: 5px;color: blue'></i>Phục hồi</button>
                     </td>                        
                 </tr>
                 <!-- The Modal -->
@@ -67,8 +67,8 @@
                         </div>
                         <!-- Modal footer -->
                         <div class="modal-footer">
-                            <a href="admin/users/phuchoitaikhoan/{{$us->id}}" class="btn btn-danger"><i class='fas fa-trash'style='margin: 5px;color: white'></i>Phục hồi</a>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Đóng</button>
+                            <a href="admin/users/phuchoitaikhoan/{{$us->id}}" class="btn btn-primary"><i class='fas fa-undo'style='margin: 5px;color: white'></i>Phục hồi</a>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                         </div>
                     </div>
                     </div>
