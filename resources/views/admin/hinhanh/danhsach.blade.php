@@ -23,10 +23,12 @@
               <th>Tên</th>
               <th style='width:30%;'>Ảnh</th>
               <th>Sửa</th>
+              @if(Auth::check())
               @if($ten_pq=='admin')
               <th>Xóa</th>
               @else
 
+              @endif
               @endif
           </tr>
       </thead>

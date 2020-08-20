@@ -86,19 +86,19 @@ class usersController extends Controller
             'passwordAgain.same'=>'Mật khẩu nhập lại chưa khớp'
 
         ]);
-        #$pw = $users->password;
-        #$oldpw = bcrypt(md5($request->oldpassword));
-        #if($pw == $oldpw)
-        #{
+        $username = Auth::user()->username;
+        $password = md5($request->oldpassword);
+        if(Auth::attempt(['username'=>$username,'password'=>$password]))
+        {
             $users->password = bcrypt(md5($request->password)) ;
             $users->username = $users->username;
             $users->status=1;
             $users->usergroup_id = $users->usergroup_id;
             $users->save();
-            return redirect('admin/users/danhsach')->with('thongbao', 'Bạn đã đổi thành công');
-        #}
-        #else
-         #   return redirect('admin/users/doimatkhau/'.$id)->with('thongbao', 'Bạn đã nhập sai mật khẩu hiện tại');
+            return redirect('admin/users/doimatkhau/'.$id)->with('thongbao', 'Bạn đã đổi thành công');
+        }
+        else
+           return redirect('admin/users/doimatkhau/'.$id)->with('thongbao', 'Bạn đã nhập sai mật khẩu hiện tại');
 
     }
 
@@ -198,10 +198,6 @@ class usersController extends Controller
         
         if(Auth::attempt(['username'=>$username,'password'=>$password]))
         {
-            /*$user_id = Auth::user()->id;
-            $usergroup_id = DB::table('users')->where('id',$user_id)->usergroup_id->get();
-            $pq_id = DB::table('usergroup')->where('id',$usergroup_id)->pq_id->get();
-            $ten_pq['ten_pq'] = DB::table('phanquyen')->where('id',$pq_id)->ten_pq->get();*/
             return redirect('trangchu');
         }
         else

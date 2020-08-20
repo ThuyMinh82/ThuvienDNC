@@ -33,10 +33,10 @@
                             <label>Username</label>
                             <input class="form-control" name="username" placeholder="Nhập username" value = "{{$users->username}}" readonly="" />
                         </div> -->
-                        <!--div class="form-group">
+                        <div class="form-group">
                             <label>Nhập mật khẩu hiện tại:</label>
                             <input type="password" class="form-control password" name="oldpassword" placeholder="Nhập mật khẩu hiện tại"/>
-                        </div-->
+                        </div>
                         <div class="form-group">
                             <!-- <input type="checkbox" id="changePassword" name="changePassword"> -->
                             <label>Đổi mật khẩu:</label>
