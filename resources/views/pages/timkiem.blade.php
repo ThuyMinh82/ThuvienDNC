@@ -1,7 +1,7 @@
 @extends('pages.page')
 
 @section('header')
-<title>Danh sách bài viết</title>
+<title>Tìm kiếm</title>
 @endsection
 
 @section('content')
@@ -12,9 +12,9 @@
         <table style="width: 100%">
           <tbody>
               <tr>
-                  <th ><h3 style="text-align: center;">Danh Sách Bài Viết</h3></th>
+                  <th ><h3 style="text-align: center;">Tìm kiếm:: {{$tukhoa}}</h3></th>
                   <th style="width: 250px;">
-                    <form action="timkiem" method="POSt">
+                    <form action="timkiem" method="POST">
                       <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                       <div class="input-group">
                         <input type="text" name="tukhoa" class="form-control" placeholder="Search">
@@ -41,13 +41,7 @@
               <th style="width: 150px;">Tên chủ Đề </th>
               <th style="width: 150px;">Ngày Đăng</th>
               <th>Ảnh Đại Diện</th>
-              @if(Auth::check())
-              @if($ten_pq=='admin')
               <th style="text-align: center;">Xử Lý</th>
-              @else
-
-              @endif
-              @endif
             </tr>
             <tr>
             @foreach($baiviet as $bv)
@@ -57,17 +51,11 @@
               <td>{{$bv->chudebv->ten_cd}}</td>
               <td>{{$bv->created_at}}</td>
               <td><a href="{{$bv->anhdaidien}}"> <img style='width:80px; height:60px' src="{{$bv->anhdaidien}}"></a></td>                
-              @if(Auth::check())
-              @if($ten_pq=='admin')
               <td style=' width: 150px;'>
               <a href="admin/baiviet/suabv/{{$bv->id}}"><i class='fas fa-pen-alt'style='margin: 5px;color:black'></i>Sửa</a>
               <a href="admin/baiviet/xoabv/{{$bv->id}}"><i class='fas fa-trash'style='margin: 5px;color: red'></i>Xóa</a></td>
-              </tr>
-              @else
-
-              @endif
-              @endif
             @endforeach
+              </tr>
           </tbody>
         </table>
           <nav aria-label="Page navigation example" style='float: right;'>

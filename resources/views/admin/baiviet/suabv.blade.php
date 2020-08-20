@@ -44,7 +44,7 @@
                                 @foreach($chudebv as $cd)
                                 <option 
 
-                                @if($cd->id == $baiviet->chudebv->cd_id)
+                                @if($cd->id == $baiviet->chudebv->id)
 
                                 {{"selected"}}
 
