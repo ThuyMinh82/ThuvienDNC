@@ -112,11 +112,6 @@ class usersController extends Controller
 
         return view('admin.users.danhsach',$ten_pq,['users'=>$users,'ten_pq'=>$ten_pq]);
     }
-    public function getIndex()
-    {
-        $users = users::all();
-        return view('admin.users.index',['users'=>$users]);
-    }
 
     public function getloginAD(){
         return view('admin.login');

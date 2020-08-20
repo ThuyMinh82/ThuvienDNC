@@ -66,7 +66,6 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::get('capquyen/{id}','usersController@getQuyen');
 		Route::post('capquyen/{id}','usersController@postQuyen');
 		Route::get('danhsach','usersController@getDanhSach');
-		Route::get('index','usersController@getIndex');
 	});
 
 	Route::group(['prefix'=>'profileuser'],function(){
