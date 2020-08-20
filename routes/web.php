@@ -81,3 +81,7 @@ Route::get('trangchu','pagesController@index');
 Route::get('admin/login','usersController@getloginAD');
 Route::post('admin/login','usersController@postloginAD');
 Route::get('logout','usersController@logout');
+
+Route::get('timkiem','pagesController@timkiem');
+
+

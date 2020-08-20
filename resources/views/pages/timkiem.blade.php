@@ -1,7 +1,7 @@
 @extends('pages.page')
 
 @section('header')
-<title>Danh sách bài viết</title>
+<title>Tìm kiếm</title>
 @endsection
 
 @section('content')
@@ -12,9 +12,9 @@
         <table style="width: 100%">
           <tbody>
               <tr>
-                  <th ><h3 style="text-align: center;">Danh Sách Bài Viết</h3></th>
+                  <th ><h3 style="text-align: center;">Tìm kiếm:: {{$tukhoa}}</h3></th>
                   <th style="width: 250px;">
-                    <form action="timkiem" method="POSt">
+                    <form action="timkiem" method="POST">
                       <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                       <div class="input-group">
                         <input type="text" name="tukhoa" class="form-control" placeholder="Search">

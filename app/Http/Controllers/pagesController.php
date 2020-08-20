@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\phanquyen;
 use App\usergroup;
+use App\baiviet;
 use DB;
 class pagesController extends Controller
 {
@@ -17,5 +18,11 @@ class pagesController extends Controller
         $phanquyen = phanquyen::where('id',$pq_id)->first();
         $ten_pq['ten_pq'] = $phanquyen->ten_pq;
     	return view('pages.index', $ten_pq);
+    }
+    function timkiem(Request $request){
+    	$tukhoa = $request->tukhoa;
+    	$baiviet = baiviet::where('ten_bv','like',"%$tukhoa%")->take(5);
+    	return view('pages.timkiem',['baiviet'=>$baiviet,'tukhoa'=>$tukhoa]);
+
     }
 }
