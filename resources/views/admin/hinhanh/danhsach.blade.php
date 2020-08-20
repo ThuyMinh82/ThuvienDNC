@@ -23,7 +23,11 @@
               <th>Tên</th>
               <th style='width:30%;'>Ảnh</th>
               <th>Sửa</th>
+              @if($ten_pq=='admin')
               <th>Xóa</th>
+              @else
+
+              @endif
           </tr>
       </thead>
       <tbody>
@@ -34,8 +38,14 @@
               <td> <a href="{{$ha->link_anh}}"> <img style='width:80px; height:60px' src="{{$ha->link_anh}}"></a></td>
               <td class="center"><i class="fas fa-pen-alt"></i><a href="admin/hinhanh/suahinhanh/{{$ha->id}}">Sửa
               </a></td>
+              @if(Auth::check())
+              @if($ten_pq=='admin')
               <td class="center"><i style="color: red;" class="fas fa-trash" data-toggle="modal" data-target="#myModal"></i><a href="admin/hinhanh/xoahinhanh/{{$ha->id}}">Xóa
               </a></td>
+              @else
+
+              @endif
+              @endif
           </tr>
           @endforeach
       </tbody>

@@ -74,7 +74,7 @@
 
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img style="width: 100%; height: 250px;" src="{{asset('frontend/images/Thu-vien1.jpg')}}">
+                            <img style="width: 100%; height: 250px;" src="{{asset('frontend/images/Thu-vien1.png')}}">
                         </div>
 
                         <div class="carousel-item">

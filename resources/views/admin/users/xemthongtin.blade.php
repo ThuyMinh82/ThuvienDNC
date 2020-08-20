@@ -32,11 +32,7 @@
     </table>
     @endforeach
     @if($profileuser->isEmpty())
-      <h5 style='text-align:center;'>Bạn chưa có thông tin. <a href="admin/profileuser/them">Nhập thông tin của bạn</a></h5>
-    @else
-      @foreach($profileuser as $pro)
-      <a href="admin/profileuser/thaydoi/{{$pro->id}}" class="btn btn-primary center">Thay đổi</a>
-      @endforeach
+      <h5 style='text-align:center;'>Người dùng này chưa có thông tin</h5>
     @endif
   </div>
   <div class="col-md-3"></div> 

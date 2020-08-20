@@ -38,7 +38,13 @@
               <th style="width: 150px;">Tên chủ Đề </th>
               <th style="width: 150px;">Ngày Đăng</th>
               <th>Ảnh Đại Diện</th>
+              @if(Auth::check())
+              @if($ten_pq=='admin')
               <th style="text-align: center;">Xử Lý</th>
+              @else
+
+              @endif
+              @endif
             </tr>
             <tr>
             @foreach($baiviet as $bv)
@@ -48,11 +54,17 @@
               <td>{{$bv->chudebv->ten_cd}}</td>
               <td>{{$bv->created_at}}</td>
               <td><a href="{{$bv->anhdaidien}}"> <img style='width:80px; height:60px' src="{{$bv->anhdaidien}}"></a></td>                
+              @if(Auth::check())
+              @if($ten_pq=='admin')
               <td style=' width: 150px;'>
               <a href="admin/baiviet/suabv/{{$bv->id}}"><i class='fas fa-pen-alt'style='margin: 5px;color:black'></i>Sửa</a>
               <a href="admin/baiviet/xoabv/{{$bv->id}}"><i class='fas fa-trash'style='margin: 5px;color: red'></i>Xóa</a></td>
-            @endforeach
               </tr>
+              @else
+
+              @endif
+              @endif
+            @endforeach
           </tbody>
         </table>
           <nav aria-label="Page navigation example" style='float: right;'>
