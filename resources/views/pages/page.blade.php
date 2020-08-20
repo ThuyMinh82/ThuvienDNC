@@ -57,8 +57,8 @@
                                     </a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="admin/users/themtaikhoan">Thêm Tài Khoản</a>
-                                        <a class="dropdown-item" href="admin/users/capquyen">Cấp Quyền</a>
                                         <a class="dropdown-item" href="admin/users/danhsach">Danh sách tài khoản</a>
+                                        <a class="dropdown-item" href="admin/users/danhsachdaxoa">Danh sách đã xóa</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">

@@ -109,6 +109,13 @@ class usersController extends Controller
         return redirect('admin/users/danhsach')->with('thongbao','Xóa thành công!');
     }
 
+    public function getPhucHoi($id){
+        $users = users::find($id);
+        $users->status = 1;
+        $users->save();
+        return redirect('admin/users/danhsachdaxoa')->with('thongbao','Phục hồi thành công!');
+    }
+
     public function getQuyen($id){
         $users = users::find($id);
 
@@ -138,7 +145,7 @@ class usersController extends Controller
     
     public function getDanhSach()
     {
-        $users = users::orderBy('id','DESC')->paginate(5);
+        $users = users::where('status','1')->orderBy('id','DESC')->paginate(5);
 
         if(Auth::check())
         {
@@ -150,9 +157,66 @@ class usersController extends Controller
             return view('admin.users.danhsach',$ten_pq,['users'=>$users,'ten_pq'=>$ten_pq]);
         }
         else
-            return view('admin.users.danhsach',['users'=>$users,'ten_pq'=>$ten_pq]);
+            return view('admin.users.danhsach',['users'=>$users]);
 
         
+    }
+
+    public function getDanhSachSearch(Request $request)
+    {   
+        $search = $request->get('search');
+        $users = users::where('status','1')->where('username', 'like', '%'.$search.'%')->orderBy('id','DESC')->paginate(5);
+
+        if(Auth::check())
+        {
+            $usergroup_id = Auth::user()->usergroup_id;
+            $usergroup = usergroup::where('id',$usergroup_id)->first();
+            $pq_id = $usergroup->pq_id;
+            $phanquyen = phanquyen::where('id',$pq_id)->first();
+            $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+            return view('admin.users.danhsach',$ten_pq,['users'=>$users,'ten_pq'=>$ten_pq]);
+        }
+        else
+            return view('admin.users.danhsach',['users'=>$users]);
+
+    }
+    
+
+    public function getDanhSachDaXoa()
+    {
+        $users = users::where('status','0')->orderBy('id','DESC')->paginate(5);
+
+        if(Auth::check())
+        {
+            $usergroup_id = Auth::user()->usergroup_id;
+            $usergroup = usergroup::where('id',$usergroup_id)->first();
+            $pq_id = $usergroup->pq_id;
+            $phanquyen = phanquyen::where('id',$pq_id)->first();
+            $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+            return view('admin.users.danhsachdaxoa',$ten_pq,['users'=>$users,'ten_pq'=>$ten_pq]);
+        }
+        else
+            return view('admin.users.danhsachdaxoa',['users'=>$users]);
+ 
+    }
+
+    public function getDSDXSearch(Request $request)
+    {   
+        $search = $request->get('search');
+        $users = users::where('status','0')->where('username', 'like', '%'.$search.'%')->orderBy('id','DESC')->paginate(5);
+
+        if(Auth::check())
+        {
+            $usergroup_id = Auth::user()->usergroup_id;
+            $usergroup = usergroup::where('id',$usergroup_id)->first();
+            $pq_id = $usergroup->pq_id;
+            $phanquyen = phanquyen::where('id',$pq_id)->first();
+            $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+            return view('admin.users.danhsachdaxoa',$ten_pq,['users'=>$users,'ten_pq'=>$ten_pq]);
+        }
+        else
+            return view('admin.users.danhsachdaxoa',['users'=>$users]);
+
     }
 
     public function getXemThongTin($id)
@@ -178,7 +242,7 @@ class usersController extends Controller
     public function postloginAD(Request $Request){
         $username = $Request->username;
         $password = md5($Request->password);
-        
+        $status = 1;
         $this -> validate ($Request,[
              'username'=>'required|min:3',
             'password'=>'required|min:3|max:32',
@@ -196,13 +260,11 @@ class usersController extends Controller
         ]);
 
         
-        if(Auth::attempt(['username'=>$username,'password'=>$password]))
-        {
+        if(Auth::attempt(['username'=>$username,'password'=>$password, 'status'=>$status]))
             return redirect('trangchu');
-        }
         else
         {
-            Session::flash('thongbao', 'Tài khoản hoặc mật khẩu không chính xác');
+            Session::flash('thongbao', 'Tài khoản hoặc mật khẩu không chính xác hoặc tài khoản tạm thời không thể đăng nhập');
             return view('admin.login');
         }
     }

@@ -62,7 +62,25 @@ class hinhanhController extends Controller
         else
             return view('admin.hinhanh.danhsach',['hinhanh'=>$hinhanh]);
 
-        
+    }
+
+    public function getDanhSachSearch(Request $request)
+    {
+        $search = $request->get('search');
+        $hinhanh = hinhanh::where('ten_anh', 'like', '%'.$search.'%')->orderBy('id','DESC')->paginate(5);
+
+        if(Auth::check())
+        {
+            $usergroup_id = Auth::user()->usergroup_id;
+            $usergroup = usergroup::where('id',$usergroup_id)->first();
+            $pq_id = $usergroup->pq_id;
+            $phanquyen = phanquyen::where('id',$pq_id)->first();
+            $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+            return view('admin.hinhanh.danhsach',$ten_pq,['hinhanh'=>$hinhanh]);
+        }
+        else
+            return view('admin.hinhanh.danhsach',['hinhanh'=>$hinhanh]);
+
     }
 
     public function getXoa($id){

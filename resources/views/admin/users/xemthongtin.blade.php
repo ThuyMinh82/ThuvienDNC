@@ -8,7 +8,10 @@
 <div class="row no-gutters">
   <div class="col-md-3"></div>
   <div class="col-md-6 col-sm-12 padding-0">
-    <h4>Thông tin cá nhân</h4> 
+    <h4>Thông tin cá nhân</h4>
+      <a href="admin/users/danhsach" class="btn btn-link btn-sm" style="margin-bottom: 10px;" >
+        <img id='img-title' src="{{asset('backend/images/back-icon.png')}}"  style="width: 18px; margin-top: -3px; margin-right: 5px;">Quay lại
+      </a> 
     @foreach($profileuser as $pro)
     <table class="table table-hover">
       <tbody>

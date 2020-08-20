@@ -7,7 +7,17 @@
 @section('content')
 <div class="row no-gutters">
     <div class="col-md-1"></div>
-    <div class="col-md-10 col-sm-12 padding-0">  
+    <div class="col-md-10 col-sm-12 padding-0">
+        @if($baiviet->status == '0')
+        <a href="admin/baiviet/danhsachchuaduyet" class="btn btn-link btn-sm" style="margin-bottom: 10px;" >
+            <img id='img-title' src="{{asset('backend/images/back-icon.png')}}"  style="width: 18px; margin-top: -3px; margin-right: 5px;">Quay lại
+        </a>
+        @endif
+        @if($baiviet->status == '1')
+        <a href="admin/baiviet/danhsach" class="btn btn-link btn-sm" style="margin-bottom: 10px;" >
+            <img id='img-title' src="{{asset('backend/images/back-icon.png')}}"  style="width: 18px; margin-top: -3px; margin-right: 5px;">Quay lại
+        </a>
+        @endif
         <div style="margin-top: 7px;">
 	        <div id="main-container-text" class="col-md-12">
             <style>

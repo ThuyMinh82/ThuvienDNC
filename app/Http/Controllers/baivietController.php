@@ -34,6 +34,25 @@ class baivietController extends Controller
             return view('admin.baiviet.danhsach',['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
     }
 
+    public function getDSBVSearch(Request $request){
+        $chudebv = chudebv::all();
+        $search = $request->get('search');
+        $baiviet = baiviet::where('status','1')->where('ten_bv', 'like', '%'.$search.'%')->orderBy('id','DESC')->paginate(5);
+        
+        #lay tên phân quyền
+        if(Auth::check())
+        {
+            $usergroup_id = Auth::user()->usergroup_id;
+            $usergroup = usergroup::where('id',$usergroup_id)->first();
+            $pq_id = $usergroup->pq_id;
+            $phanquyen = phanquyen::where('id',$pq_id)->first();
+            $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+
+            return view('admin.baiviet.danhsach',$ten_pq,['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
+        }
+        else
+            return view('admin.baiviet.danhsach',['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
+    }
     public function getThem()
     {
         $chudebv = chudebv::all();
@@ -159,6 +178,27 @@ class baivietController extends Controller
         else
             return view('admin.baiviet.danhsachchuaduyet',['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
     }
+    
+    public function getDSBVCDSearch(Request $request){
+        $chudebv = chudebv::all();
+        $search = $request->get('search');
+        $baiviet = baiviet::where('status','0')->where('ten_bv', 'like', '%'.$search.'%')->orderBy('id','DESC')->paginate(5);
+        
+        #lay tên phân quyền
+        if(Auth::check())
+        {
+            $usergroup_id = Auth::user()->usergroup_id;
+            $usergroup = usergroup::where('id',$usergroup_id)->first();
+            $pq_id = $usergroup->pq_id;
+            $phanquyen = phanquyen::where('id',$pq_id)->first();
+            $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+
+            return view('admin.baiviet.danhsachchuaduyet',$ten_pq,['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
+        }
+        else
+            return view('admin.baiviet.danhsachchuaduyet',['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
+    }
+    
 
     public function getDuyet($id)
     {

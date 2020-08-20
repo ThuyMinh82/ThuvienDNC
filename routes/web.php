@@ -27,7 +27,7 @@ Route::group(['prefix'=>'admin'],function(){
 		//admin/chudebv/themchude
 		Route::get('themchude','chudebvController@getThem');
 		Route::post('themchude','chudebvController@postThem');
-		
+		Route::get('danhsach/search','chudebvController@getDanhSachSearch');
 		Route::get('suachude/{id}','chudebvController@getSua');
 	    Route::post('suachude/{id}','chudebvController@postSua');
 	    
@@ -47,6 +47,8 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::get('duyetbv/{id}','baivietController@getDuyet');
 		Route::get('danhsachchuaduyet','baivietController@getDanhSachChuaDuyet');
 		Route::get('xembaiviet/{id}','baivietController@getXemBV');
+		Route::get('danhsach/search','baivietController@getDSBVSearch');
+		Route::get('danhsachchuaduyet/search','baivietController@getDSBVCDSearch');
 	});
 	Route::group(['prefix'=>'hinhanh'],function(){
 		Route::get('themhinhanh','hinhanhController@getThem');
@@ -55,6 +57,7 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::get('suahinhanh/{id}','hinhanhController@getSua');
 		Route::post('suahinhanh/{id}','hinhanhController@postSua');
 		Route::get('danhsach','hinhanhController@getDanhsach');
+		Route::get('danhsach/search','hinhanhController@getDanhSachSearch');
 	});
 
 	Route::group(['prefix'=>'users'],function(){
@@ -67,7 +70,10 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::post('capquyen/{id}','usersController@postQuyen');
 		Route::get('danhsach','usersController@getDanhSach');
 		Route::get('xemthongtin/{id}','usersController@getXemThongTin');
-
+		Route::get('danhsachdaxoa','usersController@getDanhSachDaXoa');
+		Route::get('phuchoitaikhoan/{id}','usersController@getPhucHoi');
+		Route::get('danhsach/search','usersController@getDanhSachSearch');
+		Route::get('danhsachdaxoa/search','usersController@getDSDXSearch');
 	});
 
 	Route::group(['prefix'=>'profileuser'],function(){

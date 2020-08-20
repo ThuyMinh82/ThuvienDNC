@@ -111,6 +111,25 @@ class chudebvController extends Controller
 
         
     }
+    
+    public function getDanhSachSearch(Request $request)
+    {
+        $search = $request->get('search');
+        $chudebv = chudebv::where('ten_cd', 'like', '%'.$search.'%')->orderBy('id','DESC')->paginate(5);
 
+        if(Auth::check())
+        {
+            $usergroup_id = Auth::user()->usergroup_id;
+            $usergroup = usergroup::where('id',$usergroup_id)->first();
+            $pq_id = $usergroup->pq_id;
+            $phanquyen = phanquyen::where('id',$pq_id)->first();
+            $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+            return view('admin.chudebv.danhsach',$ten_pq,['chudebv'=>$chudebv]);
+        }
+        else
+        return view('admin.chudebv.danhsach',['chudebv'=>$chudebv]);
+
+        
+    }
 
 }
