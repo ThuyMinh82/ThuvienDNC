@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\users; 
 use App\phanquyen;
 use App\usergroup;
+use App\profileuser;
 use DB;
 use Illuminate\Support\Facades\Auth;
 session_start();
@@ -15,14 +16,18 @@ class usersController extends Controller
     public function getThem(){
         $users = users::all();
 
-        #lay tên phân quyền
-        $usergroup_id = Auth::user()->usergroup_id;
-        $usergroup = usergroup::where('id',$usergroup_id)->first();
-        $pq_id = $usergroup->pq_id;
-        $phanquyen = phanquyen::where('id',$pq_id)->first();
-        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
-
-        return view('admin.users.themtaikhoan',$ten_pq,['users'=>$users]);
+        if(Auth::check())
+        {
+            $usergroup_id = Auth::user()->usergroup_id;
+            $usergroup = usergroup::where('id',$usergroup_id)->first();
+            $pq_id = $usergroup->pq_id;
+            $phanquyen = phanquyen::where('id',$pq_id)->first();
+            $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+            return view('admin.users.themtaikhoan',$ten_pq,['users'=>$users]);
+        }
+        else
+            return view('admin.users.themtaikhoan',['users'=>$users]);
+        
     }
     public function postThem(Request $request){
         $this -> validate ($request,[
@@ -51,20 +56,25 @@ class usersController extends Controller
         return redirect('admin/users/danhsach')->with('thongbao', 'Thêm tài khoản thành công');
     }
 
-    public function getThaydoi($id){
+    public function getDoiMK($id){
         $users = users::find($id);
 
-        #lay tên phân quyền
-        $usergroup_id = Auth::user()->usergroup_id;
-        $usergroup = usergroup::where('id',$usergroup_id)->first();
-        $pq_id = $usergroup->pq_id;
-        $phanquyen = phanquyen::where('id',$pq_id)->first();
-        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+        if(Auth::check())
+        {
+            $usergroup_id = Auth::user()->usergroup_id;
+            $usergroup = usergroup::where('id',$usergroup_id)->first();
+            $pq_id = $usergroup->pq_id;
+            $phanquyen = phanquyen::where('id',$pq_id)->first();
+            $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+            return view('admin.users.doimatkhau',$ten_pq,['users'=>$users]);
+        }
+        else
+            return view('admin.users.doimatkhau',['users'=>$users]);
 
-        return view('admin.users.doimatkhau',$ten_pq,['users'=>$users]);
+        
     }
 
-    public function postThaydoi(Request $request, $id){
+    public function postDoiMK(Request $request, $id){
         $users = users::find($id);
         $this -> validate ($request,[
             'password'=>'required|min:3|max:32',
@@ -76,13 +86,19 @@ class usersController extends Controller
             'passwordAgain.same'=>'Mật khẩu nhập lại chưa khớp'
 
         ]);
-
-        $users->password = bcrypt(md5($request->password)) ;
-        $users->username = $users->username;
-        $users->status=1;
-        $users->usergroup_id = $users->usergroup_id;
-        $users->save();
-        return redirect('admin/users/doimatkhau/'.$id)->with('thongbao', 'Bạn đã sửa thành công');
+        #$pw = $users->password;
+        #$oldpw = bcrypt(md5($request->oldpassword));
+        #if($pw == $oldpw)
+        #{
+            $users->password = bcrypt(md5($request->password)) ;
+            $users->username = $users->username;
+            $users->status=1;
+            $users->usergroup_id = $users->usergroup_id;
+            $users->save();
+            return redirect('admin/users/danhsach')->with('thongbao', 'Bạn đã đổi thành công');
+        #}
+        #else
+         #   return redirect('admin/users/doimatkhau/'.$id)->with('thongbao', 'Bạn đã nhập sai mật khẩu hiện tại');
 
     }
 
@@ -94,24 +110,69 @@ class usersController extends Controller
     }
 
     public function getQuyen($id){
-    	return view('admin.users.capquyen');
+        $users = users::find($id);
+
+        if(Auth::check())
+        {
+            $usergroup_id = Auth::user()->usergroup_id;
+            $usergroup = usergroup::where('id',$usergroup_id)->first();
+            $pq_id = $usergroup->pq_id;
+            $phanquyen = phanquyen::where('id',$pq_id)->first();
+            $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+            return view('admin.users.capquyen',$ten_pq,['users'=>$users]);
+        }
+        else
+        return view('admin.users.capquyen',['users'=>$users]);
+    }
+
+    public function postQuyen(Request $request, $id){
+        $users = users::find($id);
+
+        $users->password = $users->password;
+        $users->username = $users->username;
+        $users->status=1;
+        $users->usergroup_id = $request->usergroup_id;
+        $users->save();
+        return redirect('admin/users/danhsach')->with('thongbao', 'Bạn đã sửa thành công');
     }
     
     public function getDanhSach()
     {
         $users = users::orderBy('id','DESC')->paginate(5);
-        return view('admin.users.danhsach',['users'=>$users]);
-        $users = users::orderBy('id','DESC')->paginate(2);
 
-        #lay tên phân quyền
-        $usergroup_id = Auth::user()->usergroup_id;
-        $usergroup = usergroup::where('id',$usergroup_id)->first();
-        $pq_id = $usergroup->pq_id;
-        $phanquyen = phanquyen::where('id',$pq_id)->first();
-        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+        if(Auth::check())
+        {
+            $usergroup_id = Auth::user()->usergroup_id;
+            $usergroup = usergroup::where('id',$usergroup_id)->first();
+            $pq_id = $usergroup->pq_id;
+            $phanquyen = phanquyen::where('id',$pq_id)->first();
+            $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+            return view('admin.users.danhsach',$ten_pq,['users'=>$users,'ten_pq'=>$ten_pq]);
+        }
+        else
+            return view('admin.users.danhsach',['users'=>$users,'ten_pq'=>$ten_pq]);
 
-        return view('admin.users.danhsach',$ten_pq,['users'=>$users,'ten_pq'=>$ten_pq]);
+        
     }
+<<<<<<< HEAD
+    public function getXemThongTin($id)
+    {   
+        $profileuser = profileuser::where('users_id',$id)->get();
+
+        if(Auth::check())
+        {
+            $usergroup_id = Auth::user()->usergroup_id;
+            $usergroup = usergroup::where('id',$usergroup_id)->first();
+            $pq_id = $usergroup->pq_id;
+            $phanquyen = phanquyen::where('id',$pq_id)->first();
+            $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+            return view('admin.users.xemthongtin',$ten_pq,['profileuser'=>$profileuser]);
+        }
+        else
+            return view('admin.users.xemthongtin',['profileuser'=>$profileuser]);
+    }
+=======
+>>>>>>> cc3fe37a37607c47d6114a3d4ece754dd23ad72d
 
     public function getloginAD(){
         return view('admin.login');
