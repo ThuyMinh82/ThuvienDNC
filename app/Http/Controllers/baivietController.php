@@ -16,18 +16,22 @@ class baivietController extends Controller
     //
     public function getDanhSach()
     {
-    $chudebv = chudebv::all();
-    $baiviet = baiviet::where('status','1')->orderBy('id','DESC')->paginate(5);
-      
-    #lay tên phân quyền
-    $usergroup_id = Auth::user()->usergroup_id;
-    $usergroup = usergroup::where('id',$usergroup_id)->first();
-    $pq_id = $usergroup->pq_id;
-    $phanquyen = phanquyen::where('id',$pq_id)->first();
-    $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+        $chudebv = chudebv::all();
+        $baiviet = baiviet::where('status','1')->orderBy('id','DESC')->paginate(5);
+        
+        #lay tên phân quyền
+        if(Auth::check())
+        {
+            $usergroup_id = Auth::user()->usergroup_id;
+            $usergroup = usergroup::where('id',$usergroup_id)->first();
+            $pq_id = $usergroup->pq_id;
+            $phanquyen = phanquyen::where('id',$pq_id)->first();
+            $ten_pq['ten_pq'] = $phanquyen->ten_pq;
 
-    return view('admin.baiviet.danhsach',$ten_pq,['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
-
+            return view('admin.baiviet.danhsach',$ten_pq,['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
+        }
+        else
+            return view('admin.baiviet.danhsach',['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
     }
 
     public function getThem()
@@ -35,13 +39,18 @@ class baivietController extends Controller
         $chudebv = chudebv::all();
 
         #lay tên phân quyền
-        $usergroup_id = Auth::user()->usergroup_id;
-        $usergroup = usergroup::where('id',$usergroup_id)->first();
-        $pq_id = $usergroup->pq_id;
-        $phanquyen = phanquyen::where('id',$pq_id)->first();
-        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+        if(Auth::check())
+        {
+            $usergroup_id = Auth::user()->usergroup_id;
+            $usergroup = usergroup::where('id',$usergroup_id)->first();
+            $pq_id = $usergroup->pq_id;
+            $phanquyen = phanquyen::where('id',$pq_id)->first();
+            $ten_pq['ten_pq'] = $phanquyen->ten_pq;
 
-        return view('admin.baiviet.thembv',$ten_pq,['chudebv'=>$chudebv]);
+            return view('admin.baiviet.thembv',$ten_pq,['chudebv'=>$chudebv]);
+        }
+        else
+            return view('admin.baiviet.thembv',['chudebv'=>$chudebv]);
     }
 
         public function postThem(Request $request)
@@ -82,13 +91,17 @@ class baivietController extends Controller
         $baiviet = baiviet::find($id);
 
         #lay tên phân quyền
-        $usergroup_id = Auth::user()->usergroup_id;
-        $usergroup = usergroup::where('id',$usergroup_id)->first();
-        $pq_id = $usergroup->pq_id;
-        $phanquyen = phanquyen::where('id',$pq_id)->first();
-        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
-
-        return view('admin.baiviet.suabv',$ten_pq,['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
+        if(Auth::check())
+        {
+            $usergroup_id = Auth::user()->usergroup_id;
+            $usergroup = usergroup::where('id',$usergroup_id)->first();
+            $pq_id = $usergroup->pq_id;
+            $phanquyen = phanquyen::where('id',$pq_id)->first();
+            $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+            return view('admin.baiviet.suabv',$ten_pq,['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
+        }
+        else
+            return view('admin.baiviet.suabv',['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
     }
     public function postSua(Request $request,$id)
     {  
@@ -134,13 +147,17 @@ class baivietController extends Controller
         $baiviet = baiviet::where('status','0')->orderBy('id','DESC')->paginate(5);
 
         #lay tên phân quyền
-        $usergroup_id = Auth::user()->usergroup_id;
-        $usergroup = usergroup::where('id',$usergroup_id)->first();
-        $pq_id = $usergroup->pq_id;
-        $phanquyen = phanquyen::where('id',$pq_id)->first();
-        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+        if(Auth::check()){
+            $usergroup_id = Auth::user()->usergroup_id;
+            $usergroup = usergroup::where('id',$usergroup_id)->first();
+            $pq_id = $usergroup->pq_id;
+            $phanquyen = phanquyen::where('id',$pq_id)->first();
+            $ten_pq['ten_pq'] = $phanquyen->ten_pq;
 
-        return view('admin.baiviet.danhsachchuaduyet',$ten_pq,['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
+            return view('admin.baiviet.danhsachchuaduyet',$ten_pq,['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
+        }
+        else
+            return view('admin.baiviet.danhsachchuaduyet',['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
     }
 
     public function getDuyet($id)
@@ -157,12 +174,16 @@ class baivietController extends Controller
         $baiviet = baiviet::find($id);
 
         #lay tên phân quyền
-        $usergroup_id = Auth::user()->usergroup_id;
-        $usergroup = usergroup::where('id',$usergroup_id)->first();
-        $pq_id = $usergroup->pq_id;
-        $phanquyen = phanquyen::where('id',$pq_id)->first();
-        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+        if(Auth::check()){
+            $usergroup_id = Auth::user()->usergroup_id;
+            $usergroup = usergroup::where('id',$usergroup_id)->first();
+            $pq_id = $usergroup->pq_id;
+            $phanquyen = phanquyen::where('id',$pq_id)->first();
+            $ten_pq['ten_pq'] = $phanquyen->ten_pq;
 
-        return view('admin.baiviet.xembaiviet',$ten_pq,['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
+            return view('admin.baiviet.xembaiviet',$ten_pq,['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
+        }
+        else
+            return view('admin.baiviet.xembaiviet',['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
     }
 }

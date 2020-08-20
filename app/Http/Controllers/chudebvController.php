@@ -14,14 +14,19 @@ class chudebvController extends Controller
     {
         $chudebv = chudebv::find($id);
 
-        #lay tên phân quyền
-        $usergroup_id = Auth::user()->usergroup_id;
-        $usergroup = usergroup::where('id',$usergroup_id)->first();
-        $pq_id = $usergroup->pq_id;
-        $phanquyen = phanquyen::where('id',$pq_id)->first();
-        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+        if(Auth::check())
+        {
+            $usergroup_id = Auth::user()->usergroup_id;
+            $usergroup = usergroup::where('id',$usergroup_id)->first();
+            $pq_id = $usergroup->pq_id;
+            $phanquyen = phanquyen::where('id',$pq_id)->first();
+            $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+            return view('admin.chudebv.suachude',$ten_pq,['chudebv'=>$chudebv]);
+        }
+        else
+        return view('admin.chudebv.suachude',['chudebv'=>$chudebv]);
 
-        return view('admin.chudebv.suachude',$ten_pq,['chudebv'=>$chudebv]);
+        
     }
 
     public function postSua(Request $request,$id)
@@ -55,14 +60,17 @@ class chudebvController extends Controller
     public function getThem(){
         $chudebv = chudebv::all();
         
-        #lay tên phân quyền
-        $usergroup_id = Auth::user()->usergroup_id;
-        $usergroup = usergroup::where('id',$usergroup_id)->first();
-        $pq_id = $usergroup->pq_id;
-        $phanquyen = phanquyen::where('id',$pq_id)->first();
-        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
-
-    	return view('admin.chudebv.themchude',$ten_pq,['chudebv'=>$chudebv]);
+        if(Auth::check())
+        {
+            $usergroup_id = Auth::user()->usergroup_id;
+            $usergroup = usergroup::where('id',$usergroup_id)->first();
+            $pq_id = $usergroup->pq_id;
+            $phanquyen = phanquyen::where('id',$pq_id)->first();
+            $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+            return view('admin.chudebv.themchude',$ten_pq,['chudebv'=>$chudebv]);
+        }
+        else
+            return view('admin.chudebv.themchude',['chudebv'=>$chudebv]);
     }
 
     public function postThem(Request $request)
@@ -87,16 +95,21 @@ class chudebvController extends Controller
     
     public function getDanhSach()
     {
-        $chudebv = chudebv::orderBy('id','DESC')->paginate(2);
+        $chudebv = chudebv::orderBy('id','DESC')->paginate(5);
 
-        #lay tên phân quyền
-        $usergroup_id = Auth::user()->usergroup_id;
-        $usergroup = usergroup::where('id',$usergroup_id)->first();
-        $pq_id = $usergroup->pq_id;
-        $phanquyen = phanquyen::where('id',$pq_id)->first();
-        $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+        if(Auth::check())
+        {
+            $usergroup_id = Auth::user()->usergroup_id;
+            $usergroup = usergroup::where('id',$usergroup_id)->first();
+            $pq_id = $usergroup->pq_id;
+            $phanquyen = phanquyen::where('id',$pq_id)->first();
+            $ten_pq['ten_pq'] = $phanquyen->ten_pq;
+            return view('admin.chudebv.danhsach',$ten_pq,['chudebv'=>$chudebv]);
+        }
+        else
+        return view('admin.chudebv.danhsach',['chudebv'=>$chudebv]);
 
-        return view('admin.chudebv.danhsach',$ten_pq,['chudebv'=>$chudebv]);
+        
     }
 
 

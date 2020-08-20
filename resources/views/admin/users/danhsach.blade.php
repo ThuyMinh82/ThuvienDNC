@@ -6,6 +6,7 @@
 
 @section('content')
 <!-- Page content -->
+@if($ten_pq=='admin')
 <div class="row no-gutters">
     <div class="col-md-2"></div>
     <div class="col-md-8 col-sm-12 padding-0">
@@ -30,7 +31,7 @@
                     @foreach($users as $us)
                     <tr class="odd gradeX" align="center">
                         <td>{{$us->id}}</td>
-                        <td><a href="admin/baiviet/xemthongtin/{{$us->id}}">{{$us->username}}</td>
+                        <td><a href="admin/users/xemthongtin/{{$us->id}}">{{$us->username}}</td>
                         <td>
                             {{$us->usergroup->phanquyen->ten_pq}}
                         </td>
@@ -38,7 +39,7 @@
                             {{$us->usergroup->name_group}}
                         </td>
                         <td style=' width: 150px;'>
-                          <a href="admin/users/doimatkhau/{{$us->id}}"><i class='fas fa-pen-alt'style='margin: 5px;color:black'></i>Sửa</a>
+                          <a href="admin/users/capquyen/{{$us->id}}"><i class='fas fa-pen-alt'style='margin: 5px;color:black'></i>Sửa Quyền</a>
                           <a href="admin/users/xoataikhoan/{{$us->id}}"><i class='fas fa-trash'style='margin: 5px;color: red'></i>Xóa</a>
                         </td>                        
                     </tr>
@@ -51,4 +52,14 @@
     </div>
     <div class="col-md-2"></div> 
 </div>
+@else
+<div class="row no-gutters">
+    <div class="col-xl-3"></div>
+    <div class="col-xl-6 col-sm-12 padding-0">
+        <h5 style='text-align: center; '>Bạn phải là admin để thực hiện chức năng này</h5>
+        <img style='width:100%; height:100%' src="{{asset('backend/images/404.png')}}" alt="">
+    </div>
+    <div class="col-xl-3"></div>
+</div>
+@endif
 @endsection

@@ -94,7 +94,7 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">{{ Auth::user()->username }}</a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="admin/users/doimatkhau">Đổi mật khẩu</a>
+                                        <a class="dropdown-item" href="admin/users/doimatkhau/{{ Auth::user()->id }}">Đổi mật khẩu</a>
                                         <a class="dropdown-item" href="admin/profileuser/prouser">Xem thông tin</a>
                                         <a class="dropdown-item" href="logout">Đăng xuất</a>
                                     </div>
@@ -158,7 +158,7 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">{{ Auth::user()->username }}</a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="admin/users/doimatkhau">Đổi mật khẩu</a>
+                                        <a class="dropdown-item" href="admin/users/doimatkhau/{{ Auth::user()->id }}">Đổi mật khẩu</a>
                                         <a class="dropdown-item" href="admin/profileuser/prouser">Xem thông tin</a>
                                         <a class="dropdown-item" href="logout">Đăng xuất</a>
                                     </div>

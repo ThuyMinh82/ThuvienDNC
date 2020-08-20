@@ -22,40 +22,30 @@
                 </div>
             @endif
         <h4 style="text-align: center;">Sửa thông tin cá nhân</h4>
-        <form action="admin/profileuser/thaydoi" method="POST">  
-        <input type="hidden" name="_token" value="{{csrf_token()}}"/>     
-        <table class="table table-hover s">
-          <tbody>
-            @foreach($profileuser as $pu)
-              <tr>
-                <td id='bold3' style="width: 30px;">STT</td>
-                <td><input class="form-control" id="focusedInput" type="text" value="{{$pu->id}}"></td>
-              </tr>
-              <tr>
-                <td id='bold3'style="width: 25%;">Họ Tên</td>
-                <td><input class="form-control" id="focusedInput" type="text" value="{{$pu->name_prouser}}"></td>
-              </tr>
-              <tr>
-                <td id='bold3'>Tên hiển thị</td>
-                <td>{{$pu->users->username}}></td>
-              </tr>
-              <tr>
-                <td id='bold3'style="width: 20%;">Email</td>
-                <td><input class="form-control" id="focusedInput" type="text" value="{{$pu->email}}"></td>
-              </tr>
-              <tr>
-                <td id='bold3'>Địa chỉ</td>
-                <td><input class="form-control" id="focusedInput" type="text" value="{{$pu->address}}"></td>
-              </tr>
-              <tr>
-                <td id='bold3'>Số điện thoại</td>
-                <td><input class="form-control" id="focusedInput" type="text" value="{{$pu->sdt}}"></td>
-              </tr>               
-            @endforeach
-          </tbody>
-        </table>
-        <button type="submit" class="btn btn-primary center">Lưu</button>
-      </form>
+        <form action="admin/profileuser/thaydoi/{{$profileuser->id}}" method="POST">  
+          <input type="hidden" name="_token" value="{{csrf_token()}}"/>     
+          <table class="table table-hover s">
+            <tbody>
+                <tr>
+                  <td id='bold3'style="width: 25%;">Họ Tên</td>
+                  <td><input class="form-control" name='name_prouser' type="text" value="{{$profileuser->name_prouser}}"></td>
+                </tr>
+                <tr>
+                  <td id='bold3'style="width: 20%;">Email</td>
+                  <td><input class="form-control" name='email' type="text" value="{{$profileuser->email}}"></td>
+                </tr>
+                <tr>
+                  <td id='bold3'>Địa chỉ</td>
+                  <td><input class="form-control" name='address' type="text" value="{{$profileuser->address}}"></td>
+                </tr>
+                <tr>
+                  <td id='bold3'>Số điện thoại</td>
+                  <td><input class="form-control" name='sdt' type="text" value="{{$profileuser->sdt}}"></td>
+                </tr>
+              </tbody>
+            </table>
+          <button type="submit" class="btn btn-primary center">Lưu</button>
+        </form>
     </div>
     <div class="col-md-3"></div> 
 </div>

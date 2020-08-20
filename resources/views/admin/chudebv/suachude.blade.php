@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-
+@if($ten_pq=='admin')
 <div class="row no-gutters">
     <div class="col-md-3"></div>
     <div class="col-md-6 col-sm-12 padding-0">
