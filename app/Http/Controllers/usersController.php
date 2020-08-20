@@ -154,7 +154,7 @@ class usersController extends Controller
 
         
     }
-<<<<<<< HEAD
+
     public function getXemThongTin($id)
     {   
         $profileuser = profileuser::where('users_id',$id)->get();
@@ -171,8 +171,6 @@ class usersController extends Controller
         else
             return view('admin.users.xemthongtin',['profileuser'=>$profileuser]);
     }
-=======
->>>>>>> cc3fe37a37607c47d6114a3d4ece754dd23ad72d
 
     public function getloginAD(){
         return view('admin.login');
