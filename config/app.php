@@ -56,7 +56,7 @@ return [
 
     'asset_url' => env('ASSET_URL', null),
 
-    'timezone' => 'Asia/Ho_Chi_Minh',
+    
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -69,6 +69,7 @@ return [
     */
 
     'timezone' => 'UTC',
+    'timezone' => 'Asia/Ho_Chi_Minh',
 
     /*
     |--------------------------------------------------------------------------

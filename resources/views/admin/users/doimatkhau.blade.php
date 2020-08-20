@@ -77,7 +77,7 @@
 </div>
 @endsection
 
-@section('script')
+<!-- @section('script')
     <script>
         $(document).ready(function(){
             $("#changePassword").change(function(){
@@ -95,4 +95,4 @@
             });
         });
     </script>
-@endsection
+@endsection -->
