@@ -46,9 +46,11 @@ class HomeController extends Controller
         $baiviet = baiviet::find($id);
         return view('giaodien.xembaiviet',['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
     }
-    function getXemBaiViet($id){
+    function gioithieusach(){
         $chudebv = chudebv::all();
-        $baiviet = baiviet::find($id);
-    	return view('giaodien.xembaiviet',['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
+        $baiviet = baiviet::where('cd_id', 9)->where('status', 1)->paginate(10);
+        return view('giaodien.gioithieusach')->with('baiviet', $baiviet);
+
     }
+
 }

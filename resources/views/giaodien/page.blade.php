@@ -79,7 +79,7 @@
 
                                         <a class="dropdown-item" href="giaodien/goctanmansv">GÓC TẢN MẠN SINH VIÊN</a>
 
-                                        <a class="dropdown-item" href="http://thuvien.nctu.edu.vn/index.php/topic/7" >GIỚI THIỆU SÁCH</a>
+                                        <a class="dropdown-item" href="giaodien/gioithieusach" >GIỚI THIỆU SÁCH</a>
                                     </div>
                                 </li>    
 

@@ -24,6 +24,7 @@ Route::get('giaodien/tintuc','HomeController@tintuc');
 Route::get('giaodien/lienhe','HomeController@lienhe');
 Route::get('giaodien/sachtang','HomeController@sachtang');
 Route::get('giaodien/goctanmansv','HomeController@goctanmansv');
+Route::get('giaodien/gioithieusach','HomeController@gioithieusach');
 Route::get('xembaiviet/{id}','HomeController@getXemBaiViet');
 
 
