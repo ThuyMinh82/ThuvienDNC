@@ -11,7 +11,7 @@ class HomeController extends Controller
     //
     function index(){
         $chudebv = chudebv::all();
-        $baiviet = baiviet::where('status', 1)->paginate(10);
+        $baiviet = baiviet::where('status','1')->paginate(5);
         return view('giaodien.index')->with('baiviet', $baiviet);
 
     }
@@ -21,7 +21,7 @@ class HomeController extends Controller
     }
     function tintuc(){
         $chudebv = chudebv::all();
-        $baiviet = baiviet::where('cd_id', 1)->where('status', 1)->paginate(10);
+        $baiviet = baiviet::where('cd_id', 1)->where('status', 1)->paginate(5);
         return view('giaodien.tintuc')->with('baiviet', $baiviet);
 
     }
@@ -31,13 +31,13 @@ class HomeController extends Controller
     }
     function sachtang(){
         $chudebv = chudebv::all();
-        $baiviet = baiviet::where('cd_id', 6)->where('status', 1)->paginate(10);
+        $baiviet = baiviet::where('cd_id', 6)->where('status', 1)->paginate(5);
         return view('giaodien.sachtang')->with('baiviet', $baiviet);
 
     }
     function goctanmansv(){
         $chudebv = chudebv::all();
-        $baiviet = baiviet::where('cd_id', 8)->where('status', 1)->paginate(10);
+        $baiviet = baiviet::where('cd_id', 8)->where('status', 1)->paginate(5);
         return view('giaodien.goctanmansv')->with('baiviet', $baiviet);
 
     }
@@ -48,7 +48,7 @@ class HomeController extends Controller
     }
     function gioithieusach(){
         $chudebv = chudebv::all();
-        $baiviet = baiviet::where('cd_id', 9)->where('status', 1)->paginate(10);
+        $baiviet = baiviet::where('cd_id', 9)->where('status', 1)->paginate(5);
         return view('giaodien.gioithieusach')->with('baiviet', $baiviet);
 
     }

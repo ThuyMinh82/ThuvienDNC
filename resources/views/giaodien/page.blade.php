@@ -16,7 +16,16 @@
         <base href="{{asset('')}}">
       
     </head>
-    
+    <style>
+        .text-mtngan{
+            font-size: 14px;
+            overflow: hidden; 
+            display:-webkit-box;
+            max-height: 90px;
+            -webkit-box-orient: vertical; 
+            -webkit-line-clamp:3;
+        }
+    </style>
     <body> 
         <div class="container-fluid">
             <div class="row no-gutters">

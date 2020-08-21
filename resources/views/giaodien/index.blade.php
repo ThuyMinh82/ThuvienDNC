@@ -102,7 +102,7 @@
                 <div class="carousel-body" style="margin-top: 55px;">
                     <div class="row w-main">
                         @foreach($baiviet as $bv)
-                        <div class="col-sm-4 img-avatar text-center">
+                        <div class="col-sm-4 img-avatar text-center" style="margin-top: 5px;">
                             <a href="xembaiviet/{{$bv->id}}"><img style="width: 190px; height: 120px;" src="{{$bv->anhdaidien}}" id="hinh"></a>
                         </div>
                         <div class="col-sm-8 w-main-right">
@@ -111,18 +111,14 @@
                                     <a class="title-ls-news" href="xembaiviet/{{$bv->id}}">{{$bv->ten_bv}}</a>
                                 </div>
                                 <div class="support-tilte">{{$bv->chudebv->ten_cd}}</div>     
-                                <span>{!! $bv->mtngan_bv !!}</span>
+                                <span class='text-mtngan'>{!! $bv->mtngan_bv !!}</span>
                             </div>
                         </div>
                         @endforeach
                     </div>
                     <div class="duongvien"></div>
                     <ul class="pagination justify-content-center">
-                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        {{ $baiviet->links() }}
                     </ul>
                 </div>
             </div>
