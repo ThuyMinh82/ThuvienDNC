@@ -8,6 +8,11 @@
 <div class="row no-gutters">
   <div class="col-md-3"></div>
   <div class="col-md-6 col-sm-12 padding-0">
+  @if(session('thongbao'))
+                            <div class="alert alert-success">
+                                {{session('thongbao')}}
+                            </div>
+                        @endif
     <h4>Thông tin cá nhân</h4> 
     @foreach($profileuser as $pro)
     <table class="table table-hover">
