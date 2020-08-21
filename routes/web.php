@@ -21,6 +21,10 @@ Route::get('home','HomeController@index');
 Route::get('giaodien/gioithieu','HomeController@gioithieu');
 Route::get('giaodien/tintuc','HomeController@tintuc');
 Route::get('giaodien/lienhe','HomeController@lienhe');
+Route::get('giaodien/sachtang','HomeController@sachtang');
+Route::get('giaodien/goctanmansv','HomeController@goctanmansv');
+Route::get('xembaiviet/{id}','HomeController@getXemBaiViet');
+
 
 Route::group(['prefix'=>'admin'],function(){
 	Route::group(['prefix'=>'chudebv'],function(){
@@ -91,7 +95,4 @@ Route::get('trangchu','pagesController@index');
 Route::get('admin/login','usersController@getloginAD');
 Route::post('admin/login','usersController@postloginAD');
 Route::get('logout','usersController@logout');
-
-Route::get('timkiem','pagesController@timkiem');
-
 

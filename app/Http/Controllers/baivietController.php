@@ -77,7 +77,7 @@ class baivietController extends Controller
         $this->validate($request, [
             'chudebv'=>'required',
             'ten_bv'=>'required|min:3|unique:baiviet,ten_bv',
-            'anhdaidien'=>'required|unique:baiviet,anhdaidien',
+            'anhdaidien'=>'required',
             'mtngan_bv'=>'required',
             'noidung_bv'=>'required'
             ],[
@@ -85,7 +85,6 @@ class baivietController extends Controller
             'chudebv.required'=>'Bạn chưa chọn chủ đề bài viết',
             'ten_bv.required'=>'Bạn chưa nhập tên bài viết',
             'anhdaidien.required'=>'Bạn chưa chọn ảnh đại diện',
-            'anhdaidien.unique'=>'Ảnh đại diện đã tồn tại',
             'ten_bv.min'=>'Tên bài viết phải có ít nhất 3 ký tự',
             'ten_bv.unique'=>'Tên bài viết đã tồn tại ',
             'mtngan_bv.required'=>'Bạn chưa viết mô tả ngắn',
@@ -127,7 +126,7 @@ class baivietController extends Controller
         $baiviet = baiviet::find($id);
         $this->validate($request,[
             'chudebv'=>'required',
-            'ten_bv'=>'required|min:3|unique:baiviet,ten_bv',
+            'ten_bv'=>'required|min:3|',
             'anhdaidien'=>'required|',
             'mtngan_bv'=>'required',
             'noidung_bv'=>'required',

@@ -100,101 +100,23 @@
                 </div>
 
                 <div class="carousel-body" style="margin-top: 55px;">
-
                     <div class="row w-main">
+                        @foreach($baiviet as $bv)
                         <div class="col-sm-4 img-avatar text-center">
-                            <a href="http://thuvien.nctu.edu.vn/index.php/news/lan-toa-cuoc-thi-dai-su-van-hoa-doc-2020"><img style="width: 190px; height: 120px;" src="http://thuvien.nctu.edu.vn/upload/lantoa1.jpg"  id="hinh"></a>
+                            <a href="xembaiviet/{{$bv->id}}"><img style="width: 190px; height: 120px;" src="{{$bv->anhdaidien}}" id="hinh"></a>
                         </div>
-
                         <div class="col-sm-8 w-main-right">
-                            <div class="main">  
-                                <div class="hidden-xs"><a class="title-ls-news" href="http://thuvien.nctu.edu.vn/index.php/news/lan-toa-cuoc-thi-dai-su-van-hoa-doc-2020">Lan tỏa Cuộc thi Đại sứ Văn hóa đọc 2020</a>
+                            <div class="main"> 
+                                <div class="hidden-xs">
+                                    <a class="title-ls-news" href="xembaiviet/{{$bv->id}}">{{$bv->ten_bv}}</a>
                                 </div>
-
-                                <div class="support-tilte">Tin tức &amp; Sự kiện - 01/06/2020</div>
-                                
-                                <span>Cuộc thi Đại sứ Văn hóa đọc 2020 vòng sơ khảo bắt đầu được triển khai từ tháng 2 năm 2020. Đến thời điểm hiện tại đã có hàng chục nghìn bài dự thi tham…</span>
-                            </div>          
-                        </div>        
-                    </div>
-                    <div class="duongvien"></div>
-
-                    <div class="row w-main">
-                        <div class="col-sm-4 img-avatar text-center">
-                            <a href="http://thuvien.nctu.edu.vn/index.php/news/huong-dan-tham-gia-cuoc-thi-dai-su-van-hoa-doc-2020"><img style="width: 190px; height: 120px;" src="http://thuvien.nctu.edu.vn/upload/vhd22.jpg"  id="hinh"></a>
-                        </div>
-
-                        <div class="col-sm-8 w-main-right">
-                            <div class="main">  
-                                <div class="hidden-xs"><a class="title-ls-news" href="http://thuvien.nctu.edu.vn/index.php/news/huong-dan-tham-gia-cuoc-thi-dai-su-van-hoa-doc-2020">Hướng dẫn tham gia Cuộc thi Đại sứ Văn hóa đọc 2020</a>
-                                </div>
-
-                                <div class="support-tilte">Tin tức &amp; Sự kiện - 20/05/2020</div>
-                                
-                                <span>Để cuộc thi Đại sứ Văn hóa đọc thực sự là một sân chơi bổ ích cho học sinh và sinh viên trong cả nước, góp phần thúc đẩy phong trào đọc trong thế hệ…</span>
+                                <div class="support-tilte">{{$bv->chudebv->ten_cd}}</div>     
+                                <span>{!! $bv->mtngan_bv !!}</span>
                             </div>
-                        </div>          
-                    </div>
-
-                    <div class="duongvien"></div>
-
-                    <div class="row w-main">
-                        <div class="col-sm-4 img-avatar text-center">
-                            <a href="http://thuvien.nctu.edu.vn/index.php/news/gioi-thieu-cau-lac-bo-ban-doc-thu-vien-dai-hoc-nam-can-tho"><img style="width: 190px; height: 120px;" src="http://thuvien.nctu.edu.vn/upload/block-banner1.png"  id="hinh"></a>
                         </div>
-
-                        <div class="col-sm-8 w-main-right">
-                            <div class="main">  
-                                <div class="hidden-xs"><a class="title-ls-news" href="http://thuvien.nctu.edu.vn/index.php/news/gioi-thieu-cau-lac-bo-ban-doc-thu-vien-dai-hoc-nam-can-tho">Giới thiệu Câu lạc bộ Bạn đọc - Thư viện Đại học Nam Cần Thơ</a>
-                                </div>
-                                
-                                <div class="support-tilte">Tin tức &amp; Sự kiện - 24/07/2020</div>
-                                
-                                <span>Nhằm góp phần phát triển Thư viện cũng như nâng cao chất lượng phục vụ bạn đọc, cùng với đáp ứng nhu cầu của một số bạn đọc muốn được sinh hoạt cùng thư…</span>
-                            </div> 
-                        </div>          
+                        @endforeach
                     </div>
-
                     <div class="duongvien"></div>
-
-                    <div class="row w-main">
-                        <div class="col-sm-4 img-avatar text-center">
-                            <a href="http://thuvien.nctu.edu.vn/index.php/news/lieu-phap-doc-sach-trong-hoat-dong-thu-vien"><img style="width: 190px; height: 120px;" src="http://thuvien.nctu.edu.vn/upload/mot-vai-net-ve-noi-dung-tv-bia.jpg"  id="hinh"></a>
-                        </div>
-
-                        <div class="col-sm-8 w-main-right">
-                            <div class="main">  
-                                <div class="hidden-xs"><a class="title-ls-news" href="http://thuvien.nctu.edu.vn/index.php/news/lieu-phap-doc-sach-trong-hoat-dong-thu-vien">Liệu pháp đọc sách trong hoạt động thư viện</a>
-                                </div>
-                                
-                                <div class="support-tilte">Tin tức &amp; Sự kiện - 23/12/2019</div>
-                                
-                                <span>Là một loại sản phẩm đặc biệt do con người tạo ra, sách có nhiều lợi thế và tác dụng tích cực</span>
-                            </div>
-                        </div>          
-                    </div>
-
-                    <div class="duongvien"></div>
-
-                    <div class="row w-main">
-                        <div class="col-sm-4 img-avatar text-center">
-                            <a href="http://thuvien.nctu.edu.vn/index.php/news/hoi-nghi-ban-doc-lan-2-thu-vien-la-ngoi-nha-thu-2-cua-sinh-vien"><img style="width: 190px; height: 120px;" src="http://thuvien.nctu.edu.vn/upload/HNBDpp1.png"  id="hinh"></a>
-                        </div>
-
-                        <div class="col-sm-8 w-main-right">
-                            <div class="main">  
-                                <div class="hidden-xs"><a class="title-ls-news" href="http://thuvien.nctu.edu.vn/index.php/news/hoi-nghi-ban-doc-lan-2-thu-vien-la-ngoi-nha-thu-2-cua-sinh-vien">Hội nghị bạn đọc lần 2 - Thư viện là ngôi nhà thứ 2 của sinh viên</a>
-                                </div>
-                                
-                                <div class="support-tilte">Tin tức &amp; Sự kiện - 30/11/2019</div>
-                                
-                                <span>Thư viện DNC là không gian dành cho cán bộ, giảng viên, sinh viên của trường, các bạn ngoài việc đến học bài/ nghiên cứu tài liệu/ sử dụng máy tính/ đọc…</span>
-                            </div>
-                        </div>          
-                    </div>
-
-                    <div class="duongvien"></div>
-
                     <ul class="pagination justify-content-center">
                         <li class="page-item"><a class="page-link" href="#">Previous</a></li>
                         <li class="page-item active"><a class="page-link" href="#">1</a></li>

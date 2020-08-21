@@ -23,10 +23,4 @@ class pagesController extends Controller
         else
             return view('pages.index');
     }
-    function timkiem(Request $request){
-    	$tukhoa = $request->tukhoa;
-    	$baiviet = baiviet::where('ten_bv','like',"%$tukhoa%")->take(5);
-    	return view('pages.timkiem',['baiviet'=>$baiviet,'tukhoa'=>$tukhoa]);
-
-    }
 }

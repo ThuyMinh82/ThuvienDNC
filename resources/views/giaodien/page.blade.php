@@ -35,7 +35,7 @@
                 <div class="col-xl-1"></div>
                 <div class="col-xl-10 col-sm-12 padding-0">
                     <nav class="navbar navbar-dark py-0 bg-primary navbar-expand-lg py-md-0" style='font-size: 18px;'>
-                        <a class="navbar-brand" href="" ><i class="fa fa-fw fa-home"></i></a>
+                        <a class="navbar-brand" href="/ThuvienDNC/public/home" ><i class="fa fa-fw fa-home"></i></a>
 
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                             <span class="navbar-toggler-icon"></span>
@@ -73,9 +73,11 @@
                                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"  style="color: white">TIN TỨC</a>
 
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="giaodien/tintuc">TIN TỨC MỚI</a>
+                                        <a class="dropdown-item" href="giaodien/tintuc">TIN TỨC & SỰ KIỆN</a>
 
-                                        <a class="dropdown-item" href="#">SỰ KIỆN TRONG TƯƠNG LAI GẦN</a>
+                                        <a class="dropdown-item" href="giaodien/sachtang">SÁCH TẶNG</a>
+
+                                        <a class="dropdown-item" href="giaodien/goctanmansv">GÓC TẢN MẠN SINH VIÊN</a>
 
                                         <a class="dropdown-item" href="http://thuvien.nctu.edu.vn/index.php/topic/7" >GIỚI THIỆU SÁCH</a>
                                     </div>
