@@ -8,24 +8,11 @@
                 </a>
 
                 <div class="panel-body">
+                    @foreach($baiviet1 as $bv)
                     <div style="border-bottom: 1px solid #ccc;">
-                        <a href="http://thuvien.nctu.edu.vn/index.php/news/sach-tham-khao-bai-tap-va-bai-giai-ke-toan-tai-chinh"  class="text-primary">Sách tham khảo bài tập và bài giải kế toán tài chính</a><span class="date-newstick"><br><i>Giới thiệu sách - 15/07/2020</i></span>
+                        <a href="xembaiviet/{{$bv->id}}"  class="text-primary" style="font-size: 14px; overflow: hidden; display:-webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp:2; margin-bottom: -30px;">{{$bv->ten_bv}}</a><span class="date-newstick"><br><i>{{$bv->chudebv->ten_cd}} - {{$bv->created_at}}</i></span>
                     </div>
-                    <div style="border-bottom: 1px solid #ccc;">
-                        <a href="http://thuvien.nctu.edu.vn/index.php/news/luat-doanh-nghiep-viet-nam-tinh-huong-dan-giai-binh-luan"  class="text-primary">Luật doanh nghiệp Việt Nam tình huống - Dẫn giải - Bình luận</a><span class="date-newstick"><br><i>Giới thiệu sách - 10/07/2020</i></span>
-                    </div>
-                    <div style="border-bottom: 1px solid #ccc;">
-                        <a href="http://thuvien.nctu.edu.vn/index.php/news/chum-anh-ve-thu-vien-dai-hoc-nam-can-tho" class="text-primary">Chùm ảnh về thư viện đại học Nam Cần Thơ</a><span class="date-newstick"><br><i>Góc ảnh - 10/07/2020</i></span>
-                    </div>
-                    <div style="border-bottom: 1px solid #ccc;">
-                        <a href="http://thuvien.nctu.edu.vn/index.php/news/danh-sach-sinh-vien-tre-han-tra-sach-tinh-den-30062020" class="text-primary">Danh sách sinh viên trễ hạn trả sách tính đến 30/06/2020</a><span class="date-newstick"><br><i>Thông báo - 09/07/2020</i></span>
-                    </div>
-                    <div style="border-bottom: 1px solid #ccc;">
-                        <a href="http://thuvien.nctu.edu.vn/index.php/news/nguoi-ban-hang-gioi-phai-ban-minh-truoc"  class="text-primary">Người Bán Hàng Giỏi Phải Bán Mình Trước</a><span class="date-newstick"><br><i>Giới thiệu sách - 03/07/2020</i></span>
-                    </div>
-                    <div style="border-bottom: 1px solid #ccc;">
-                        <a href="http://thuvien.nctu.edu.vn/index.php/news/100-phuong-phap-truyen-dong-luc-cho-doi-nhom-chien-thang" class="text-primary">100 Phương Pháp Truyền Động Lực Cho Đội Nhóm Chiến Thắng</a><span class="date-newstick"><br><i>Giới thiệu sách - 29/06/2020</i></span>
-                    </div>
+                    @endforeach
                 </div>
             
                 <div class="panel panel-default" id="lienketwebsite">

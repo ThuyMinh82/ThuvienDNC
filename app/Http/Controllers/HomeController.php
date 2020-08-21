@@ -11,8 +11,9 @@ class HomeController extends Controller
     //
     function index(){
         $chudebv = chudebv::all();
-        $baiviet = baiviet::where('status','1')->paginate(5);
-        return view('giaodien.index')->with('baiviet', $baiviet);
+        $baiviet = baiviet::where('status','1')->orderBy('id','DESC')->paginate(5);
+        $baiviet1 = baiviet::where('status','1')->orderBy('id','DESC')->take(5);
+        return view('giaodien.index',['baiviet1'=>$baiviet1])->with('baiviet', $baiviet);
 
     }
     function gioithieu(){
@@ -22,7 +23,8 @@ class HomeController extends Controller
     function tintuc(){
         $chudebv = chudebv::all();
         $baiviet = baiviet::where('cd_id', 1)->where('status', 1)->paginate(5);
-        return view('giaodien.tintuc')->with('baiviet', $baiviet);
+        $baiviet1 = baiviet::where('status','1')->orderBy('id','DESC')->take(5)->paginate(5);
+        return view('giaodien.tintuc',['baiviet1'=>$baiviet1])->with('baiviet', $baiviet);
 
     }
     function lienhe(){
@@ -32,24 +34,28 @@ class HomeController extends Controller
     function sachtang(){
         $chudebv = chudebv::all();
         $baiviet = baiviet::where('cd_id', 6)->where('status', 1)->paginate(5);
-        return view('giaodien.sachtang')->with('baiviet', $baiviet);
+        $baiviet1 = baiviet::where('status','1')->orderBy('id','DESC')->take(5)->paginate(5);
+        return view('giaodien.sachtang',['baiviet1'=>$baiviet1])->with('baiviet', $baiviet);
 
     }
     function goctanmansv(){
         $chudebv = chudebv::all();
         $baiviet = baiviet::where('cd_id', 8)->where('status', 1)->paginate(5);
-        return view('giaodien.goctanmansv')->with('baiviet', $baiviet);
+        $baiviet1 = baiviet::where('status','1')->orderBy('id','DESC')->take(5)->paginate(5);
+        return view('giaodien.goctanmansv',['baiviet1'=>$baiviet1])->with('baiviet', $baiviet);
 
     }
     function getXemBaiViet($id){
         $chudebv = chudebv::all();
         $baiviet = baiviet::find($id);
-        return view('giaodien.xembaiviet',['baiviet'=>$baiviet,'chudebv'=>$chudebv]);
+        $baiviet1 = baiviet::where('status','1')->orderBy('id','DESC')->take(5)->paginate(5);
+        return view('giaodien.xembaiviet',['baiviet'=>$baiviet,'baiviet1'=>$baiviet1,'chudebv'=>$chudebv]);
     }
     function gioithieusach(){
         $chudebv = chudebv::all();
         $baiviet = baiviet::where('cd_id', 9)->where('status', 1)->paginate(5);
-        return view('giaodien.gioithieusach')->with('baiviet', $baiviet);
+        $baiviet1 = baiviet::where('status','1')->orderBy('id','DESC')->take(5)->paginate(5);
+        return view('giaodien.gioithieusach',['baiviet1'=>$baiviet1])->with('baiviet', $baiviet);
 
     }
 

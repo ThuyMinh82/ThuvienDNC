@@ -21,7 +21,7 @@
             font-size: 14px;
             overflow: hidden; 
             display:-webkit-box;
-            max-height: 90px;
+            max-height: 64px;
             -webkit-box-orient: vertical; 
             -webkit-line-clamp:3;
         }

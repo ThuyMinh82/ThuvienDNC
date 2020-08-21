@@ -18,7 +18,7 @@
                     <div class="hidden-xs">
                         <a class="title-ls-news" href="xembaiviet/{{$bv->id}}">{{$bv->ten_bv}}</a>
                     </div>
-                    <div class="support-tilte">{{$bv->chudebv->ten_cd}}</div>     
+                    <div class="support-tilte">{{$bv->chudebv->ten_cd}} - {{$bv->created_at}}</div>     
                     <span class='text-mtngan'>{!! $bv->mtngan_bv !!}</span>
                 </div>
             </div>
