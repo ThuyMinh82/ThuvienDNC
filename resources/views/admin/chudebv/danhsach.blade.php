@@ -6,6 +6,7 @@
 
 @section('content')
 <!-- Page content -->
+@if(Auth::check())
 @if($ten_pq=='admin')
 <div class="row no-gutters">
     <div class="col-md-2"></div>
@@ -85,6 +86,7 @@
     </div>
     <div class="col-xl-3"></div>
 </div>
+@endif
 @endif
 
 @endsection

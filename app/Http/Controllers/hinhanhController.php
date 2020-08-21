@@ -23,7 +23,7 @@ class hinhanhController extends Controller
             return view('admin.hinhanh.themhinhanh',$ten_pq,['hinhanh'=>$hinhanh]);
         }
         else
-            return view('admin.hinhanh.themhinhanh',$ten_pq,['hinhanh'=>$hinhanh]);
+            return view('admin.hinhanh.themhinhanh',['hinhanh'=>$hinhanh]);
     }
 
     public function postThem(Request $request)

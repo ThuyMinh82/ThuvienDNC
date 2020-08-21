@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
      return view('welcome');
  });
 
+Route::get('xembaiviet/{id}','HomeController@getXemBaiViet');
 Route::get('home','HomeController@index');
 Route::get('giaodien/gioithieu','HomeController@gioithieu');
 Route::get('giaodien/tintuc','HomeController@tintuc');
