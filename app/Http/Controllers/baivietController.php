@@ -128,6 +128,7 @@ class baivietController extends Controller
             'chudebv'=>'required',
             'ten_bv'=>'required|min:3|',
             'anhdaidien'=>'required|',
+            'ten_bv'=>'required|min:3',
             'mtngan_bv'=>'required',
             'noidung_bv'=>'required',
             'alias' => 'required'

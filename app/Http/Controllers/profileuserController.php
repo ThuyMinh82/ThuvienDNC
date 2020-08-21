@@ -14,11 +14,12 @@ class profileuserController extends Controller
     //
     public function getIndex(Request $Request)
     {
-        $id = Auth::user()->id;
-        $profileuser = profileuser::where('users_id',$id)->get();
+        $profileuser = profileuser::all();
 
         if(Auth::check())
         {
+            $id = Auth::user()->id;
+            $profileuser = profileuser::where('users_id',$id)->get();
             $usergroup_id = Auth::user()->usergroup_id;
             $usergroup = usergroup::where('id',$usergroup_id)->first();
             $pq_id = $usergroup->pq_id;
@@ -83,7 +84,7 @@ class profileuserController extends Controller
         $profileuser = profileuser::where('users_id',$id);
 
         if(Auth::check())
-        {
+        {   
             $usergroup_id = Auth::user()->usergroup_id;
             $usergroup = usergroup::where('id',$usergroup_id)->first();
             $pq_id = $usergroup->pq_id;
