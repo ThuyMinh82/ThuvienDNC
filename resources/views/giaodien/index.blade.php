@@ -128,14 +128,14 @@
     <div class="col-md-2 col-md-pull-6 col-sm-6 col-xs-12" id="bodyright">
         <div class="panel-group">
             <div class="panel panel-default" id="tinmoinhat">
-                <a href="tintuc.html">
+                <a>
                     <div class="panel-heading">
                         <span class="glyphicon glyphicon-bullhorn"></span><h5> Tin mới nhất </h5>
                     </div>
                 </a>
 
                 <div class="panel-body">
-                    @foreach($baiviet as $bv)
+                    @foreach($baiviet1 as $bv)
                     <div style="border-bottom: 1px solid #ccc;">
                         <a href="xembaiviet/{{$bv->id}}"  class="text-primary" style="font-size: 14px; overflow: hidden; display:-webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp:2; margin-bottom: -30px;">{{$bv->ten_bv}}</a><span class="date-newstick"><br><i>{{$bv->chudebv->ten_cd}} - {{$bv->created_at}}</i></span>
                     </div>
