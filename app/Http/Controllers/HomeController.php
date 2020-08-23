@@ -5,18 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\baiviet;
 use App\chudebv;
+use App\hinhanh;
 
 class HomeController extends Controller
 {
     //
     function index(){
+        $hinhanh = hinhanh::all();
         $chudebv = chudebv::all();
         $baiviet = baiviet::where('status','1')->orderBy('id','DESC')->paginate(5);
         $baiviet1 = baiviet::where('status','1')->orderBy('id','DESC')->take(5);
-        return view('giaodien.index',['baiviet1'=>$baiviet1])->with('baiviet', $baiviet);
+        return view('giaodien.index',['baiviet1'=>$baiviet1])->with('baiviet', $baiviet)->with('hinhanh',$hinhanh);
 
     }
     function gioithieu(){
+        $chudebv = chudebv::all();
+        $baiviet = baiviet::where('status','1')->orderBy('id','DESC')->paginate(5);
+        $baiviet1 = baiviet::where('status','1')->orderBy('id','DESC')->take(5)->paginate(5);
     	return view('giaodien.gioithieu');
 
     }
