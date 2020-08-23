@@ -78,6 +78,7 @@ class usersController extends Controller
         $users = users::find($id);
         $this -> validate ($request,[
             'password'=>'required|min:3|max:32',
+            'passwordAgain'=>'required|same',
         ],[
             'password.required'=>'Bạn chưa nhập Mật khẩu',
             'password.min'=>'Mật khẩu không được nhỏ hơn 3 ký tự',
