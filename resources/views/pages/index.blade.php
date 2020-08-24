@@ -8,12 +8,28 @@
 <div class="row no-gutters">
     <div class="col-md-1"></div>
     <div class="col-md-10 col-sm-12 padding-0">
-        <div class="alert alert-success alert-dismissible" style='text-align:center;'>
             @if(Auth::check())
                 @if($ten_pq=='admin')
-                    <h5>Xin chào {{ Auth::user()->username }}! bạn đã đăng nhập thành công và có thể sử dụng tất cả chức năng.</h5>
+                    <div class="alert alert-success alert-dismissible" style='text-align:center;'>
+                        <h5>Xin chào {{ Auth::user()->username }}! bạn đã đăng nhập thành công và có thể sử dụng tất cả chức năng.</h5>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-xl-3"></div>
+                        <div class="col-xl-6 col-sm-12 padding-0">
+			                <img style='width:100%; height:100%' src="{{asset('backend/images/welcome.png')}}" alt="">
+                        </div>
+                        <div class="col-xl-3"></div>
+                    </div>
                 @else
-                    <h5>Xin chào {{ Auth::user()->username }}! bạn đã đăng nhập thành công bạn có thể thêm bài viết và thêm hình ảnh.</h5>
+                    <div class="alert alert-success alert-dismissible" style='text-align:center;'>
+                        <h5>Xin chào {{ Auth::user()->username }}! bạn đã đăng nhập thành công bạn có thể thêm bài viết và thêm hình ảnh.</h5>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-xl-3"></div>
+                        <div class="col-xl-6 col-sm-12 padding-0">
+			                <img style='width:100%; height:100%' src="{{asset('backend/images/welcome.png')}}" alt="">
+                        </div>
+                    <div class="col-xl-3"></div>
                 @endif
             @else
                 <div class="row no-gutters">
@@ -29,17 +45,7 @@
           </tr>
             </tbody>
         </table>
-    </div>
     <div class="col-md-1"></div> 
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 @endsection()
 

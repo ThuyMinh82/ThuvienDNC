@@ -90,6 +90,9 @@
                                         <a class="dropdown-item" href="admin/hinhanh/danhsach">Danh sách hình ảnh</a>
                                     </div>
                                 </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="/ThuvienDNC/public/home"><img style='width:15px; height:15px; margin-right: 5px; margin-top: -2px;' src="{{asset('backend/images/namct.ico')}}">Thư Viện</a>
+                                </li>
                             </ul>
                             <ul class="nav navbar-nav ml-auto">
                                 <li class="nav-item dropdown">
@@ -153,6 +156,9 @@
                                         <a class="dropdown-item" href="admin/hinhanh/themhinhanh">Thêm Ảnh</a>
                                         <a class="dropdown-item" href="admin/hinhanh/danhsach">Danh sách hình ảnh</a>
                                     </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="/ThuvienDNC/public/home"><img style='width:15px; height:15px; margin-right: 5px; margin-top: -2px;' src="{{asset('backend/images/namct.ico')}}">Thư Viện</a>
                                 </li>
                             </ul>
                             <ul class="nav navbar-nav ml-auto">

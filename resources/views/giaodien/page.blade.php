@@ -31,7 +31,7 @@
             <div class="row no-gutters">
                 <div class="col-xl-1"></div>
                  <div class="col-xl-6 col-lg-7 col-md-8 col-sm-12" id="color" style="background-color:#D2EDFB; background-image: linear-gradient(#D2EDFB,white);">
-                    <a href="" class ="logo"><img style='width:80%' src="{{asset('frontend/images/logo.png')}}" id="logo"></a>
+                    <a href="/ThuvienDNC/public/home" class ="logo"><img style='width:80%' src="{{asset('frontend/images/logo.png')}}" id="logo"></a>
                 </div>
 
                 <div class="col-xl-4 col-lg-5 col-md-4 d-none d-sm-block d-sm-none d-md-block" id="color" style="background-color:#D2EDFB; background-image: linear-gradient(#D2EDFB,white);">
@@ -52,10 +52,6 @@
 
                         <div class="collapse navbar-collapse" id="collapsibleNavbar">
                             <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" active href="/ThuvienDNC/public/home" style="color: white">TRANG CHỦ</a>
-                                </li>
-
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"  style="color: white">GIỚI THIỆU</a>
 
