@@ -29,7 +29,7 @@
             <div class="row no-gutters" id="banner">
                 <div class="col-xl-1"></div>
                 <div class="col-xl-6 col-lg-7 col-md-8 col-sm-12" id ="color">
-                    <a href=""  class="logo"><img src="{{asset('backend/images/logo.png')}}" id="logo"></a>
+                    <a href="trangchu"  class="logo"><img src="{{asset('backend/images/logo.png')}}" id="logo"></a>
                 </div>
                 <div class="col-xl-4 col-lg-5 col-md-4" id = "color">
                     <img src="{{asset('backend/images/block-banner.png')}}" id="logo1">

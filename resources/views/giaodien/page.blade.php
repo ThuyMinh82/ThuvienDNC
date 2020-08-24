@@ -40,7 +40,7 @@
                 <div class="col-xl-1"></div>
             </div>
 
-            <div class="row no-gutters">
+            <div class="row no-gutters" style='margin-top:5px;'>
                 <div class="col-xl-1"></div>
                 <div class="col-xl-10 col-sm-12 padding-0">
                     <nav class="navbar navbar-dark py-0 bg-primary navbar-expand-lg py-md-0" style='font-size: 18px;'>
@@ -108,7 +108,6 @@
             @yield('content')
 
             @include('giaodien.footder')
-
     </body>
 </html>
 
