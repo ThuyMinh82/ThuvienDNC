@@ -238,8 +238,12 @@ class usersController extends Controller
     }
 
     public function getloginAD(){
-        return view('admin.login');
+        if(Auth::check())
+            return redirect('trangchu');
+        else
+            return view('admin.login');
     }
+    
     public function postloginAD(Request $Request){
         $username = $Request->username;
         $password = md5($Request->password);
