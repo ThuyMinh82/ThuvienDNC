@@ -54,21 +54,21 @@ class profileuserController extends Controller
     public function postThaydoi(Request $request,$id)
     {
         $profileuser = profileuser::find($id);
-        /*$this->validate($Request,
+        $this->validate($request,
             [
-                'name_prouser' => 'required|unique:name_prouser|min:5|max:255',
-                'email'=>'required',
+                'name_prouser'=>'required',
+                'email'=>'email',
                 'address'=>'required',
-                'sdt'=>'required',
+                'sdt'=>'required|min:10|max:10'
             ],
             [
                 'name_prouser.required' => 'Bạn chưa nhập tên của bạn',
-                'email.unique' => 'Email đã tồn tại',
+                'email.email' => 'Email không đúng định dạng',
+                'email.required' => 'Bạn chưa nhập email',
                 'address.required' => 'Bạn chưa nhập địa chỉ',
                 'sdt.min' => 'Số điện thoại phải có 10 ký tự',
                 'sdt.max' => 'Số điện thoại phải đủ 10 ký tự',
-
-            ]);*/
+            ]);
         $profileuser->name_prouser = $request->name_prouser;
         $profileuser->email = $request->email;
         $profileuser->address = $request->address;
@@ -100,21 +100,21 @@ class profileuserController extends Controller
     public function postThem(Request $request)
     {
         $id = Auth::user()->id;
-        /*$this->validate($Request,
+        $this->validate($request,
             [
-                'name_prouser' => 'required|unique:name_prouser|min:5|max:255',
-                'email'=>'required',
+                'name_prouser'=>'required',
+                'email'=>'email',
                 'address'=>'required',
-                'sdt'=>'required',
+                'sdt'=>'required|min:10|max:10'
             ],
             [
                 'name_prouser.required' => 'Bạn chưa nhập tên của bạn',
-                'email.unique' => 'Email đã tồn tại',
+                'email.email' => 'Email không đúng định dạng',
+                'email.required' => 'Bạn chưa nhập email',
                 'address.required' => 'Bạn chưa nhập địa chỉ',
                 'sdt.min' => 'Số điện thoại phải có 10 ký tự',
                 'sdt.max' => 'Số điện thoại phải đủ 10 ký tự',
-
-            ]);*/
+            ]);
         $profileuser = new profileuser;
         $profileuser->name_prouser = $request->name_prouser;
         $profileuser->email = $request->email;

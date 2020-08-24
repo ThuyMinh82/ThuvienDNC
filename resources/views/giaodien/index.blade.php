@@ -62,40 +62,40 @@
         <div class="row no-gutters"id='center'>
             <div class="col-xl-12 col-sm-12 padding-0" >
                 <div id="slides" class="carousel slide" data-ride="carousel">
-                    <ul class="carousel-indicators" style='margin-top:50px;'>
-                        <li data-target="#slides" data-slide-to="0" class="active"></li>
+                    <ul class="carousel-indicators">
+                        <?php $i=0; ?>
+                        @foreach($hinhanh as $ha)
+                            <li data-target="#slides" data-slide-to="{{$i}}" 
+                            @if($i == 0) 
+                                class="active"
 
-                        <li data-target="#slides" data-slide-to="1"></li>
-
-                        <li data-target="#slides" data-slide-to="2"></li>
-
-                        <li data-target="#slides" data-slide-to="3"></li>
+                            @endif>                          
+                            </li>
+                        <?php $i++; ?>
+                        @endforeach
                     </ul>
 
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img style="width: 100%; height: 250px;" src="{{asset('frontend/images/Thu-vien1.png')}}">
+                        <?php $i=0; ?>
+                        @foreach($hinhanh as $ha)
+                        <div 
+                        @if($i == 0)
+                            class="carousel-item active"
+                        @else
+                            class="carousel-item"
+                        @endif
+                        >
+                        <?php $i++; ?>
+                            <img style="width: 100%; height: 250px;" src="{{$ha->link_anh}}">
                         </div>
-
-                        <div class="carousel-item ">
-                            <img style="width: 100%; height: 250px;" src="{{asset('frontend/images/Thu-vien2.jpg')}}">
-                        </div>
-
-                        <div class="carousel-item">
-                            <img style="width: 100%; height: 250px;" src="{{asset('frontend/images/Thu-vien3.jpg')}}">
-                        </div>
-
-                        <div class="carousel-item">
-                            <img style="width: 100%; height: 250px;" src="{{asset('frontend/images/Thu-vien4.jpg')}}">
-                        </div>
+                        @endforeach
                     </div>
-
-                    <a class="carousel-control-prev" href="#slides" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
+                    <a class="left-carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
                     </a>
 
-                    <a class="carousel-control-next" href="#slides" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
+                    <a class="right-carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>
                 </div>
 

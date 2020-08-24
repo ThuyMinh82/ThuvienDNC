@@ -33,7 +33,7 @@ class usersController extends Controller
         $this -> validate ($request,[
             'username'=>'required|min:3',
             'password'=>'required|min:3|max:32',
-            ''
+            'passwordAgain'=>'required|same:password'
         ],[
             'username.required'=>'Bạn chưa nhập Tên đăng nhập',
             'username.min'=>'Tên đăng nhập ít nhất 3 kí tự',
@@ -78,7 +78,7 @@ class usersController extends Controller
         $users = users::find($id);
         $this -> validate ($request,[
             'password'=>'required|min:3|max:32',
-            'passwordAgain'=>'required|same',
+            'passwordAgain'=>'required|same:password',
         ],[
             'password.required'=>'Bạn chưa nhập Mật khẩu',
             'password.min'=>'Mật khẩu không được nhỏ hơn 3 ký tự',

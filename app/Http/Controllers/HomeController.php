@@ -11,11 +11,11 @@ class HomeController extends Controller
 {
     //
     function index(){
+        $hinhanh = hinhanh::all();
         $chudebv = chudebv::all();
         $baiviet = baiviet::where('status','1')->orderBy('id','DESC')->paginate(5);
         $baiviet1 = baiviet::where('status','1')->orderBy('id','DESC')->take(5)->get();
-        $hinhanh = hinhanh::orderBy('id','DESC')->take(4)->get();
-        return view('giaodien.index',['baiviet1'=>$baiviet1,'hinhanh'=>$hinhanh])->with('baiviet', $baiviet);
+        return view('giaodien.index',['baiviet1'=>$baiviet1])->with('baiviet', $baiviet)->with('hinhanh',$hinhanh);
 
     }
     function gioithieu(){
