@@ -30,11 +30,10 @@ class hinhanhController extends Controller
     {
         $this->validate($request,
             [
-                'ten_anh' => 'required|min:3|max:255|unique:hinhanh,ten_anh',
+                'ten_anh' => 'required|min:3|max:255',
             ],
             [
                 'ten_anh.required' => 'Bạn chưa nhập tên hình ảnh',
-                'ten_anh.unique' => 'Tên ảnh đã tồn tại',
                 'ten_anh.min' => 'Tên ảnh phải có độ dài từ 3 cho đến 255 ký tự',
                 'ten_anh.max' => 'Tên ảnh phải có độ dài từ 3 cho đến 255 ký tự',
             ]);
@@ -113,11 +112,10 @@ class hinhanhController extends Controller
         $hinhanh = hinhanh::find($id);
         $this->validate($request,
         [
-            'ten_anh' => 'required|min:3|max:255|unique:hinhanh,ten_anh',
+            'ten_anh' => 'required|min:3|max:255',
         ],
         [
             'ten_anh.required' => 'Bạn chưa nhập tên hình ảnh',
-            'ten_anh.unique' => 'Tên ảnh đã tồn tại',
             'ten_anh.min' => 'Tên ảnh phải có độ dài từ 3 cho đến 255 ký tự',
             'ten_anh.max' => 'Tên ảnh phải có độ dài từ 3 cho đến 255 ký tự',
         ]);
