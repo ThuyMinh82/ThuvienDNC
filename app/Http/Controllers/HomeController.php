@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\baiviet;
 use App\chudebv;
+use App\hinhanh;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,8 @@ class HomeController extends Controller
         $chudebv = chudebv::all();
         $baiviet = baiviet::where('status','1')->orderBy('id','DESC')->paginate(5);
         $baiviet1 = baiviet::where('status','1')->orderBy('id','DESC')->take(5)->get();
-        return view('giaodien.index',['baiviet1'=>$baiviet1])->with('baiviet', $baiviet);
+        $hinhanh = hinhanh::orderBy('id','DESC')->take(4)->get();
+        return view('giaodien.index',['baiviet1'=>$baiviet1,'hinhanh'=>$hinhanh])->with('baiviet', $baiviet);
 
     }
     function gioithieu(){
