@@ -62,7 +62,7 @@
         <div class="row no-gutters"id='center'>
             <div class="col-xl-12 col-sm-12 padding-0" >
                 <div id="slides" class="carousel slide" data-ride="carousel">
-                    <ul class="carousel-indicators">
+                    <ul class="carousel-indicators" style='margin-top:50px;'>
                         <li data-target="#slides" data-slide-to="0" class="active"></li>
 
                         <li data-target="#slides" data-slide-to="1"></li>
@@ -77,7 +77,7 @@
                             <img style="width: 100%; height: 250px;" src="{{asset('frontend/images/Thu-vien1.png')}}">
                         </div>
 
-                        <div class="carousel-item">
+                        <div class="carousel-item ">
                             <img style="width: 100%; height: 250px;" src="{{asset('frontend/images/Thu-vien2.jpg')}}">
                         </div>
 
